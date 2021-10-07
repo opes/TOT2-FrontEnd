@@ -4,7 +4,7 @@ import GoogleLogin from 'react-google-login';
 import PropTypes from 'prop-types';
 
 
-const SignUp = ({ event, state }) => {
+const SignUp = ({ event }) => {
   const [token, setToken] = useState();
   const [username, setUsername] = useState();
   const [googleId, setGoogleId] = useState();
@@ -16,8 +16,10 @@ const SignUp = ({ event, state }) => {
     setUsername(protoUsername);
   }, [token]);
 
-  const onSubmit = async () => {
+  const onSubmit = async (event) => {
+    event.preventDefault();
     // this is where we create a userObject to be posted to the backend.
+    
     // this also redirects the user to the first CUTSCENE after their userObject has been added to the database.
     // this is the start of the app.
   };
@@ -25,7 +27,7 @@ const SignUp = ({ event, state }) => {
   if(!token) return <GoogleLogin className="button"
     clientId={process.env.CLIENT_GOOGLE_ID}
     buttonText="Signup using Google"
-    onSuccess={ (token) => {setToken(token); event(!state);} }
+    onSuccess={ (token) => {setToken(token); event(true);} }
     onFailure={ (response) => console.log(response)}
     cookiePolicy={'single_host_origin'}
   />;
@@ -45,7 +47,6 @@ const SignUp = ({ event, state }) => {
 
 SignUp.propTypes = {
   event: PropTypes.func.isRequired,
-  state: PropTypes.bool.isRequired,
 };
 
 export default SignUp;
