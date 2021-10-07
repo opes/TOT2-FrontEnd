@@ -1,11 +1,15 @@
+/* eslint-disable max-len */
 import React from 'react';
 import SignUp from '../functional-components/SignUp';
+import styles from './TitlePage.css';
 
 const TitlePage = () => {
   return (
-    <div style={{ border: 'solid black 1px', width: '100vw', height: '100vh' }}>
-            Title Page
-      <SignUp />
+    <div className={styles['main-container']}>
+      <div className={styles['left-container']}>
+        <SignUp />
+      </div>
+      <div className={styles['right-container']}></div>
     </div>
   );
 };
