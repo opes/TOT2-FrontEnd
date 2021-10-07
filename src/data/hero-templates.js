@@ -25,15 +25,15 @@ const devilkinMage = {
   HP: 15,
   STM: 10,
   AC: 1,
-  SPD: 6,
+  SPD: 8,
   ATK: 6,
-  level: 0,
+  level: 1,
   gold: 0,
   XP: 0
 };
 
 const vampireRonin = {
-  HP: 30,
+  HP: 35,
   STM: 10,
   AC: 3,
   SPD: 3,
