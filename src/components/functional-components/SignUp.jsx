@@ -1,8 +1,10 @@
 /* eslint-disable max-len */
 import React, { useState, useEffect } from 'react';
 import GoogleLogin from 'react-google-login';
+import PropTypes from 'prop-types';
 
-const SignUp = () => {
+
+const SignUp = ({ event, state }) => {
   const [token, setToken] = useState();
   const [username, setUsername] = useState();
   const [googleId, setGoogleId] = useState();
@@ -23,7 +25,7 @@ const SignUp = () => {
   if(!token) return <GoogleLogin className="button"
     clientId={process.env.CLIENT_GOOGLE_ID}
     buttonText="Signup using Google"
-    onSuccess={ (token) => {setToken(token); } }
+    onSuccess={ (token) => {setToken(token); event(!state);} }
     onFailure={ (response) => console.log(response)}
     cookiePolicy={'single_host_origin'}
   />;
@@ -39,6 +41,11 @@ const SignUp = () => {
       </form>
     </div>
   );
+};
+
+SignUp.propTypes = {
+  event: PropTypes.func.isRequired,
+  state: PropTypes.bool.isRequired,
 };
 
 export default SignUp;
