@@ -1,3 +1,5 @@
+import { func } from 'prop-types';
+
 const URL = process.env.DATABASE_URL;
 
 export async function createUser(user) {
@@ -42,6 +44,15 @@ export async function deleteUserById(id) {
   const response = await fetch(`${URL}/api/v1/users/${id}`,
     {
       method: 'DELETE'
+    }
+  );
+  return response.body;
+}
+
+export async function getAllUsers() {
+  const response = await fetch(`${URL}/api/v1/users`,
+    {
+      method: 'GET'
     }
   );
   return response.body;
