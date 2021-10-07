@@ -16,8 +16,10 @@ const SignUp = ({ event }) => {
     setUsername(protoUsername);
   }, [token]);
 
-  const onSubmit = async () => {
+  const onSubmit = async (event) => {
+    event.preventDefault();
     // this is where we create a userObject to be posted to the backend.
+    
     // this also redirects the user to the first CUTSCENE after their userObject has been added to the database.
     // this is the start of the app.
   };
