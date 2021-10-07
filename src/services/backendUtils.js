@@ -37,3 +37,12 @@ export async function updateUserById(id, updatedUser) {
   );
   return response.body;
 }
+
+export async function deleteUserById(id) {
+  const response = await fetch(`${URL}/api/v1/users/${id}`,
+    {
+      method: 'DELETE'
+    }
+  );
+  return response.body;
+}
