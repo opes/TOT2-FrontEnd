@@ -31,7 +31,7 @@ const devilkinMage = {
   XP: 0
 };
 
-const vampireKnight = {
+const vampireRonin = {
   HP: 30,
   STM: 10,
   AC: 3,
@@ -42,4 +42,4 @@ const vampireKnight = {
   XP: 0
 };
 
-export const heroes = { dwarfWarrior, foxArcher, devilkinMage, vampireKnight };
+export const heroes = { dwarfWarrior, foxArcher, devilkinMage, vampireRonin };
