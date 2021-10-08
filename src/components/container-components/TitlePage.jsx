@@ -1,6 +1,7 @@
 /* eslint-disable max-len */
 import React, { useState } from 'react';
 import SignUp from '../functional-components/SignUp';
+import Login from '../functional-components/Login'
 import styles from './TitlePage.css';
 
 const TitlePage = () => {
@@ -12,6 +13,7 @@ const TitlePage = () => {
         <div className="image02"></div>
       </div>
       <div className={!signedIn ? styles['left-container'] : styles['full-page']}>
+        <Login />
         <SignUp event={setSignedIn} />
       </div>
       <div className={!signedIn ? styles[ 'right-container' ] : styles[ 'hidden' ]}>
