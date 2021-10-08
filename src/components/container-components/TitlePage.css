@@ -29,6 +29,9 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background-image: url('https://cdna.artstation.com/p/assets/images/images/003/581/980/large/preston-bechler-landscape-43-barren-mountains.jpg?1475243716');
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .hidden {
