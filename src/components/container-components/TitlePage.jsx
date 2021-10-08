@@ -1,12 +1,13 @@
 /* eslint-disable max-len */
 import React, { useState } from 'react';
 import SignUp from '../functional-components/SignUp';
+// import fogStyles from '../../styles/fog.css';
 import styles from './TitlePage.css';
 
 const TitlePage = () => {
   const [signedIn, setSignedIn] = useState(false);
   return (
-    <div className={styles[ 'main-container' ]}>
+    <div className={styles[ 'main-container']}>
       <div id="foglayer_01" className="fog">
         <div className="image01"></div>
         <div className="image02"></div>

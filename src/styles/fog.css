@@ -1,0 +1,70 @@
+.fogwrapper {
+  filter: -webkit-filter blur(1px) grayscale(0.2) saturate(1.2) sepia(0.2);
+}
+
+#foglayer_01 {
+  width: 200%;
+  height: 100%;
+  position: absolute;
+  animation: foglayer_01_opacity 10s linear infinite, foglayer_moveme 15s linear infinite;
+  -webkit-animation: foglayer_01_opacity 10s linear infinite, foglayer_moveme 15s linear infinite;
+}
+
+#foglayer_01 .image01, #foglayer_01 .image02 {
+  background: url('https://raw.githubusercontent.com/danielstuart14/CSS_FOG_ANIMATION/master/fog1.png') repeat-x top left transparent;
+  background-size: 100%;
+  width: 50%;
+  height: 100%;
+  float: left;
+}
+
+@keyframes foglayer_01_opacity {
+  0% {
+    opacity: .1;
+  }
+  22% {
+    opacity: .5;
+  }
+  40% {
+    opacity: .28;
+  }
+  58% {
+    opacity: .4;
+  }
+  80% {
+    opacity: .16;
+  }
+  100% {
+    opacity: .1;
+  }
+}
+
+@-webkit-keyframes foglayer_01_opacity {
+  0% {
+    opacity: .1;
+  }
+  22% {
+    opacity: .5;
+  }
+  40% {
+    opacity: .28;
+  }
+  58% {
+    opacity: .4;
+  }
+  80% {
+    opacity: .16;
+  }
+  100% {
+    opacity: .1;
+  }
+}
+
+@keyframes foglayer_moveme {
+  0% {
+    left: 0;
+  }
+  100% {
+    left: -100%;
+  }
+}
