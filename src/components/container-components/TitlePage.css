@@ -3,6 +3,9 @@
     display: flex;
     flex-direction: row;
     border: solid black 5px;
+    background-image: url('https://raw.githubusercontent.com/danielstuart14/CSS_FOG_ANIMATION/master/background.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .left-container {
@@ -12,13 +15,11 @@
     justify-content: center;
     align-items: center;
     border: solid black 5px;
+    
 }
 
 .right-container {
     width: 70%;
-    background-image: url('https://cdn.discordapp.com/attachments/380989362755600394/895777286589153280/Dead_Forest_25x20_70ppi.png');
-    background-repeat: no-repeat;
-    background-size: cover;
     border: solid black 5px;
 }
 
@@ -28,6 +29,9 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background-image: url('https://cdna.artstation.com/p/assets/images/images/003/581/980/large/preston-bechler-landscape-43-barren-mountains.jpg?1475243716');
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .hidden {
