@@ -1,9 +1,7 @@
-import { func } from 'prop-types';
-
 const URL = process.env.DATABASE_URL;
 
 export async function createUser(user) {
-  const response = await fetch(`${URL}/api/v1/users/`,
+  const response = await fetch(`${URL}/api/v1/users`,
     {
       method: 'POST',
       headers: {

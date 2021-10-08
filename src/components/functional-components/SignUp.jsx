@@ -2,6 +2,8 @@
 import React, { useState, useEffect } from 'react';
 import GoogleLogin from 'react-google-login';
 import PropTypes from 'prop-types';
+import { heroes } from '../../data/hero-templates';
+import { createUser } from '../../services/backendUtils';
 
 
 const SignUp = ({ event }) => {
@@ -18,8 +20,17 @@ const SignUp = ({ event }) => {
 
   const onSubmit = async (event) => {
     event.preventDefault();
-    // this is where we create a userObject to be posted to the backend.
-    
+    const userObject = {
+      googleId,
+      username,
+      score: 0,
+      heroStats: heroes[hero],
+      heldGear: [],
+      items: [],
+      achievements: [''],
+      location: 1,
+    };
+    await createUser(userObject)
     // this also redirects the user to the first CUTSCENE after their userObject has been added to the database.
     // this is the start of the app.
   };
@@ -33,12 +44,17 @@ const SignUp = ({ event }) => {
   />;
   return (
     <div>
-      <form>
+      <form onSubmit={onSubmit}>
         <input type="text" value={username} onChange={({ target }) => setUsername(target.value)} />
-        <input type="radio" name="hero" />
-        <input type="radio" name="hero" />
-        <input type="radio" name="hero" />
-        <input type="radio" name="hero" />
+        {/* Images and more styling for the choices of heroes */}
+        <label htmlFor="dwarf">Dwarf Warrior</label>
+        <input type="radio" name="hero" value="dwarfWarrior" id="dwarf" onChange={({ target }) => setHero(target.value)}/>
+        <label htmlFor="fox">Fox Archer</label>
+        <input type="radio" name="hero" value="foxArcher" id="fox" onChange={({ target }) => setHero(target.value)}/>
+        <label htmlFor="devilkin">Devilkin Mage</label>
+        <input type="radio" name="hero" value="devilkinMage" id="devilkin" onChange={({ target }) => setHero(target.value)}/>
+        <label htmlFor="vampire">Vampire Ronin</label>
+        <input type="radio" name="hero" value="vampireRonin" id="vampire" onChange={({ target }) => setHero(target.value)}/>
         <button>Start the Adventure</button>
       </form>
     </div>
