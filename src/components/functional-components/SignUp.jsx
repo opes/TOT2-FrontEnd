@@ -4,6 +4,7 @@ import GoogleLogin from 'react-google-login';
 import PropTypes from 'prop-types';
 import { heroes } from '../../data/hero-templates';
 import { createUser } from '../../services/backendUtils';
+import { useSetActiveSession, useSetContextGoogleId } from '../../hooks/SessionProvider';
 
 
 const SignUp = ({ event }) => {
@@ -11,6 +12,8 @@ const SignUp = ({ event }) => {
   const [username, setUsername] = useState();
   const [googleId, setGoogleId] = useState();
   const [hero, setHero] = useState();
+  const setContextGoogleId = useSetContextGoogleId();
+  const setActiveSession = useSetActiveSession();
 
   useEffect(() => {
     setGoogleId(token?.googleId);
@@ -30,7 +33,9 @@ const SignUp = ({ event }) => {
       achievements: [''],
       location: 1,
     };
-    await createUser(userObject)
+    await createUser(userObject);
+    setContextGoogleId(googleId);
+    setActiveSession(true);
     // this also redirects the user to the first CUTSCENE after their userObject has been added to the database.
     // this is the start of the app.
   };

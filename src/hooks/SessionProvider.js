@@ -5,11 +5,11 @@ import PropTypes from 'prop-types';
 //These two contexts are the backbone of play sessions.
 export const SessionContext = createContext();
 const SessionProvider = ({ children }) => {
-  const [googleId, setGoogleId] = useState();
-  const [activeSession, setActiveSession] = useState();
+  const [contextGoogleId, setContextGoogleId] = useState();
+  const [activeSession, setActiveSession] = useState(false);
 
   return (
-    <SessionContext.Provider value={{ googleId, setGoogleId, activeSession, setActiveSession }}>
+    <SessionContext.Provider value={{ contextGoogleId, setContextGoogleId, activeSession, setActiveSession }}>
       {children}
     </SessionContext.Provider>
   );
@@ -17,14 +17,14 @@ const SessionProvider = ({ children }) => {
 
 //These hooks allow all children comps to have access to the context state
 
-export const useGoogleId = () => {
-  const { googleId } = useContext(SessionContext);
-  return googleId;
+export const useContextGoogleId = () => {
+  const { contextGoogleId } = useContext(SessionContext);
+  return contextGoogleId;
 };
 
-export const useSetGoogleId = () => {
-  const { setGoogleId } = useContext(SessionContext);
-  return setGoogleId;
+export const useSetContextGoogleId = () => {
+  const { setContextGoogleId } = useContext(SessionContext);
+  return setContextGoogleId;
 };
 
 export const useActiveSession = () => {
