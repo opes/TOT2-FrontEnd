@@ -5,6 +5,8 @@ import SessionProvider from './hooks/SessionProvider';
 import './styles/global-styles.css';
 
 render(
-  <SessionProvider><App /></SessionProvider>,
+  <SessionProvider>
+    <App />
+  </SessionProvider>,
   document.getElementById('root')
 );

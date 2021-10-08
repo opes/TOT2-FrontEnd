@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useHistory } from 'react-router-dom';
 import GoogleLogin from 'react-google-login';
 import {
   useSetActiveSession,
@@ -11,20 +12,21 @@ const Login = () => {
   const setContextGoogleId = useSetContextGoogleId();
   const setActiveSession = useSetActiveSession();
 
+  const history = useHistory(); 
   const handleLogin = async () => {
     const bckRes = await getUserById(token?.googleId);
     if (bckRes) {
       setContextGoogleId(token?.googleId);
       setActiveSession(true);
-      location.replace('/village');
+      // location.replace('/village');
+      history.push('/village');
     } else {
       alert('You must create an account before logging in...');
     }
   };
 
   return (
-    <div>"
-      "
+    <div>
       <GoogleLogin
         className="button"
         clientId={process.env.CLIENT_GOOGLE_ID}

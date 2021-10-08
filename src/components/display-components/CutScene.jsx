@@ -1,10 +1,11 @@
 import React from 'react'; 
 import useGetUser from '../../hooks/useGetUser';
 import { cutscene } from '../../data/cutscene';
+import { useContextGoogleId } from '../../hooks/SessionProvider';
 
 const CutScene = () => {
-
-  const { userObj, loading } = useGetUser();
+  const contextGoogleId = useContextGoogleId();
+  const { userObj, loading } = useGetUser(contextGoogleId);
 
   if (loading) return <div>'Loading...'</div>
   console.log(userObj);
@@ -15,7 +16,5 @@ const CutScene = () => {
     </div>
   );
 }
-{
-  // cutscene[`${userObj.heroStats?.type}`];
-}
+
 export default CutScene;

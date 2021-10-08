@@ -8,7 +8,7 @@ export default function App() {
   return (
     <Router>
       <Switch>
-        <Route exact path="/cutscene/:id">
+        <Route exact path="/cutscene">
           <CutScene />
         </Route>
         <Route exact path="/">

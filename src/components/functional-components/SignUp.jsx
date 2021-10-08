@@ -1,6 +1,7 @@
 /* eslint-disable max-len */
 import React, { useState, useEffect } from 'react';
 import GoogleLogin from 'react-google-login';
+import { useHistory } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { heroes } from '../../data/hero-templates';
 import { createUser } from '../../services/backendUtils';
@@ -14,12 +15,14 @@ const SignUp = ({ event }) => {
   const [hero, setHero] = useState();
   const setContextGoogleId = useSetContextGoogleId();
   const setActiveSession = useSetActiveSession();
+  const history = useHistory(); 
 
   useEffect(() => {
     setGoogleId(token?.googleId);
     const protoUsername = `${token?.profileObj.givenName}${token?.profileObj.familyName[0]}`;
     setUsername(protoUsername);
   }, [token]);
+
 
   const onSubmit = async (event) => {
     event.preventDefault();
@@ -36,7 +39,7 @@ const SignUp = ({ event }) => {
     await createUser(userObject);
     setContextGoogleId(googleId);
     setActiveSession(true);
-    location.replace(`/cutscene/${googleId}`);
+    history.push(`/cutscene`);
   };
 
   if(!token) return <GoogleLogin className="button"
