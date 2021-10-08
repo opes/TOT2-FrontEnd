@@ -23,7 +23,8 @@ const Login = () => {
   };
 
   return (
-    <div>
+    <div>"
+      "
       <GoogleLogin
         className="button"
         clientId={process.env.CLIENT_GOOGLE_ID}

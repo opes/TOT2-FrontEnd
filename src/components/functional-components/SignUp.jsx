@@ -36,7 +36,7 @@ const SignUp = ({ event }) => {
     await createUser(userObject);
     setContextGoogleId(googleId);
     setActiveSession(true);
-    location.replace('/cutscene'); 
+    location.replace(`/cutscene/${googleId}`);
   };
 
   if(!token) return <GoogleLogin className="button"
