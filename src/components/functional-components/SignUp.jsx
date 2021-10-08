@@ -36,8 +36,7 @@ const SignUp = ({ event }) => {
     await createUser(userObject);
     setContextGoogleId(googleId);
     setActiveSession(true);
-    // this also redirects the user to the first CUTSCENE after their userObject has been added to the database.
-    // this is the start of the app.
+    location.replace('/cutscene'); 
   };
 
   if(!token) return <GoogleLogin className="button"
