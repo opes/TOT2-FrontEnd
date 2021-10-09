@@ -4,8 +4,66 @@
     flex-direction: row;
     border: solid black 5px;
     background-image: url('https://raw.githubusercontent.com/danielstuart14/CSS_FOG_ANIMATION/master/background.jpg');
+    background-color: black;
     background-repeat: no-repeat;
     background-size: cover;
+}
+
+.fogwrapper {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  -webkit-filter: blur(2px) grayscale(0.4) saturate(0.5) sepia(0.4);
+  filter: blur(2px) grayscale(0.4) saturate(0.5) sepia(0.4);
+}
+
+.foglayer_01 {
+  background-image: url('https://raw.githubusercontent.com/danielstuart14/CSS_FOG_ANIMATION/master/fog1.png');
+  background-size: 100%;
+  width: 50%;
+  height: 100%;
+  float: left;
+}
+
+.foglayer_01 {
+  width: 200%;
+  height: 100%;
+  position: absolute;
+  animation: foglayer_01_opacity 10s linear infinite, foglayer_moveme 15s linear infinite;
+  -webkit-animation: foglayer_01_opacity 10s linear infinite, foglayer_moveme 15s linear infinite;
+}
+
+.foglayer_02 {
+  width: 200%;
+  height: 100%;
+  position: absolute;
+  animation: foglayer_02_opacity 21s linear infinite, foglayer_moveme 13s linear infinite;
+  -webkit-animation: foglayer_01_opacity 21s linear infinite, foglayer_moveme 13s linear infinite;
+}
+
+.foglayer_02 {
+  background-image: url('https://raw.githubusercontent.com/danielstuart14/CSS_FOG_ANIMATION/master/fog2.png');
+  background-size: 100%;
+  width: 50%;
+  height: 100%;
+  float: left;
+}
+
+.foglayer_03 {
+    width: 200%;
+    height: 100%;
+    position: absolute;
+    animation: foglayer_02_opacity 21s linear infinite, foglayer_moveme 13s linear infinite;
+    -webkit-animation: foglayer_01_opacity 21s linear infinite, foglayer_moveme 13s linear infinite;
+}
+
+.foglayer_03 {
+    background: url('https://raw.githubusercontent.com/danielstuart14/CSS_FOG_ANIMATION/master/fog2.png');
+    background-size: 100%;
+    width: 50%;
+    height: 100%;
+    float: left;
 }
 
 .left-container {
@@ -36,4 +94,22 @@
 
 .hidden {
     display: none;
+}
+
+@keyframes foglayer_moveme {
+  0% {
+    left: 0;
+  }
+  100% {
+    left: -100%;
+  }
+}
+
+@-webkit-keyframes foglayer_moveme {
+  0% {
+    left: 0;
+  }
+100% {
+    left: -100%;
+}
 }

@@ -40,13 +40,15 @@ const SignUp = ({ event }) => {
     // this is the start of the app.
   };
 
-  if(!token) return <GoogleLogin className="button"
-    clientId={process.env.CLIENT_GOOGLE_ID}
-    buttonText="Signup using Google"
-    onSuccess={ (token) => {setToken(token); event(true);} }
-    onFailure={ (response) => console.log(response)}
-    cookiePolicy={'single_host_origin'}
-  />;
+  if (!token) return <div style={{ zIndex: '99' }}>
+    <GoogleLogin className="button"
+      clientId={process.env.CLIENT_GOOGLE_ID}
+      buttonText="Signup using Google"
+      onSuccess={ (token) => {setToken(token); event(true);} }
+      onFailure={ (response) => console.log(response)}
+      cookiePolicy={'single_host_origin'}
+    />
+  </div>;
   return (
     <div>
       <form onSubmit={onSubmit}>
