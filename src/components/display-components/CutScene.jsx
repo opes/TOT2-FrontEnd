@@ -9,7 +9,7 @@ const CutScene = () => {
   const { userObj, loading } = useGetUser(contextGoogleId);
   const history = useHistory(); 
 
-  if (loading) return <div>'Loading...'</div>
+  if (loading) return <div>Loading...</div>;
 
   return (
     <div>
@@ -20,6 +20,6 @@ const CutScene = () => {
       </button> 
     </div>
   );
-}
+};
 
 export default CutScene;

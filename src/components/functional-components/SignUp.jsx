@@ -39,7 +39,7 @@ const SignUp = ({ event }) => {
     await createUser(userObject);
     setContextGoogleId(googleId);
     setActiveSession(true);
-    history.push(`/cutscene`);
+    history.push('/cutscene');
   };
 
   if(!token) return <GoogleLogin className="button"
