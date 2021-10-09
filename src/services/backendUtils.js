@@ -10,7 +10,7 @@ export async function createUser(user) {
       body: JSON.stringify(user)
     }
   );
-  return response.body;
+  return response.json();
 }
 
 export async function getUserById(id) {
@@ -22,7 +22,7 @@ export async function getUserById(id) {
       },
     }
   );
-  return response.body;
+  return response.json();
 }
 
 export async function updateUserById(id, updatedUser) {
@@ -35,7 +35,7 @@ export async function updateUserById(id, updatedUser) {
       body: JSON.stringify(updatedUser)
     }
   );
-  return response.body;
+  return response.json();
 }
 
 export async function deleteUserById(id) {
@@ -44,7 +44,7 @@ export async function deleteUserById(id) {
       method: 'DELETE'
     }
   );
-  return response.body;
+  return response.json();
 }
 
 export async function getAllUsers() {
@@ -53,5 +53,5 @@ export async function getAllUsers() {
       method: 'GET'
     }
   );
-  return response.body;
+  return response.json();
 }

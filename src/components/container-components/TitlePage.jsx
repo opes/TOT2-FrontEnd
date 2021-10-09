@@ -1,6 +1,7 @@
 /* eslint-disable max-len */
 import React, { useState } from 'react';
 import SignUp from '../functional-components/SignUp';
+import Login from '../functional-components/Login';
 import styles from './TitlePage.css';
 // import fogStyles from '../../styles/fog.css';
 

@@ -1,5 +1,6 @@
 /* eslint-disable max-len */
 const dwarfWarrior = {
+  type: 'dwarf',
   HP: 25,
   STM: 10,
   AC: 6,
@@ -11,6 +12,7 @@ const dwarfWarrior = {
 };
 
 const foxArcher = {
+  type: 'fox',
   HP: 20,
   STM: 10,
   AC: 2,
@@ -22,6 +24,7 @@ const foxArcher = {
 };
 
 const devilkinMage = {
+  type: 'devilkin',
   HP: 15,
   STM: 10,
   AC: 1,
@@ -33,6 +36,7 @@ const devilkinMage = {
 };
 
 const vampireRonin = {
+  type: 'vampire',
   HP: 35,
   STM: 10,
   AC: 3,
