@@ -6,8 +6,10 @@ import {
   useSetContextGoogleId,
 } from '../../hooks/SessionProvider';
 import { getUserById } from '../../services/backendUtils';
+import PropTypes from 'prop-types';
+import styles from  '../container-components/TitlePage.css';
 
-const Login = () => {
+const Login = ({ signedIn }) => {
   const [token, setToken] = useState();
   const setContextGoogleId = useSetContextGoogleId();
   const setActiveSession = useSetActiveSession();
@@ -26,7 +28,7 @@ const Login = () => {
   };
 
   return (
-    <div>
+    <div className={signedIn ? styles['hidden'] : styles['bloop']}>
       <GoogleLogin
         className="button"
         clientId={process.env.CLIENT_GOOGLE_ID}
@@ -41,6 +43,10 @@ const Login = () => {
       ;
     </div>
   );
+};
+
+Login.propTypes = {
+  signedIn: PropTypes.func.isRequired,
 };
 
 export default Login;
