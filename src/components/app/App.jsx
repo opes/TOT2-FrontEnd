@@ -9,12 +9,16 @@ export default function App() {
   return (
     <Router>
       <Switch>
+        {/*<Hero Provider /> */}
         <Route exact path="/cutscene">
           <CutScene />
         </Route>
         <Route exact path="/tutorial">
           <Tutorial />
         </Route>
+        {/* VILLAGE ROUTE */}
+        {/* COMBAT ROUTE */}
+        {/*<HeroProvider /> */}
         <Route exact path="/">
           <TitlePage />
         </Route>
