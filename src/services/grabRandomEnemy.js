@@ -1,8 +1,6 @@
 /* eslint-disable max-len */
 
-const enemyList = [{ name: 'goblin', level: 1 }, { name: 'Boblin', level: 2 }];
-
-const grabRandomEnemy = (playerLevel) => {
+const grabRandomEnemy = (playerLevel, enemyList) => {
   const randomEnemyIndex = Math.floor(Math.random() * enemyList.length);
 
   while(enemyList[randomEnemyIndex].level <= playerLevel) return enemyList[randomEnemyIndex];
