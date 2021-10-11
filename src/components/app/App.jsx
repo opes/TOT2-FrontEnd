@@ -4,22 +4,27 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import CutScene from '../display-components/CutScene';
 import Tutorial from '../functional-components/Tutorial';
 import HeroProvider from '../../hooks/HeroProvider';
+import VillagePage from '../container-components/VillagePage';
 
 export default function App() {
   return (
     <Router>
       <Switch>
         <Route exact path="/cutscene">
-          <HeroProvider >
+          <HeroProvider>
             <CutScene />
-          </ HeroProvider>
+          </HeroProvider>
         </Route>
         <Route exact path="/tutorial">
           <HeroProvider>
             <Tutorial />
-          </ HeroProvider>
+          </HeroProvider>
         </Route>
-        {/* VILLAGE ROUTE */}
+        <Route exact path="/village">
+          <HeroProvider>
+            <VillagePage />
+          </HeroProvider>
+        </Route>
         {/* COMBAT ROUTE */}
         <Route exact path="/">
           <TitlePage />
