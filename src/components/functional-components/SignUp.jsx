@@ -6,6 +6,7 @@ import PropTypes from 'prop-types';
 import { heroes } from '../../data/hero-templates';
 import { createUser } from '../../services/backendUtils';
 import { useSetActiveSession, useSetContextGoogleId } from '../../hooks/SessionProvider';
+import styles from './SignUp.css';
 
 
 const SignUp = ({ event }) => {
@@ -43,7 +44,9 @@ const SignUp = ({ event }) => {
   };
 
   if (!token) return <div style={{ zIndex: '99' }}>
-    <GoogleLogin className="button"
+    <GoogleLogin
+      className={styles['button']}
+      // className="button"
       clientId={process.env.CLIENT_GOOGLE_ID}
       buttonText="Signup using Google"
       onSuccess={ (token) => {setToken(token); event(true);} }

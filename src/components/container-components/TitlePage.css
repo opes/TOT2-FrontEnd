@@ -16,6 +16,11 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background-image: url('https://t3.ftcdn.net/jpg/00/70/87/48/240_F_70874851_f0GblTdhvXkq6L9a7ZbUAKfNSXfGxZ1S.jpg');
+  background-repeat: no-repeat;
+  background-position-x: center;
+  background-position-y: center;
+  background-size: 275px 150px;
   border: solid black 5px;
   overflow: hidden;
 }
@@ -43,11 +48,23 @@
 }
 
 .logo {
+    width: 60vw;
   display: flex;
-  margin: 100px;
+  margin: 225px;
+  margin-left: 55px;
   flex-direction: row;
   align-items: center;
   justify-content: center;
+}
+
+.button {
+    margin-left: 2.5px;
+    width: 195px;
+    background-image: url('https://t3.ftcdn.net/jpg/00/70/87/48/240_F_70874851_f0GblTdhvXkq6L9a7ZbUAKfNSXfGxZ1S.jpg');
+  background-repeat: no-repeat;
+  background-position-x: center;
+  background-position-y: center;
+  background-size: auto;
 }
 
 .fogwrapper {
