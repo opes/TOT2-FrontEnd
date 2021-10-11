@@ -23,7 +23,7 @@ const Tutorial = () => {
   const contextHero = useContextHero();
   const setContextHero = useSetContextHero();
   const history = useHistory();
-  const { player, enemy, activeCombat, combatLog, loading, doOneCombatRound } = useCombatHook(contextHero, tutorialFight);
+  const { player, enemy, activeCombat, combatLog, loading, doOneCombatRound, doFlee } = useCombatHook(contextHero, tutorialFight);
 
   if (!activeSession) history.push('/');
   
@@ -54,7 +54,13 @@ const Tutorial = () => {
           <div className={styles['left-bot-right-container']}>
             <section className={styles['combat-buttons']}>
               <button onClick={doOneCombatRound} className={!activeCombat ? styles['hidden'] : styles['bloop']}> Attack</button>
-              <button className={!activeCombat ? styles['hidden'] : styles['bloop']}> Flee </button>
+              <button onClick={() => {
+                const flee = doFlee();
+                if (flee) {
+                  setContextHero(player);
+                  history.push('/village');
+                }
+              }} className={!activeCombat ? styles['hidden'] : styles['bloop']}> Flee </button>
               <button className={activeCombat ? styles['hidden'] : styles['bloop']} onClick={() => history.push('/village')}>To Village</button>
             </section>
             <section className={styles['combat-log']}>

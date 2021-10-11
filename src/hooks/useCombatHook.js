@@ -22,7 +22,6 @@ const useCombatHook = (heroObj, enemyListArr) => {
   const attackRoll = (attacker) => {
     const rdmRoll = Math.ceil(Math.random() * 10);
     const attackRoll = Number(rdmRoll + attacker.SPD);
-    console.log(attackRoll, attacker);
     return attackRoll;
   };
 
@@ -34,7 +33,18 @@ const useCombatHook = (heroObj, enemyListArr) => {
     return defenderHP;
   };
 
-  //giveRewards = () => just gives rewards and ends combat
+  const doFlee = () => {
+    const flee = confirm(`Do you want to flee from ${enemy?.name}? [${enemy?.gold}]`);
+    if (flee) {
+      let newPlayerGold = player.gold - enemy?.gold;
+      if (newPlayerGold <= 0) newPlayerGold = 0;
+      setPlayer(prev => {
+        return { ...prev, gold: newPlayerGold };
+      });
+      return true;
+    }
+    return false;
+  };
 
   const doOneCombatRound = () => {
     const playerHitChance = player.AC + player.SPD;
@@ -93,7 +103,7 @@ const useCombatHook = (heroObj, enemyListArr) => {
     }
   };
 
-  return { player, enemy, activeCombat, combatLog, loading, doOneCombatRound };
+  return { player, enemy, activeCombat, combatLog, loading, doOneCombatRound, doFlee };
 
 };
 
