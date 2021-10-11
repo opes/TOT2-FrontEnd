@@ -7,6 +7,10 @@ import { heroes } from '../../data/hero-templates';
 import { createUser } from '../../services/backendUtils';
 import { useSetActiveSession, useSetContextGoogleId } from '../../hooks/SessionProvider';
 import styles from './SignUp.css';
+import dwarfWarrior from '../../assets/Dwarf Warrior.png';
+import foxArcher from '../../assets/FoxArcher.png';
+import devilkin from '../../assets/devilkin.png';
+import vampire from '../../assets/vampire.png';
 
 
 const SignUp = ({ event }) => {
@@ -61,18 +65,22 @@ const SignUp = ({ event }) => {
         {/* Images and more styling for the choices of heroes */}
         <label htmlFor="dwarf">
           Dwarf Warrior
+          <img className={styles['hero-icon']}src={dwarfWarrior} alt="dwarf"/>
           <input type="radio" name="hero" value="dwarfWarrior" id="dwarf" onChange={({ target }) => setHero(target.value)}/>
         </label>
         <label htmlFor="fox">
           Fox Archer
+          <img src={foxArcher} alt="fox"/>
           <input type="radio" name="hero" value="foxArcher" id="fox" onChange={({ target }) => setHero(target.value)}/>
         </label>
         <label htmlFor="devilkin">
           Devilkin Mage
+          <img src={devilkin} alt="devilkin"/>
           <input type="radio" name="hero" value="devilkinMage" id="devilkin" onChange={({ target }) => setHero(target.value)}/>
         </label>
         <label htmlFor="vampire">
           Vampire Ronin
+          <img src={vampire} alt="vampire"/>
           <input type="radio" name="hero" value="vampireRonin" id="vampire" onChange={({ target }) => setHero(target.value)}/>
         </label>
         <button>Start the Adventure</button>
