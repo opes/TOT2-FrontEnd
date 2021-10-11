@@ -53,8 +53,8 @@ const Tutorial = () => {
         <div className={styles['bot-right-container']}>
           <div className={styles['left-bot-right-container']}>
             <section className={styles['combat-buttons']}>
-              <button onClick={doOneCombatRound} styles={activeCombat ? { backgroundColor: 'blue' } : { display: 'none' }}> Attack</button>
-              <button> Flee </button>
+              <button onClick={doOneCombatRound} className={!activeCombat ? styles['hidden'] : styles['bloop']}> Attack</button>
+              <button className={!activeCombat ? styles['hidden'] : styles['bloop']}> Flee </button>
               {/* back to village button */}
               {/* another fight button */}
             </section>
