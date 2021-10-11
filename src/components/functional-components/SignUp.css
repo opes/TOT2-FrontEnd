@@ -5,3 +5,7 @@
   background-position-y: center;
   background-size: auto auto;
 }
+
+.hero-form {
+  z-index: 99;
+}
