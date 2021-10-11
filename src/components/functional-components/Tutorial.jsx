@@ -1,18 +1,30 @@
+/* eslint-disable max-len */
 import React from 'react';
 import { useContextHero, useSetContextHero } from '../../hooks/HeroProvider';
+import useCombatHook from '../../hooks/useCombatHook';
+import grabRandomEnemy from '../../services/grabRandomEnemy';
 import styles from './Tutorial.css';
 
 const Tutorial = () => {
   const contextHero = useContextHero();
   const setContextHero = useSetContextHero();
-  // const wtvEnemy = grabRandomEnemy(contextHero.level)
-  // {player, enemy, someCombatFuncs} = useCombatHook(contextHero, wtvEnemy)
+  const wtvEnemy = grabRandomEnemy(contextHero.level);
+  const { player, enemy, activeCombat, combatLog, doOneCombatRound } = useCombatHook(contextHero, wtvEnemy);
 
 
   return (
     <div className={styles['main-container']}>
       <section className={styles['left-container']}>
-        {/* <PlayerScroll /> */} PLAYER STATS HERE
+        {/* <PlayerScroll /> */}
+        {player.type}
+        {player.HP}
+        {player.STM}
+        {player.AC}
+        {player.SPD}
+        {player.ATK}
+        {player.level}
+        {player.gold}
+        {player.XP}
       </section>
       <section className={styles['right-container']}>
         <div className={styles['top-right-container']}>
@@ -23,7 +35,7 @@ const Tutorial = () => {
         </div>
         <div className={styles['bot-right-container']}>
           <div className={styles['left-bot-right-container']}>
-            TEXT LOG HERE
+            {combatLog.map(single => <p key={single}> {single} </p>)}
           </div>
           <div className={styles['right-bot-right-container']}>
             ENEMY STATS HERE
