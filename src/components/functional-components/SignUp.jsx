@@ -26,7 +26,9 @@ const SignUp = ({ event }) => {
 
   const handleSignup = async () => {
     const bckRes = await getUserById(token?.googleId); 
-    if (bckRes) {
+    console.log(bckRes);
+    if (bckRes.message === "null value in column \"google_id\" of relation \"users\" violates not-null constraint"
+) {
       alert('You have an account, please use login to log in...');
       location.replace('/')
     }

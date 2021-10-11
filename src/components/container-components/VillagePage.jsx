@@ -10,7 +10,7 @@ const VillagePage = () => {
   
   return (
     <div>
-      fdsafas
+      <button onClick={() => history.push('/cutscene')}>Cutscene</button>
     </div>
   );
 }
