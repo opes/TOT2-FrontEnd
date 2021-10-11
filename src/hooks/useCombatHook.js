@@ -34,6 +34,9 @@ const useCombatHook = (heroObj, enemyObj) => {
       //IF PLAYER HITS, THESE ACTIONS ARE TAKEN
       const newEnemyHP = doDamage(player, enemy);
       updateCombatLog(`The hero hits ${enemy.name} for ${enemy.HP - newEnemyHP} damage!`);
+      setPlayer(prev => {
+        return { ...prev, STM: prev.STM - 1 };
+      });
       setEnemy(prev => {
         return { ...prev, HP: newEnemyHP };
       });
