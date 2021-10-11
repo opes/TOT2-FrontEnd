@@ -1,0 +1,124 @@
+/* .main-container {
+    display: flex;
+    flex-direction: column;
+    height: 98.25vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    border: solid black 5px;
+    background-image: url('https://cdn.discordapp.com/attachments/380989362755600394/897221809739558912/image0.jpg');
+    background-color: black;
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+    overflow-y: hidden;
+}
+
+.first-article-container {
+    display: flex;
+    flex-direction: column;
+    background-image: url('https://cdn.discordapp.com/attachments/380989362755600394/897226849959178250/image0.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 600px;
+    width: 500px;
+}
+
+.first-article {
+    align-content: center;
+    animation: type 10s steps(292);
+    width: 292ch;
+}
+
+@keyframes type {
+    0% {
+        width:0ch;
+    }
+    100%{
+        width:300ch;
+    }
+} */
+
+.main-container article {
+    border-right: .15em transparent;
+    font-family: "Courier";
+    font-size: 14px;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+  .main-container article:nth-child(1) {
+    width: 350ch;
+    -webkit-animation: type 10s steps(350, end);
+    animation: type 10s steps(178, end);
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+  }
+  
+  .main-container article:nth-child(2) {
+    width: 400ch;
+    opacity: 0;
+    -webkit-animation: type2 10s steps(400, end);
+    animation: type2 10s steps(144, end);
+    -webkit-animation-delay: 10s;
+    animation-delay: 10s;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+  }
+  
+  
+  @keyframes type {
+    0% {
+      width: 0;
+    }
+    99.9% {
+      border-right: .15em transparent;
+    }
+    100% {
+      border: none;
+    }
+  }
+  
+  @-webkit-keyframes type {
+    0% {
+      width: 0;
+    }
+    99.9% {
+      border-right: .15em transparent;
+    }
+    100% {
+      border: none;
+    }
+  }
+  
+  @keyframes type2 {
+    0% {
+      width: 0;
+    }
+    1% {
+      opacity: 1;
+    }
+    99.9% {
+      border-right: .15em transparent;
+    }
+    100% {
+      opacity: 1;
+      border: none;
+    }
+  }
+  
+  @-webkit-keyframes type2 {
+    0% {
+      width: 0;
+    }
+    1% {
+      opacity: 1;
+    }
+    99.9% {
+      border-right: .15em transparent;
+    }
+    100% {
+      opacity: 1;
+      border: none;
+    }
+  }
+  

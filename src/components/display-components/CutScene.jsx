@@ -5,6 +5,7 @@ import { useHistory } from 'react-router-dom';
 import { cutscene } from '../../data/cutscene';
 import { useActiveSession, useContextGoogleId } from '../../hooks/SessionProvider';
 import { useSetContextHero } from '../../hooks/HeroProvider';
+import styles from './CutScene.css';
 
 const CutScene = () => {
   const contextGoogleId = useContextGoogleId();
@@ -23,13 +24,15 @@ const CutScene = () => {
   };
 
   return (
-    <div>
-      <article>{cutscene.intro}</article>
-      <article>{cutscene[userObj?.heroStats?.type]}</article>
-      <button onClick={onClick}>
+    <>
+      <div className={styles['main-container']}>
+        <article className={styles['first-article']}>{cutscene.intro}</article>
+        <article>{cutscene[userObj?.heroStats?.type]}</article>
+        <button onClick={onClick}>
         Begin Adverture
-      </button> 
-    </div>
+        </button> 
+      </div>
+    </>
   );
 };
 
