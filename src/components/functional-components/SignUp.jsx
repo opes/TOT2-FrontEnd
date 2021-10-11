@@ -24,15 +24,18 @@ const SignUp = ({ event }) => {
     setUsername(protoUsername);
   }, [token]);
 
-  const handleSignup = async () => {
-    const bckRes = await getUserById(token?.googleId); 
+  const handleSignup = async (id) => {
+    const bckRes = await getUserById(id);
     console.log(bckRes);
-    if (bckRes.message === "null value in column \"google_id\" of relation \"users\" violates not-null constraint"
-) {
+    if (
+      bckRes.message ===
+        'null value in column "google_id" of relation "users" violates not-null constraint' ||
+      typeof bckRes.googleId === 'string'
+    ) {
       alert('You have an account, please use login to log in...');
-      location.replace('/')
+      location.replace('/');
     }
-  }
+  };
 
   const onSubmit = async (event) => {
     event.preventDefault();
@@ -60,7 +63,7 @@ const SignUp = ({ event }) => {
       buttonText="Signup using Google"
       onSuccess={(token) => {
         setToken(token); event(true);
-        handleSignup();
+        handleSignup(token?.googleId);
       }}
       onFailure={ (response) => console.log(response)}
       cookiePolicy={'single_host_origin'}
