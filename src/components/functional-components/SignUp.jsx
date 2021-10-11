@@ -4,7 +4,7 @@ import GoogleLogin from 'react-google-login';
 import { useHistory } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { heroes } from '../../data/hero-templates';
-import { createUser } from '../../services/backendUtils';
+import { createUser, getUserById } from '../../services/backendUtils';
 import { useSetActiveSession, useSetContextGoogleId } from '../../hooks/SessionProvider';
 import styles from './SignUp.css';
 
@@ -24,6 +24,13 @@ const SignUp = ({ event }) => {
     setUsername(protoUsername);
   }, [token]);
 
+  const handleSignup = async () => {
+    const bckRes = await getUserById(token?.googleId); 
+    if (bckRes) {
+      alert('You have an account, please use login to log in...');
+      location.replace('/')
+    }
+  }
 
   const onSubmit = async (event) => {
     event.preventDefault();
@@ -49,7 +56,10 @@ const SignUp = ({ event }) => {
       // className="button"
       clientId={process.env.CLIENT_GOOGLE_ID}
       buttonText="Signup using Google"
-      onSuccess={ (token) => {setToken(token); event(true);} }
+      onSuccess={(token) => {
+        setToken(token); event(true);
+        handleSignup();
+      }}
       onFailure={ (response) => console.log(response)}
       cookiePolicy={'single_host_origin'}
     />
