@@ -11,7 +11,6 @@ import PropTypes from 'prop-types';
 import styles from  '../container-components/TitlePage.css';
 
 const Login = ({ signedIn }) => {
-  const [token, setToken] = useState();
   const setContextGoogleId = useSetContextGoogleId();
   const setActiveSession = useSetActiveSession();
 
@@ -22,7 +21,6 @@ const Login = ({ signedIn }) => {
     if (bckRes.status !== 500) {
       setContextGoogleId(id);
       setActiveSession(true);
-      // location.replace('/village');
       history.push('/village');
     } else {
       alert('You must create an account before logging in...');
@@ -37,7 +35,6 @@ const Login = ({ signedIn }) => {
         clientId={process.env.CLIENT_GOOGLE_ID}
         buttonText="Login using Google"
         onSuccess={(token) => {
-          setToken(token);
           handleLogin(token?.googleId);
         }}
         onFailure={(response) => console.log(response)}
