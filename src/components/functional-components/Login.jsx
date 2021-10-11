@@ -16,8 +16,8 @@ const Login = ({ signedIn }) => {
   const setActiveSession = useSetActiveSession();
 
   const history = useHistory(); 
-  const handleLogin = async () => {
-    const bckRes = await getUserById(token?.googleId);
+  const handleLogin = async (id) => {
+    const bckRes = await getUserById(id);
     if (bckRes) {
       setContextGoogleId(token?.googleId);
       setActiveSession(true);
@@ -37,7 +37,7 @@ const Login = ({ signedIn }) => {
         buttonText="Login using Google"
         onSuccess={(token) => {
           setToken(token);
-          handleLogin();
+          handleLogin(token?.googleId);
         }}
         onFailure={(response) => console.log(response)}
         cookiePolicy={'single_host_origin'}
