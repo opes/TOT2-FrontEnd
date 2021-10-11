@@ -55,8 +55,7 @@ const Tutorial = () => {
             <section className={styles['combat-buttons']}>
               <button onClick={doOneCombatRound} className={!activeCombat ? styles['hidden'] : styles['bloop']}> Attack</button>
               <button className={!activeCombat ? styles['hidden'] : styles['bloop']}> Flee </button>
-              {/* back to village button */}
-              {/* another fight button */}
+              <button className={activeCombat ? styles['hidden'] : styles['bloop']} onClick={() => history.push('/village')}>To Village</button>
             </section>
             <section className={styles['combat-log']}>
               {combatLog.map((single, i) => <p key={i}> {single} </p>)}
