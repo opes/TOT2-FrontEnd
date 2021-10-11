@@ -18,8 +18,9 @@ const Login = ({ signedIn }) => {
   const history = useHistory(); 
   const handleLogin = async (id) => {
     const bckRes = await getUserById(id);
-    if (bckRes) {
-      setContextGoogleId(token?.googleId);
+
+    if (bckRes.status !== 500) {
+      setContextGoogleId(id);
       setActiveSession(true);
       // location.replace('/village');
       history.push('/village');
