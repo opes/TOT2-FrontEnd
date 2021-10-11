@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import GoogleLogin from 'react-google-login';
@@ -28,7 +29,7 @@ const Login = ({ signedIn }) => {
   };
 
   return (
-    <div className={signedIn ? styles['hidden'] : styles['bloop']}>
+    <div className={signedIn ? styles['hidden'] : styles['bloop']} style={{ zIndex: '99' }}>
       <GoogleLogin
         className="button"
         clientId={process.env.CLIENT_GOOGLE_ID}

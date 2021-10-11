@@ -7,6 +7,47 @@
     background-color: black;
     background-repeat: no-repeat;
     background-size: cover;
+    overflow: hidden;
+}
+
+.left-container {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: solid black 5px;
+  overflow: hidden;
+}
+
+.right-container {
+  width: 70%;
+  border: solid black 5px;
+  overflow: hidden;
+}
+
+.full-page {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: url('https://cdna.artstation.com/p/assets/images/images/003/581/980/large/preston-bechler-landscape-43-barren-mountains.jpg?1475243716');
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow: hidden;
+}
+
+.hidden {
+  display: none;
+}
+
+.logo {
+  display: flex;
+  margin: 100px;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
 }
 
 .fogwrapper {
@@ -16,22 +57,31 @@
   top: 0;
   -webkit-filter: blur(2px) grayscale(0.4) saturate(0.5) sepia(0.4);
   filter: blur(2px) grayscale(0.4) saturate(0.5) sepia(0.4);
+  overflow: hidden;
 }
 
-.foglayer_01 {
+.foglayer_01{
   background-image: url('https://raw.githubusercontent.com/danielstuart14/CSS_FOG_ANIMATION/master/fog1.png');
-  background-size: 100%;
-  width: 50%;
-  height: 100%;
+  background-size: contain;
+  width: 100%;
+  height: auto;
   float: left;
 }
 
-.foglayer_01 {
+.foglayer_01{
   width: 200%;
   height: 100%;
   position: absolute;
   animation: foglayer_01_opacity 10s linear infinite, foglayer_moveme 15s linear infinite;
   -webkit-animation: foglayer_01_opacity 10s linear infinite, foglayer_moveme 15s linear infinite;
+}
+
+/* .foglayer_02 {
+  background-image: url('https://raw.githubusercontent.com/danielstuart14/CSS_FOG_ANIMATION/master/fog2.png');
+  background-size: contain;
+  width: 100%;
+  height: auto;
+  float: left;
 }
 
 .foglayer_02 {
@@ -40,61 +90,24 @@
   position: absolute;
   animation: foglayer_02_opacity 21s linear infinite, foglayer_moveme 13s linear infinite;
   -webkit-animation: foglayer_01_opacity 21s linear infinite, foglayer_moveme 13s linear infinite;
-}
+} */
 
-.foglayer_02 {
-  background-image: url('https://raw.githubusercontent.com/danielstuart14/CSS_FOG_ANIMATION/master/fog2.png');
-  background-size: 100%;
-  width: 50%;
-  height: 100%;
+/* .foglayer_03 {
+  background: url('https://raw.githubusercontent.com/danielstuart14/CSS_FOG_ANIMATION/master/fog2.png');
+  background-size: contain;
+  width: 100%;
+  height: auto;
   float: left;
 }
 
 .foglayer_03 {
     width: 200%;
-    height: 100%;
+    height: auto;
     position: absolute;
     animation: foglayer_02_opacity 21s linear infinite, foglayer_moveme 13s linear infinite;
     -webkit-animation: foglayer_01_opacity 21s linear infinite, foglayer_moveme 13s linear infinite;
-}
+} */
 
-.foglayer_03 {
-    background: url('https://raw.githubusercontent.com/danielstuart14/CSS_FOG_ANIMATION/master/fog2.png');
-    background-size: 100%;
-    width: 50%;
-    height: 100%;
-    float: left;
-}
-
-.left-container {
-    width: 30%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    border: solid black 5px;
-    
-}
-
-.right-container {
-    width: 70%;
-    border: solid black 5px;
-}
-
-.full-page {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-image: url('https://cdna.artstation.com/p/assets/images/images/003/581/980/large/preston-bechler-landscape-43-barren-mountains.jpg?1475243716');
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
-.hidden {
-    display: none;
-}
 
 @keyframes foglayer_moveme {
   0% {
