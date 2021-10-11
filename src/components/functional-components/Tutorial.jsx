@@ -5,6 +5,9 @@ import styles from './Tutorial.css';
 const Tutorial = () => {
   const contextHero = useContextHero();
   const setContextHero = useSetContextHero();
+  // const wtvEnemy = grabRandomEnemy(contextHero.level)
+  // {player, enemy, someCombatFuncs} = useCombatHook(contextHero, wtvEnemy)
+
 
   return (
     <div className={styles['main-container']}>

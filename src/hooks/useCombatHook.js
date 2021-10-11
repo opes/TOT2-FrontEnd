@@ -1,5 +1,5 @@
 /* eslint-disable max-len */
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 
 const useCombatHook = (combat1, combat2) => {
   const [player, setPlayer] = useState(combat1);
