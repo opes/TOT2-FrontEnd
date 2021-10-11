@@ -1,6 +1,5 @@
 /* eslint-disable max-len */
-
-const enemyList = [{ name: 'goblin', level: 1 }, { name: 'Boblin', level: 2 }];
+import { enemyList } from '../data/enemy-list';
 
 const grabRandomEnemy = (playerLevel) => {
   const randomEnemyIndex = Math.floor(Math.random() * enemyList.length);
