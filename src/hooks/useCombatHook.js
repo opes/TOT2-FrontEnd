@@ -10,7 +10,7 @@ const useCombatHook = (heroObj, enemyListArr) => {
   const [combatLog, setCombatLog] = useState([]);
 
   useEffect(() => {
-    const chosenEnemy = grabRandomEnemy(player.level, enemyListArr);
+    const chosenEnemy = grabRandomEnemy(player?.level, enemyListArr);
     setEnemy(chosenEnemy);
     setLoading(false);
   }, []);
@@ -34,6 +34,8 @@ const useCombatHook = (heroObj, enemyListArr) => {
     return defenderHP;
   };
 
+  //giveRewards = () => just gives rewards and ends combat
+
   const doOneCombatRound = () => {
     const playerHitChance = player.AC + player.SPD;
     const enemyHitChance = enemy?.AC + enemy?.SPD;
@@ -43,13 +45,24 @@ const useCombatHook = (heroObj, enemyListArr) => {
     if(playerAttack >= enemyHitChance) {
       //IF PLAYER HITS, THESE ACTIONS ARE TAKEN
       const newEnemyHP = doDamage(player, enemy);
-      updateCombatLog(`The hero hits ${enemy?.name} for ${enemy?.HP - newEnemyHP} damage!`);
-      setPlayer(prev => {
-        return { ...prev, STM: prev.STM - 1 };
-      });
-      setEnemy(prev => {
-        return { ...prev, HP: newEnemyHP };
-      });
+      if (newEnemyHP <= 0) {
+        const newPlayerXP = player.XP + enemy?.XP;
+        const newPlayerGold = player.gold + enemy?.gold;
+        setPlayer(prev => {
+          return { ...prev, XP: newPlayerXP, gold: newPlayerGold };
+        });
+        updateCombatLog(`The Hero has dealt ${enemy?.HP - newEnemyHP} damage, slaining ${enemy?.name}, gaining ${enemy?.gold} gold pieces and ${enemy?.XP} experience!`);
+        setActiveCombat(false);
+        return 'Combat Done';
+      } else if (newEnemyHP > 0) {
+        updateCombatLog(`The hero hits ${enemy?.name} for ${enemy?.HP - newEnemyHP} damage!`);
+        setPlayer(prev => {
+          return { ...prev, STM: prev.STM - 1 };
+        });
+        setEnemy(prev => {
+          return { ...prev, HP: newEnemyHP };
+        });
+      }
     } else {
       //IF PLAYER MISSES, THIS HAPPENS
       updateCombatLog(`The Hero misses their attack against ${enemy?.name}`);
@@ -68,15 +81,6 @@ const useCombatHook = (heroObj, enemyListArr) => {
       } else {
         updateCombatLog(`The ${enemy?.name} misses their attack against the Hero`);
       }
-    } else if(enemy?.HP <= 0) {
-      //REWARDS PHASE
-      const newPlayerXP = player.XP + enemy?.XP;
-      const newPlayerGold = player.gold + enemy?.gold;
-      setPlayer(prev => {
-        return { ...prev, XP: newPlayerXP, gold: newPlayerGold };
-      });
-      updateCombatLog(`The Hero has slain ${enemy?.name}, gaining ${enemy?.gold} gold pieces and ${enemy?.XP} experience!`);
-      setActiveCombat(false);
     }
 
     //FINAL CHECK TO SEE IF PLAYER LIVES
