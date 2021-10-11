@@ -31,7 +31,8 @@ const Login = ({ signedIn }) => {
   return (
     <div className={signedIn ? styles['hidden'] : styles['bloop']} style={{ zIndex: '99' }}>
       <GoogleLogin
-        className="button"
+        className={styles['button']}
+        // className="button"
         clientId={process.env.CLIENT_GOOGLE_ID}
         buttonText="Login using Google"
         onSuccess={(token) => {
@@ -41,7 +42,6 @@ const Login = ({ signedIn }) => {
         onFailure={(response) => console.log(response)}
         cookiePolicy={'single_host_origin'}
       />
-      ;
     </div>
   );
 };
