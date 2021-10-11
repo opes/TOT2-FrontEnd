@@ -1,11 +1,11 @@
 import React from 'react';
-import { useContextHero } from '../../hooks/HeroProvider';
+import { useContextHero, useSetContextHero } from '../../hooks/HeroProvider';
 import styles from './Tutorial.css';
 
 const Tutorial = () => {
   const contextHero = useContextHero();
+  const setContextHero = useSetContextHero();
 
-  console.log(contextHero);
   return (
     <div className={styles['main-container']}>
       <section className={styles['left-container']}>
