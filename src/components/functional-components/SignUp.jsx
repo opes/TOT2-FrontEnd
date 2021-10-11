@@ -52,7 +52,7 @@ const SignUp = ({ event }) => {
     />
   </div>;
   return (
-    <div>
+    <div style={{ zIndex: '99' }}>
       <form onSubmit={onSubmit}>
         <input type="text" value={username} onChange={({ target }) => setUsername(target.value)} />
         {/* Images and more styling for the choices of heroes */}
