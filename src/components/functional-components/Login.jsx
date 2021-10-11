@@ -47,7 +47,7 @@ const Login = ({ signedIn }) => {
 };
 
 Login.propTypes = {
-  signedIn: PropTypes.func.isRequired,
+  signedIn: PropTypes.bool.isRequired,
 };
 
 export default Login;

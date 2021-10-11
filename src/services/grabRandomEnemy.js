@@ -1,7 +1,6 @@
 /* eslint-disable max-len */
-import { enemyList } from '../data/enemy-list';
 
-const grabRandomEnemy = (playerLevel) => {
+const grabRandomEnemy = (playerLevel, enemyList) => {
   const randomEnemyIndex = Math.floor(Math.random() * enemyList.length);
 
   while(enemyList[randomEnemyIndex].level <= playerLevel) return enemyList[randomEnemyIndex];
