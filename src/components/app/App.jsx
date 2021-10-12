@@ -5,6 +5,7 @@ import CutScene from '../display-components/CutScene';
 import Tutorial from '../functional-components/Tutorial';
 import HeroProvider from '../../hooks/HeroProvider';
 import VillagePage from '../container-components/VillagePage';
+import CombatPage from '../container-components/CombatPage';
 
 export default function App() {
   return (
@@ -25,7 +26,11 @@ export default function App() {
             <VillagePage />
           </HeroProvider>
         </Route>
-        {/* COMBAT ROUTE */}
+        <Route exact path="/combat">
+          <HeroProvider>
+            <CombatPage />
+          </HeroProvider>
+        </Route>
         <Route exact path="/">
           <HeroProvider>
             <TitlePage />

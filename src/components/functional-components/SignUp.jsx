@@ -41,8 +41,7 @@ const SignUp = ({ event }) => {
       location.replace('/');
     }
   };
-  console.log(heroes[hero]);
-
+  
   const onSubmit = async (event) => {
     event.preventDefault();
     const userObject = {
