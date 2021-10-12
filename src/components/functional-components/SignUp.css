@@ -4,22 +4,35 @@
   background-position-x: center;
   background-position-y: center;
   background-size: auto auto;
+  margin: 5px;
 }
 
 .hero-form {
   z-index: 99;
-  border: yellow 3px solid;
-  width: 40vw;
-  height: 40vh;
+  width: auto;
+  height: fit-content;
   display: flex;
-  flex-direction: column;
-  justify-content: space-around;
+  flex-direction: row;
+  justify-content: space-between;
   align-items: center;
   margin: auto;
   padding: 15px;
 }
 
 .hero-icon {
-  height: 250px;
-  width: auto;
+  height: 150px;
+  width: fit-content;
+  flex-direction: row;
+}
+
+.input-display {
+  display: none;
+}
+
+.input-display:checked {
+  border: solid 1px yellow
+}
+
+.form-button {
+  margin: 5px; 
 }
