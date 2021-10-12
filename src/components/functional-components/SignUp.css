@@ -32,22 +32,20 @@
 }
 
 .hero-icon {
-  border: solid 3px purple;
+  /* border: solid 3px purple; */
   height: 295px;
   width: fit-content;
   flex-direction: row;
 }
 
-.input-display, label {
-  border: 3px white solid;
-  white-space: none;
-  width: 25px;
-  /* display: none; */
+.input-display {
+  display: none;
 }
 
-input[type="radio"]:checked {
+input[type="radio"]:checked + label > img {
   border: 3px solid green;
 }
+
 
 .form-button {
   margin: 15px; 
