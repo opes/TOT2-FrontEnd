@@ -29,8 +29,9 @@ const SignUp = ({ event }) => {
   }, [token]);
 
   const handleSignup = async (id) => {
+    
     const bckRes = await getUserById(id);
-    console.log(bckRes);
+
     if (
       bckRes.message ===
         'null value in column "google_id" of relation "users" violates not-null constraint' ||
