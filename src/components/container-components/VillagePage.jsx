@@ -1,18 +1,55 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useHistory } from 'react-router-dom';
 import { useActiveSession } from '../../hooks/SessionProvider';
+import Church from '../display-components/Church';
+import Shop from '../display-components/Shop';
+import Tavern from '../display-components/Tavern';
+import Login from '../functional-components/Login';
 
 const VillagePage = () => {
   const activeSession = useActiveSession();
   const history = useHistory(); 
-
+  const [villageLocation, setVillageLocation] = useState('main'); 
   if (!activeSession) history.push('/'); 
+  
+  const handleVillageLocationChange = ({ target }) => {
+    setVillageLocation(target.value);
+  }
+
+  if (villageLocation === 'tavern') return (<Tavern handleVillageLocationChange={handleVillageLocationChange}/>);
+  
+  if (villageLocation === 'shop') return (<Shop handleVillageLocationChange={handleVillageLocationChange} />);
+  
+  if (villageLocation === 'church')  return (<Church handleVillageLocationChange={handleVillageLocationChange} />);
+  
   
   return (
     <div>
-      <button onClick={() => history.push('/cutscene')}>Cutscene</button>
+      <button
+        value="tavern"
+        onClick={(event) => handleVillageLocationChange(event)}
+      >
+        Tavern
+      </button>
+      <button
+        value="church"
+        onClick={(event) => handleVillageLocationChange(event)}
+      >
+        Church
+      </button>
+      <button
+        value="shop"
+        onClick={(event) => handleVillageLocationChange(event)}
+      >
+        Shop
+      </button>
     </div>
   );
 }
 
 export default VillagePage
+
+// Create a main locaiton
+  // 3 functions for each buttion
+  // if else => 
+  // create four buttons => tavern, chrunch, shop
