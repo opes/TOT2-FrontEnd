@@ -1,11 +1,23 @@
-import React from 'react'
+import React from 'react';
+import PropTypes from 'prop-types';
 
-const Tavern = () => {
+const Tavern = ({ handleVillageLocationChange }) => {
+
   return (
     <div>
       Tavern
+      <button
+        onClick={(event) => handleVillageLocationChange(event)}
+        value="main"
+      >
+        Go back to Village
+      </button>
     </div>
-  )
-}
+  );
+};
 
-export default Tavern
+Tavern.propTypes = {
+  handleVillageLocationChange: PropTypes.func.isRequired,
+};
+
+export default Tavern;

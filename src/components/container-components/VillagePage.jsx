@@ -4,6 +4,7 @@ import { useActiveSession } from '../../hooks/SessionProvider';
 import Church from '../display-components/Church';
 import Shop from '../display-components/Shop';
 import Tavern from '../display-components/Tavern';
+import Login from '../functional-components/Login';
 
 const VillagePage = () => {
   const activeSession = useActiveSession();
@@ -15,17 +16,15 @@ const VillagePage = () => {
     setVillageLocation(target.value);
   }
 
-  if (villageLocation === 'tavern') {
-    <Tavern />
-  } else if (villageLocation === 'shop') {
-    <Shop />
-  } else if (villageLocation === 'church') {
-    <Church />
-  }
+  if (villageLocation === 'tavern') return (<Tavern handleVillageLocationChange={handleVillageLocationChange}/>);
+  
+  if (villageLocation === 'shop') return (<Shop handleVillageLocationChange={handleVillageLocationChange} />);
+  
+  if (villageLocation === 'church')  return (<Church handleVillageLocationChange={handleVillageLocationChange} />);
+  
   
   return (
     <div>
-      {villageLocation}
       <button
         value="tavern"
         onClick={(event) => handleVillageLocationChange(event)}
