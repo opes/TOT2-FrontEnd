@@ -16,6 +16,13 @@ const VillagePage = () => {
     setVillageLocation(target.value);
   }
 
+  const handleWilderness = () => {
+    const message = confirm('You are about to head to the wilderness, do you want to continue?')
+    if (message) {
+      history.push('/combat')
+    }
+  }
+
   if (villageLocation === 'tavern') return (<Tavern handleVillageLocationChange={handleVillageLocationChange}/>);
   
   if (villageLocation === 'shop') return (<Shop handleVillageLocationChange={handleVillageLocationChange} />);
@@ -42,6 +49,11 @@ const VillagePage = () => {
         onClick={(event) => handleVillageLocationChange(event)}
       >
         Shop
+      </button>
+      <button
+        onClick={handleWilderness}
+      >
+        Local Wilderness
       </button>
     </div>
   );
