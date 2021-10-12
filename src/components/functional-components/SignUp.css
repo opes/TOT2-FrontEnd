@@ -7,32 +7,49 @@
   margin: 5px;
 }
 
+.parchment {
+  border: solid 3px yellow;
+  height: 50vh;
+  width: 1200px;
+  /* margin-right: -825px; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-size: 40vw;
+}
+
 .hero-form {
+  border: tomato 3px solid;
   z-index: 99;
-  width: auto;
+  width: 1000px;
+  /* margin-left: -750px; */
   height: fit-content;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
-  margin: auto;
-  padding: 15px;
+  flex-wrap: wrap;
 }
 
 .hero-icon {
-  height: 150px;
+  border: solid 3px purple;
+  height: 295px;
   width: fit-content;
   flex-direction: row;
 }
 
-.input-display {
-  display: none;
+.input-display, label {
+  border: 3px white solid;
+  white-space: none;
+  width: 25px;
+  /* display: none; */
 }
 
-.input-display:checked {
-  border: solid 1px yellow
+input[type="radio"]:checked {
+  border: 3px solid green;
 }
 
 .form-button {
-  margin: 5px; 
+  margin: 15px; 
+  justify-content: center;
 }
