@@ -13,13 +13,11 @@ import devilkin from '../../assets/devilkin.png';
 import vampire from '../../assets/vampire.png';
 import parchment from '../../assets/parchement2.png';
 
-
-
 const SignUp = ({ event }) => {
   const [token, setToken] = useState();
   const [username, setUsername] = useState();
   const [googleId, setGoogleId] = useState();
-  const [selectedHero, setSelectedHero] = useState(true);
+  // const [selectedHero, setSelectedHero] = useState(true);
   const [hero, setHero] = useState();
   const setContextGoogleId = useSetContextGoogleId();
   const setActiveSession = useSetActiveSession();
@@ -32,7 +30,6 @@ const SignUp = ({ event }) => {
   }, [token]);
 
   const handleSignup = async (id) => {
-    
     const bckRes = await getUserById(id);
 
     if (
@@ -44,6 +41,7 @@ const SignUp = ({ event }) => {
       location.replace('/');
     }
   };
+  console.log(heroes[hero]);
 
   const onSubmit = async (event) => {
     event.preventDefault();
@@ -80,31 +78,38 @@ const SignUp = ({ event }) => {
   return (
     <>
       <div
-        style={{ backgroundImage: `url(${parchment})`, backgroundRepeat: 'no-repeat' }}
-        className={styles[ 'parchment' ]}>
-        <div className={styles[ 'hero-form' ]}>
+        style={{
+          backgroundImage: `url(${parchment})`,
+          backgroundRepeat: 'no-repeat',
+        }}
+        className={styles['parchment']}
+      >
+        <div className={styles['hero-form']}>
           <form onSubmit={onSubmit}>
             <input
               type="text"
               value={username}
-              onChange={
-                ({ target }) => setUsername(target.value)
-              } />
+              onChange={({ target }) => setUsername(target.value)}
+            />
             <div className={styles['radio-buttons']}>
               <label htmlFor="dwarf">
                 <img
-                  className={styles[ 'hero-icon' ]}
+                  className={styles['hero-icon']}
                   src={dwarfWarrior}
-                  alt="dwarf" />
-          Dwarf Warrior
+                  alt="dwarf"
+                />
+                Dwarf Warrior
                 <input
-                  className={styles[ 'input-display' ]} type="radio"
+                  className={styles['input-display']}
+                  type="radio"
                   name="hero"
                   value="dwarfWarrior"
-                  checked={selectedHero === 'dwarfWarrior'}
+                  // checked={selectedHero === 'dwarfWarrior'}
                   id="dwarf"
-                  onChange={({ target }) => setHero(target.value),
-                  ({ target }) => setSelectedHero(target.value)}
+                  onChange={
+                    ({ target }) => setHero(target.value)
+                    // , ({ target }) => setSelectedHero(target.value)
+                  }
                 />
               </label>
               <label htmlFor="fox">
@@ -113,52 +118,63 @@ const SignUp = ({ event }) => {
                   src={foxArcher}
                   alt="fox"
                 />
-          Fox Archer
+                Fox Archer
                 <input
-                  className={styles[ 'input-display' ]} type="radio"
+                  className={styles['input-display']}
+                  type="radio"
                   name="hero"
                   value="foxArcher"
-                  checked={selectedHero === 'foxArcher'}
+                  // checked={selectedHero === 'foxArcher'}
                   id="fox"
-                  onChange={({ target }) => setHero(target.value),
-                  ({ target }) => setSelectedHero(target.value)}
+                  onChange={
+                    ({ target }) => setHero(target.value)
+                    // , ({ target }) => setSelectedHero(target.value)
+                  }
                 />
               </label>
               <label htmlFor="devilkin">
                 <img
-                  className={styles[ 'hero-icon' ]}
+                  className={styles['hero-icon']}
                   src={devilkin}
-                  alt="devilkin" />
-          Devilkin Mage
+                  alt="devilkin"
+                />
+                Devilkin Mage
                 <input
-                  className={styles[ 'input-display' ]} type="radio"
+                  className={styles['input-display']}
+                  type="radio"
                   name="hero"
                   value="devilkinMage"
-                  checked={selectedHero === 'devilkinMage'}
+                  // checked={selectedHero === 'devilkinMage'}
                   id="devilkin"
-                  onChange={({ target }) => setHero(target.value),
-                  ({ target }) => setSelectedHero(target.value)}
+                  onChange={
+                    ({ target }) => setHero(target.value)
+                    // ,({ target }) => setSelectedHero(target.value)
+                  }
                 />
               </label>
               <label htmlFor="vampire">
                 <img
-                  className={styles[ 'hero-icon' ]}
+                  className={styles['hero-icon']}
                   src={vampire}
-                  alt="vampire" />
-          Vampire Ronin
+                  alt="vampire"
+                />
+                Vampire Ronin
                 <input
-                  className={styles[ 'input-display' ]} type="radio"
+                  className={styles['input-display']}
+                  type="radio"
                   name="hero"
                   value="vampireRonin"
-                  checked={selectedHero === 'vampireRonin'}
+                  // checked={selectedHero === 'vampireRonin'}
                   id="vampire"
-                  onChange={({ target }) => setHero(target.value),
-                  ({ target }) => setSelectedHero(target.value)}
+                  onChange={
+                    ({ target }) => setHero(target.value)
+                    // ,({ target }) => setSelectedHero(target.value)
+                  }
                 />
               </label>
             </div>
-            <button className={styles[ 'form-button' ]}>
-          Start the Adventure
+            <button className={styles['form-button']}>
+              Start the Adventure
             </button>
           </form>
         </div>

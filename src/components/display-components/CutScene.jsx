@@ -17,7 +17,7 @@ const CutScene = () => {
   if (!activeSession) history.push('/');
 
   if (loading) return <div>Loading...</div>;
-
+  
   const onClick = () => {
     setContextHero(userObj?.heroStats);
     history.push('/tutorial');

@@ -25,9 +25,10 @@ const Tutorial = () => {
   const setContextHero = useSetContextHero();
   const history = useHistory();
   const { player, enemy, activeCombat, combatLog, loading, doOneCombatRound, doFlee } = useCombatHook(contextHero, tutorialFight);
-  
+
+  console.log(contextHero);
+
   const handleReturnToVillage = () => {
-    // console.log(player);
     setContextHero(player); 
     history.push('/village')
   }
