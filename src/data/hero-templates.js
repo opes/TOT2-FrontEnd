@@ -49,7 +49,7 @@ const vampireRonin = {
 
 export const heroes = { dwarfWarrior, foxArcher, devilkinMage, vampireRonin };
 
-const dwarfWarriorLevelUp = {
+const dwarfLevelUp = {
   HP: 5,
   STM: 7,
   SPD: 1,
@@ -57,7 +57,7 @@ const dwarfWarriorLevelUp = {
   level: 1,
 };
   
-const foxArcherLevelUp = {
+const foxLevelUp = {
   HP: 3,
   STM: 5,
   SPD: 2,
@@ -65,7 +65,7 @@ const foxArcherLevelUp = {
   level: 1,
 };
   
-const devilkinMageLevelUp = {
+const devilkinLevelUp = {
   HP: 2,
   STM: 5,
   SPD: 3,
@@ -73,7 +73,7 @@ const devilkinMageLevelUp = {
   level: 1,
 };
   
-const vampireRoninLevelUp = {
+const vampireLevelUp = {
   HP: 8,
   STM: 5,
   SPD: 2,
@@ -81,4 +81,4 @@ const vampireRoninLevelUp = {
   level: 1,
 };
 
-export const heroesLevelUp = { dwarfWarriorLevelUp, foxArcherLevelUp, devilkinMageLevelUp, vampireRoninLevelUp };
+export const heroesLevelUp = { dwarfLevelUp, foxLevelUp, devilkinLevelUp, vampireLevelUp };

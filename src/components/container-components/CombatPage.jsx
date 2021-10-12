@@ -21,8 +21,6 @@ const CombatPage = () => {
     doFlee,
   } = useCombatHook(contextHero, enemyList);
 
-  console.log(enemyList, enemy);
-
   const handleReturnToVillage = () => {
     setContextHero(player);
     history.push('/village');

@@ -9,10 +9,10 @@ const Tavern = ({ handleVillageLocationChange }) => {
 
   const contextHero = useContextHero(); 
   const contextGoogleId = useContextGoogleId(); 
-  console.log(contextHero, contextGoogleId, 'from Tavern!!!!!!!');
+  
   const handleSave = async (quit) => {
     const updatedUser = await updateUserById(contextGoogleId, {heroStats: contextHero});
-    console.log(updatedUser);
+  
     if (quit) {
       location.replace('/')
     }

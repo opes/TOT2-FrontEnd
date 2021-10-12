@@ -11,7 +11,6 @@ const useCombatHook = (heroObj, enemyListArr) => {
  
   useEffect(() => {
     const chosenEnemy = grabRandomEnemy(player?.level, enemyListArr);
-    console.log(chosenEnemy, 'from combathook again');
     setEnemy(chosenEnemy);
     setLoading(false);
   }, []);
