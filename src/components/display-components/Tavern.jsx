@@ -1,11 +1,28 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { updateUserById } from '../../services/backendUtils';
+import { useContextHero } from '../../hooks/HeroProvider';
+import { useContextGoogleId } from '../../hooks/SessionProvider';
+
 
 const Tavern = ({ handleVillageLocationChange }) => {
+
+  const contextHero = useContextHero(); 
+  const contextGoogleId = useContextGoogleId(); 
+  console.log(contextHero, contextGoogleId, 'from Tavern!!!!!!!');
+  const handleSave = async (quit) => {
+    const updatedUser = await updateUserById(contextGoogleId, {heroStats: contextHero});
+    console.log(updatedUser);
+    if (quit) {
+      location.replace('/')
+    }
+  }
 
   return (
     <div>
       Tavern
+      <button onClick={() => handleSave()}>Save</button>
+      <button onClick={() => handleSave(true)}>Save & Quit</button>
       <button
         onClick={(event) => handleVillageLocationChange(event)}
         value="main"

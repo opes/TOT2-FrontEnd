@@ -27,7 +27,9 @@ export default function App() {
         </Route>
         {/* COMBAT ROUTE */}
         <Route exact path="/">
-          <TitlePage />
+          <HeroProvider>
+            <TitlePage />
+          </HeroProvider>
         </Route>
       </Switch>
     </Router>

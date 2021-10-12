@@ -26,15 +26,14 @@ export async function getUserById(id) {
 }
 
 export async function updateUserById(id, updatedUser) {
-  const response = await fetch(`${URL}/api/v1/users/${id}`,
-    {
-      method: 'PUT',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(updatedUser)
-    }
-  );
+  const response = await fetch(`${URL}/api/v1/users/${id}`, {
+    method: 'PUT',
+    headers: {
+      'Content-Type': 'application/json',
+      'Access-Control-Allow-Origin': '*'
+    },
+    body: JSON.stringify(updatedUser),
+  });
   return response.json();
 }
 
