@@ -7,6 +7,10 @@ import { heroes } from '../../data/hero-templates';
 import { createUser, getUserById } from '../../services/backendUtils';
 import { useSetActiveSession, useSetContextGoogleId } from '../../hooks/SessionProvider';
 import styles from './SignUp.css';
+import dwarfWarrior from '../../assets/Dwarf Warrior.png';
+import foxArcher from '../../assets/FoxArcher.png';
+import devilkin from '../../assets/devilkin.png';
+import vampire from '../../assets/vampire.png';
 
 
 const SignUp = ({ event }) => {
@@ -70,27 +74,36 @@ const SignUp = ({ event }) => {
     />
   </div>;
   return (
-    <div style={{ zIndex: '99' }}>
+    <div className={styles['hero-form']}>
       <form onSubmit={onSubmit}>
         <input type="text" value={username} onChange={({ target }) => setUsername(target.value)} />
-        {/* Images and more styling for the choices of heroes */}
-        <label htmlFor="dwarf">
+        <div className={styles['hero-icon']}>
+          <label htmlFor="dwarf">
           Dwarf Warrior
-          <input type="radio" name="hero" value="dwarfWarrior" id="dwarf" onChange={({ target }) => setHero(target.value)}/>
-        </label>
-        <label htmlFor="fox">
+            <img className={styles['hero-icon']} src={dwarfWarrior} alt="dwarf" />
+            <input  className={styles['input-display']}type="radio" name="hero" value="dwarfWarrior" id="dwarf" onChange={({ target }) => setHero(target.value)}/>
+          </label>
+          <label htmlFor="fox">
           Fox Archer
-          <input type="radio" name="hero" value="foxArcher" id="fox" onChange={({ target }) => setHero(target.value)}/>
-        </label>
-        <label htmlFor="devilkin">
+            <img
+              className={styles['hero-icon']}
+              src={foxArcher} alt="fox" />
+            <input className={styles['input-display']} type="radio" name="hero" value="foxArcher" id="fox" onChange={({ target }) => setHero(target.value)}/>
+          </label>
+          <label htmlFor="devilkin">
           Devilkin Mage
-          <input type="radio" name="hero" value="devilkinMage" id="devilkin" onChange={({ target }) => setHero(target.value)}/>
-        </label>
-        <label htmlFor="vampire">
+            <img className={styles['hero-icon']}
+              src={devilkin} alt="devilkin" />
+            <input className={styles['input-display']} type="radio" name="hero" value="devilkinMage" id="devilkin" onChange={({ target }) => setHero(target.value)}/>
+          </label>
+          <label htmlFor="vampire">
           Vampire Ronin
-          <input type="radio" name="hero" value="vampireRonin" id="vampire" onChange={({ target }) => setHero(target.value)}/>
-        </label>
-        <button>Start the Adventure</button>
+            <img className={styles['hero-icon']}
+              src={vampire} alt="vampire" />
+            <input className={styles['input-display']} type="radio" name="hero" value="vampireRonin" id="vampire" onChange={({ target }) => setHero(target.value)}/>
+          </label>
+        </div>
+        <button className={styles['form-button']}>Start the Adventure</button>
       </form>
     </div>
   );

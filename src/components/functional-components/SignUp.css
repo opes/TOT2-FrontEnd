@@ -4,4 +4,35 @@
   background-position-x: center;
   background-position-y: center;
   background-size: auto auto;
+  margin: 5px;
+}
+
+.hero-form {
+  z-index: 99;
+  width: auto;
+  height: fit-content;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: auto;
+  padding: 15px;
+}
+
+.hero-icon {
+  height: 150px;
+  width: fit-content;
+  flex-direction: row;
+}
+
+.input-display {
+  display: none;
+}
+
+.input-display:checked {
+  border: solid 1px yellow
+}
+
+.form-button {
+  margin: 5px; 
 }
