@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { useHistory } from 'react-router-dom';
 import { useActiveSession } from '../../hooks/SessionProvider';
 import Church from '../display-components/Church';
+import PlayerScroll from '../display-components/PlayerScroll';
 import Shop from '../display-components/Shop';
 import Tavern from '../display-components/Tavern';
 import Login from '../functional-components/Login';
@@ -33,6 +34,7 @@ const VillagePage = () => {
   
   return (
     <div>
+      <PlayerScroll />
       <button
         value="tavern"
         onClick={(event) => handleVillageLocationChange(event)}
