@@ -75,15 +75,17 @@ const SignUp = ({ event }) => {
   return (
     <>
       <div className={styles['hero-form']}>
-        <form onSubmit={onSubmit} className={styles['form-container']}>
-          <label className={styles['username-label']}>
-              Username
-            <input
-              type="text"
-              value={username}
-              onChange={({ target }) => setUsername(target.value)}
-            />
-          </label>
+        <form onSubmit={onSubmit} className={styles[ 'form-container' ]}>
+          <div className={styles['label-background']}>
+            <label className={styles['username-label']}>
+            Username
+              <input
+                type="text"
+                value={username}
+                onChange={({ target }) => setUsername(target.value)}
+              />
+            </label>
+          </div>
           <div className={styles['radio-buttons']}>
             <label htmlFor="dwarf">
               <input

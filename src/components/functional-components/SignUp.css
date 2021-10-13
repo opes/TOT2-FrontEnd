@@ -63,6 +63,36 @@ input[type="radio"]:hover + div {
   justify-content: center;
   padding: 10px;
   width: 15vw;
+  font-family: fantasy;
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: #202122;
+  text-shadow: -1px 1px rgb(41, 45, 48);
+  text-shadow: 1px 1px 1px #cac5b859;
+  background-image: url('https://t3.ftcdn.net/jpg/00/70/87/48/240_F_70874851_f0GblTdhvXkq6L9a7ZbUAKfNSXfGxZ1S.jpg');
+  background-repeat: no-repeat;
+  background-position-x: center;
+  background-position-y: center;
+  background-size: 325px 115px;
+  filter: drop-shadow(-3px 3px 8px #cac5b8de);
+}
+
+button {
+  -moz-transition: all 0.2s ease-in;
+  -o-transition: all 0.2s ease-in;
+  -webkit-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+}
+
+button:hover {
+  opacity: 75%;
+  color: rgb(223, 202, 172);
+  text-shadow: 8px 8px 30px #cac5b8de;
+  filter: drop-shadow(-5px 5px 10px #cac5b8de);
+  -moz-transition: all 0.2s ease-in;
+  -o-transition: all 0.2s ease-in;
+  -webkit-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
 }
 
 .radio-buttons{
@@ -88,15 +118,32 @@ input[type="radio"]:hover + div {
   font-weight: 800;
   margin: 5px;
   padding: 5px;
-  filter: drop-shadow(6px 6px 8px #cac5b8de)
+  filter: drop-shadow(6px 6px 8px #cac5b8de);
 }
 
 .hero-text > p {
 font-size: 1.3em;
 }
 
-.username-label, .form-button {
+.username-label {
   font-family: fantasy;
   font-size: 1.2rem;
   font-weight: 800;
+  text-shadow: -1px 1px rgb(41, 45, 48);
+  text-shadow: 1px 1px 1px #cac5b859;
+  filter: drop-shadow(-3px 3px 8px #cac5b8de);
+  color: #202122;
+  filter: drop-shadow(6px 6px 6px rgb(32, 32, 32));
+}
+
+.label-background {
+  border: 3px yellow solid;
+  /* width: 70vw;
+  margin: 5px;
+  background-image: url('https://t3.ftcdn.net/jpg/00/70/87/48/240_F_70874851_f0GblTdhvXkq6L9a7ZbUAKfNSXfGxZ1S.jpg');
+  background-repeat: no-repeat;
+  background-position-x: center;
+  background-position-y: center;
+  background-size: 70vw 70px; */
+  filter: drop-shadow(-3px 3px 8px #cac5b8de);
 }
