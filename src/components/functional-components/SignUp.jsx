@@ -73,28 +73,29 @@ const SignUp = ({ event }) => {
     />
   </div>;
   return (
-    <div className={styles['hero-form']}>
-      <form onSubmit={onSubmit} className={styles['form-container']}>
-        <label>
-              Username
-          <input
-            type="text"
-            value={username}
-            onChange={({ target }) => setUsername(target.value)}
-          />
-        </label>
-        <div className={styles['radio-buttons']}>
-          <label htmlFor="dwarf">
-            <input
-              className={styles['input-display']}
-              type="radio"
-              name="hero"
-              value="dwarfWarrior"
-              id="dwarf"
-              onChange={
-                ({ target }) => setHero(target.value)
-              }
-            />
+      <div className={styles['hero-form']}>
+        <form onSubmit={onSubmit} className={styles[ 'form-container' ]}>
+          <div className={styles['label-background']}>
+            <label className={styles['username-label']}>
+              {' '}{' '}Username
+              <input
+                type="text"
+                value={username}
+                onChange={({ target }) => setUsername(target.value)}
+              />
+            </label>
+          </div>
+          <div className={styles['radio-buttons']}>
+            <label htmlFor="dwarf">
+              <input
+                className={styles['input-display']}
+                type="radio"
+                name="hero"
+                value="dwarfWarrior"
+                id="dwarf"
+                onChange={
+                  ({ target }) => setHero(target.value)
+                }/>
             <div className={styles['hero-container']}>
               <img
                 className={styles['hero-icon']}
