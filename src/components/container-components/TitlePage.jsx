@@ -15,10 +15,14 @@ const TitlePage = () => {
         <div
           className={!signedIn ? styles['left-container'] : styles['full-page']}
         >
-          <div className={styles['login-button']}>
+          <div
+            className={!signedIn ? styles['login-button'] : styles['hidden']}
+          >
             <Login signedIn={signedIn} />
           </div>
-          <div className={styles['signup-button']}>
+          <div
+            className={!signedIn ? styles['signup-button'] : styles['visible']}
+          >
             <SignUp event={setSignedIn} />
           </div>
         </div>
