@@ -1,5 +1,5 @@
 /* eslint-disable max-len */
-import React, { useState } from 'react';
+import React from 'react';
 import { useHistory } from 'react-router-dom';
 import GoogleLogin from 'react-google-login';
 import {
@@ -35,17 +35,17 @@ const Login = ({ signedIn }) => {
       className={signedIn ? styles['hidden'] : styles['bloop']}
       style={{ zIndex: '99' }}
     >
-        <GoogleLogin
-          className={styles['button']}
-          // className="button"
-          clientId={process.env.CLIENT_GOOGLE_ID}
-          buttonText="Login using Google"
-          onSuccess={(token) => {
-            handleLogin(token?.googleId);
-          }}
-          onFailure={(response) => console.log(response)}
-          cookiePolicy={'single_host_origin'}
-        />
+      <GoogleLogin
+        className={styles['button']}
+        // className="button"
+        clientId={process.env.CLIENT_GOOGLE_ID}
+        buttonText="Login using Google"
+        onSuccess={(token) => {
+          handleLogin(token?.googleId);
+        }}
+        onFailure={(response) => console.log(response)}
+        cookiePolicy={'single_host_origin'}
+      />
     </div>
   );
 };
