@@ -4,31 +4,41 @@ import { useHistory } from 'react-router';
 import { useContextHero, useSetContextHero } from '../../hooks/HeroProvider';
 import { useActiveSession } from '../../hooks/SessionProvider';
 import useCombatHook from '../../hooks/useCombatHook';
+import PlayerScroll from '../display-components/PlayerScroll';
 import styles from './Tutorial.css';
 
-const tutorialFight = [{
-  level: 1,
-  HP: 8,
-  AC: 1,
-  SPD: 2,
-  ATK: 2,
-  name: 'Common Goblin',
-  XP: 5,
-  gold: 3
-}];
-
+const tutorialFight = [
+  {
+    level: 1,
+    HP: 8,
+    AC: 1,
+    SPD: 2,
+    ATK: 2,
+    name: 'Common Goblin',
+    XP: 5,
+    gold: 3,
+  },
+];
 
 const Tutorial = () => {
   const activeSession = useActiveSession();
   const contextHero = useContextHero();
   const setContextHero = useSetContextHero();
   const history = useHistory();
-  const { player, enemy, activeCombat, combatLog, loading, doOneCombatRound, doFlee } = useCombatHook(contextHero, tutorialFight);
+  const {
+    player,
+    enemy,
+    activeCombat,
+    combatLog,
+    loading,
+    doOneCombatRound,
+    doFlee,
+  } = useCombatHook(contextHero, tutorialFight);
 
   const handleReturnToVillage = () => {
-    setContextHero(player); 
-    history.push('/village')
-  }
+    setContextHero(player);
+    history.push('/village');
+  };
 
   if (!activeSession) history.push('/');
   if (loading) return <h1>Loading...</h1>;
@@ -36,8 +46,8 @@ const Tutorial = () => {
   return (
     <div className={styles['main-container']}>
       <section className={styles['left-container']}>
-        {/* <PlayerScroll /> */}
-        {player?.type}
+        <PlayerScroll />
+        {/* {player?.type}
         {player?.HP}
         {player?.STM}
         {player?.AC}
@@ -45,7 +55,7 @@ const Tutorial = () => {
         {player?.ATK}
         {player?.level}
         {player?.gold}
-        {player?.XP}
+        {player?.XP} */}
       </section>
       <section className={styles['right-container']}>
         <div className={styles['top-right-container']}>ITEMS GO HERE</div>
@@ -63,8 +73,12 @@ const Tutorial = () => {
                 onClick={() => {
                   const flee = doFlee();
                   if (flee) {
-                    setContextHero(player);
-                    history.push('/village');
+                    if (player.gold < 3) {
+                      alert("You don't have enough gold to flee");
+                    } else {
+                      setContextHero(player);
+                      history.push('/village');
+                    }
                   }
                 }}
                 className={!activeCombat ? styles['hidden'] : styles['bloop']}
