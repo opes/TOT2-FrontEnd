@@ -5,6 +5,7 @@ import { useContextHero, useSetContextHero } from '../../hooks/HeroProvider';
 import { useActiveSession } from '../../hooks/SessionProvider';
 import useCombatHook from '../../hooks/useCombatHook';
 import styles from './Tutorial.css';
+import PlayerScroll from '../display-components/PlayerScroll';
 
 const tutorialFight = [{
   level: 1,
@@ -27,8 +28,8 @@ const Tutorial = () => {
 
   const handleReturnToVillage = () => {
     setContextHero(player); 
-    history.push('/village')
-  }
+    history.push('/village');
+  };
 
   if (!activeSession) history.push('/');
   if (loading) return <h1>Loading...</h1>;
@@ -36,16 +37,16 @@ const Tutorial = () => {
   return (
     <div className={styles['main-container']}>
       <section className={styles['left-container']}>
-        {/* <PlayerScroll /> */}
-        {player?.type}
-        {player?.HP}
-        {player?.STM}
-        {player?.AC}
-        {player?.SPD}
-        {player?.ATK}
-        {player?.level}
-        {player?.gold}
-        {player?.XP}
+        <PlayerScroll 
+          type={player.type} 
+          HP={player.HP} 
+          STM={player.STM} 
+          AC={player.AC} 
+          SPD={player.SPD} 
+          ATK={player.ATK} 
+          level={player.level} 
+          gold={player.gold} 
+          XP={player.XP} />
       </section>
       <section className={styles['right-container']}>
         <div className={styles['top-right-container']}>ITEMS GO HERE</div>

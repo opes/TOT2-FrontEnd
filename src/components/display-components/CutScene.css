@@ -1,66 +1,75 @@
-/* .main-container {
+.main-container {
     display: flex;
     flex-direction: column;
-    height: 98.25vh;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    border: solid black 5px;
+    height: 100vh;
+    width: 100vw;
     background-image: url('https://cdn.discordapp.com/attachments/380989362755600394/897221809739558912/image0.jpg');
     background-color: black;
     background-repeat: no-repeat;
     background-size: cover;
-    overflow: hidden;
-    overflow-y: hidden;
+    justify-content: center;
+    align-items: center;
 }
 
-.first-article-container {
-    display: flex;
-    flex-direction: column;
-    background-image: url('https://cdn.discordapp.com/attachments/380989362755600394/897226849959178250/image0.png');
-    background-repeat: no-repeat;
-    background-size: contain;
-    height: 600px;
-    width: 500px;
+.parchment{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 55vh;
+  width: 35vw;
+  background-image: url('https://cdn.discordapp.com/attachments/380989362755600394/897646780206940170/parchement2.png');
+  background-size: 35vw 55vh;
+  background-repeat: no-repeat;
 }
 
-.first-article {
-    align-content: center;
-    animation: type 10s steps(292);
-    width: 292ch;
+.cutscene-button {
+  width: 15vw;
+  padding: 2vw 2vh;
+  border: none;
+  font-size: 2rem;
+  border-radius: 20px;
+  background-image: url('https://png2.cleanpng.com/sh/a8492d85ab33b12bbbe242f35539030d/L0KzQYi4UsEzN2g6eZGAYUOzRoW4VMQyaWhnT5C6NUG6Q4S7WME2OWQ2SqICOEi1RomCTwBvbz==/5a30641441a7b7.1517334815131207882689.png');
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 
-@keyframes type {
-    0% {
-        width:0ch;
-    }
-    100%{
-        width:300ch;
-    }
-} */
+.article-container {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  word-wrap: normal;
+  height: fit-content;
+}
 
-.main-container article {
-    border-right: .15em transparent;
+article {
     font-family: "Courier";
     font-size: 14px;
-    white-space: nowrap;
-    overflow: hidden;
+    word-wrap: break-word;
+    width: 25vw;
+    flex-wrap: wrap;
+    overflow-wrap: normal;
+    opacity: 1;
   }
-  .main-container article:nth-child(1) {
-    width: 350ch;
-    -webkit-animation: type 10s steps(350, end);
-    animation: type 10s steps(178, end);
+
+/* article:nth-child(1) {
+    width: 150ch;
+    -webkit-animation: type 5s steps(150, end);
+    animation: type 5s steps(150, end);
     -webkit-animation-fill-mode: forwards;
     animation-fill-mode: forwards;
+        white-space: nowrap;
+    overflow: hidden;
+    word-wrap: break-word;
   }
   
-  .main-container article:nth-child(2) {
-    width: 400ch;
+article:nth-child(2) {
+    width: 200ch;
     opacity: 0;
-    -webkit-animation: type2 10s steps(400, end);
-    animation: type2 10s steps(144, end);
-    -webkit-animation-delay: 10s;
-    animation-delay: 10s;
+    -webkit-animation: type2 5s steps(200, end);
+    animation: type2 5s steps(200, end);
+    -webkit-animation-delay: 5s;
+    animation-delay: 5s;
     -webkit-animation-fill-mode: forwards;
     animation-fill-mode: forwards;
   }
@@ -121,4 +130,4 @@
       border: none;
     }
   }
-  
+   */
