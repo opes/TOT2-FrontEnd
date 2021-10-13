@@ -2,27 +2,42 @@
     height: 100vh;
     display: flex;
     flex-direction: row;
-    border: solid black 5px;
+    /* border: solid black 5px; */
     background-image: url('https://raw.githubusercontent.com/danielstuart14/CSS_FOG_ANIMATION/master/background.jpg');
-    background-color: black;
+    /* background-color: black; */
     background-repeat: no-repeat;
     background-size: cover;
     overflow: hidden;
 }
 
 .left-container {
+  z-index: 99;
   width: 30%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-image: url('https://t3.ftcdn.net/jpg/00/70/87/48/240_F_70874851_f0GblTdhvXkq6L9a7ZbUAKfNSXfGxZ1S.jpg');
-  background-repeat: no-repeat;
-  background-position-x: center;
-  background-position-y: center;
   background-size: 275px 150px;
-  border: solid black 5px;
   overflow: hidden;
+}
+
+.login-button, .signup-button {
+  margin: 15px;
+  border-style: solid;
+  border-width: 15px;
+  border-image-source: url('https://t3.ftcdn.net/jpg/00/70/87/48/240_F_70874851_f0GblTdhvXkq6L9a7ZbUAKfNSXfGxZ1S.jpg');
+  border-image-slice: 60 30 fill;
+  border-image-outset: 5px;
+  box-shadow: 12px 5px 40px 10px #5b5b5cde;
+}
+
+.login-button {
+  padding: 0;
+  width: 209px;
+}
+
+.login-button:hover, .signup-button:hover {
+  box-shadow: 12px 5px 40px 10px #cac5b8de;
 }
 
 .right-container {
@@ -48,7 +63,7 @@
 }
 
 .logo {
-    width: 60vw;
+  width: 60vw;
   display: flex;
   margin: 225px;
   margin-left: 55px;
@@ -60,7 +75,12 @@
 .button {
     margin-left: 2.5px;
     width: 195px;
-    background-image: url('https://t3.ftcdn.net/jpg/00/70/87/48/240_F_70874851_f0GblTdhvXkq6L9a7ZbUAKfNSXfGxZ1S.jpg');
+    border-style: solid;
+  border-width: 15px;
+  border-image-source: url('https://t3.ftcdn.net/jpg/00/70/87/48/240_F_70874851_f0GblTdhvXkq6L9a7ZbUAKfNSXfGxZ1S.jpg');
+  border-image-slice: 60 30;
+  border-image-outset: 5px;
+  background-image: url('https://t3.ftcdn.net/jpg/00/70/87/48/240_F_70874851_f0GblTdhvXkq6L9a7ZbUAKfNSXfGxZ1S.jpg');
   background-repeat: no-repeat;
   background-position-x: center;
   background-position-y: center;
@@ -92,39 +112,6 @@
   animation: foglayer_01_opacity 10s linear infinite, foglayer_moveme 15s linear infinite;
   -webkit-animation: foglayer_01_opacity 10s linear infinite, foglayer_moveme 15s linear infinite;
 }
-
-/* .foglayer_02 {
-  background-image: url('https://raw.githubusercontent.com/danielstuart14/CSS_FOG_ANIMATION/master/fog2.png');
-  background-size: contain;
-  width: 100%;
-  height: auto;
-  float: left;
-}
-
-.foglayer_02 {
-  width: 200%;
-  height: 100%;
-  position: absolute;
-  animation: foglayer_02_opacity 21s linear infinite, foglayer_moveme 13s linear infinite;
-  -webkit-animation: foglayer_01_opacity 21s linear infinite, foglayer_moveme 13s linear infinite;
-} */
-
-/* .foglayer_03 {
-  background: url('https://raw.githubusercontent.com/danielstuart14/CSS_FOG_ANIMATION/master/fog2.png');
-  background-size: contain;
-  width: 100%;
-  height: auto;
-  float: left;
-}
-
-.foglayer_03 {
-    width: 200%;
-    height: auto;
-    position: absolute;
-    animation: foglayer_02_opacity 21s linear infinite, foglayer_moveme 13s linear infinite;
-    -webkit-animation: foglayer_01_opacity 21s linear infinite, foglayer_moveme 13s linear infinite;
-} */
-
 
 @keyframes foglayer_moveme {
   0% {
