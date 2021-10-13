@@ -4,7 +4,7 @@ import { useContextHero, useSetContextHero } from '../../hooks/HeroProvider';
 import { useActiveSession } from '../../hooks/SessionProvider';
 import { enemyList } from '../../data/enemy-list.js';
 import useCombatHook from '../../hooks/useCombatHook';
-import styles from './CombatPage.css'
+import styles from './CombatPage.css';
 import PlayerScroll from '../display-components/PlayerScroll';
 
 const CombatPage = () => {
@@ -34,16 +34,16 @@ const CombatPage = () => {
   return (
     <div className={styles['main-container']}>
       <section className={styles['left-container']}>
-        <PlayerScroll />
-        {/* {player?.type}
-        {player?.HP}
-        {player?.STM}
-        {player?.AC}
-        {player?.SPD}
-        {player?.ATK}
-        {player?.level}
-        {player?.gold}
-        {player?.XP} */}
+        <PlayerScroll 
+          type={player.type} 
+          HP={player.HP} 
+          STM={player.STM} 
+          AC={player.AC} 
+          SPD={player.SPD} 
+          ATK={player.ATK} 
+          level={player.level} 
+          gold={player.gold} 
+          XP={player.XP} />
       </section>
       <section className={styles['right-container']}>
         <div className={styles['top-right-container']}>ITEMS GO HERE</div>
