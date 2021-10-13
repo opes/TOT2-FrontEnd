@@ -6,6 +6,7 @@ import { useActiveSession } from '../../hooks/SessionProvider';
 import useCombatHook from '../../hooks/useCombatHook';
 import grabRandomEnemy from '../../services/grabRandomEnemy';
 import styles from './Tutorial.css';
+import PlayerScroll from '../display-components/PlayerScroll';
 
 const tutorialFight = [{
   level: 1,
@@ -30,8 +31,8 @@ const Tutorial = () => {
 
   const handleReturnToVillage = () => {
     setContextHero(player); 
-    history.push('/village')
-  }
+    history.push('/village');
+  };
 
   if (!activeSession) history.push('/');
   
@@ -40,7 +41,7 @@ const Tutorial = () => {
   return (
     <div className={styles['main-container']}>
       <section className={styles['left-container']}>
-        {/* <PlayerScroll /> */}
+        <PlayerScroll />
         {player?.type}
         {player?.HP}
         {player?.STM}
