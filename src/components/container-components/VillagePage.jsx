@@ -26,39 +26,45 @@ const VillagePage = () => {
   }
 
   if (villageLocation === 'tavern') return (<Tavern handleVillageLocationChange={handleVillageLocationChange}/>);
-  
   if (villageLocation === 'shop') return (<Shop handleVillageLocationChange={handleVillageLocationChange} />);
-  
   if (villageLocation === 'church')  return (<Church handleVillageLocationChange={handleVillageLocationChange} />);
   
   
   return (
-    <div>
-      <PlayerScroll />
-      <button
-        value="tavern"
-        onClick={(event) => handleVillageLocationChange(event)}
-      >
-        Tavern
-      </button>
-      <button
-        value="church"
-        onClick={(event) => handleVillageLocationChange(event)}
-      >
-        Church
-      </button>
-      <button
-        value="shop"
-        onClick={(event) => handleVillageLocationChange(event)}
-      >
-        Shop
-      </button>
-      <button
-        onClick={handleWilderness}
-      >
-        Local Wilderness
-      </button>
-    </div>
+    <>
+      <div className="left-component-playerScroll">
+        <PlayerScroll />
+      </div>
+      <div className="right-component-village-enterties">
+        <div className="tavern">
+          <button
+            value="tavern-component"
+            onClick={(event) => handleVillageLocationChange(event)}
+          >
+            Tavern
+          </button>
+        </div>
+        <div className="church-component">
+          <button
+            value="church"
+            onClick={(event) => handleVillageLocationChange(event)}
+          >
+            Church
+          </button>
+        </div>
+        <div className="shop-component">
+          <button
+            value="shop"
+            onClick={(event) => handleVillageLocationChange(event)}
+          >
+            Shop
+          </button>
+        </div>
+        <div className="local-wilderness-component">
+          <button onClick={handleWilderness}>Local Wilderness</button>
+        </div>
+      </div>
+    </>
   );
 }
 

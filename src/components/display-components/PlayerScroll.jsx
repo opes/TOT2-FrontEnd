@@ -3,7 +3,7 @@ import { useContextHero } from '../../hooks/HeroProvider';
 
 const PlayerScroll = () => {
   const contextHero = useContextHero();
-  console.log(contextHero);
+  
   return (
     <div>
       <ul>
