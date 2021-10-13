@@ -78,7 +78,7 @@ const SignUp = ({ event }) => {
         <form onSubmit={onSubmit} className={styles[ 'form-container' ]}>
           <div className={styles['label-background']}>
             <label className={styles['username-label']}>
-            Username
+              {' '}{' '}Username
               <input
                 type="text"
                 value={username}
