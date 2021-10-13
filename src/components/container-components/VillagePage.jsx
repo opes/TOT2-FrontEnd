@@ -10,8 +10,9 @@ const VillagePage = () => {
   const activeSession = useActiveSession();
   const history = useHistory(); 
   const [villageLocation, setVillageLocation] = useState('main'); 
+
   if (!activeSession) history.push('/'); 
-  
+
   const handleVillageLocationChange = ({ target }) => {
     setVillageLocation(target.value);
   }
@@ -60,8 +61,3 @@ const VillagePage = () => {
 }
 
 export default VillagePage
-
-// Create a main locaiton
-  // 3 functions for each buttion
-  // if else => 
-  // create four buttons => tavern, chrunch, shop
