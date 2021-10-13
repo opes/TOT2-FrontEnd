@@ -7,8 +7,8 @@ import { heroes } from '../../data/hero-templates';
 import { createUser, getUserById } from '../../services/backendUtils';
 import { useSetActiveSession, useSetContextGoogleId } from '../../hooks/SessionProvider';
 import styles from './SignUp.css';
-import dwarfWarrior from '../../assets/Dwarf Warrior.png';
-import foxArcher from '../../assets/FoxArcher.png';
+import dwarfWarrior from '../../assets/dwarf.png';
+import foxArcher from '../../assets/fox.png';
 import devilkin from '../../assets/devilkin.png';
 import vampire from '../../assets/vampire.png';
 // import parchment from '../../assets/parchement2.png';
@@ -73,141 +73,139 @@ const SignUp = ({ event }) => {
     />
   </div>;
   return (
-    <>
-      <div className={styles['hero-form']}>
-        <form onSubmit={onSubmit} className={styles['form-container']}>
-          <label>
+    <div className={styles['hero-form']}>
+      <form onSubmit={onSubmit} className={styles['form-container']}>
+        <label>
               Username
+          <input
+            type="text"
+            value={username}
+            onChange={({ target }) => setUsername(target.value)}
+          />
+        </label>
+        <div className={styles['radio-buttons']}>
+          <label htmlFor="dwarf">
             <input
-              type="text"
-              value={username}
-              onChange={({ target }) => setUsername(target.value)}
+              className={styles['input-display']}
+              type="radio"
+              name="hero"
+              value="dwarfWarrior"
+              id="dwarf"
+              onChange={
+                ({ target }) => setHero(target.value)
+              }
             />
-          </label>
-          <div className={styles['radio-buttons']}>
-            <label htmlFor="dwarf">
-              <input
-                className={styles['input-display']}
-                type="radio"
-                name="hero"
-                value="dwarfWarrior"
-                id="dwarf"
-                onChange={
-                  ({ target }) => setHero(target.value)
-                }
+            <div className={styles['hero-container']}>
+              <img
+                className={styles['hero-icon']}
+                src={dwarfWarrior}
+                alt="dwarf"
               />
-              <div className={styles['hero-container']}>
-                <img
-                  className={styles['hero-icon']}
-                  src={dwarfWarrior}
-                  alt="dwarf"
-                />
-                <section className={styles['hero-text']}>
-                  <p>Dwarf Warrior</p>
-                  <article>
+              <section className={styles['hero-text']}>
+                <p>Dwarf Warrior</p>
+                <div>
                       HP: 25<br/>
                       STM: 10<br/>
                       AC: 6<br/>
                       SPD: 1<br/>
                       ATK: 3
-                  </article>
-                </section>
-              </div>
-            </label>
-            <label htmlFor="fox">
-              <input
-                className={styles['input-display']}
-                type="radio"
-                name="hero"
-                value="foxArcher"
-                id="fox"
-                onChange={
-                  ({ target }) => setHero(target.value)
-                }
+                </div>
+              </section>
+            </div>
+          </label>
+          <label htmlFor="fox">
+            <input
+              className={styles['input-display']}
+              type="radio"
+              name="hero"
+              value="foxArcher"
+              id="fox"
+              onChange={
+                ({ target }) => setHero(target.value)
+              }
+            />
+            <div className={styles['hero-container']}>
+              <img
+                className={styles['hero-icon']}
+                src={foxArcher}
+                alt="fox"
               />
-              <div className={styles['hero-container']}>
-                <img
-                  className={styles['hero-icon']}
-                  src={foxArcher}
-                  alt="fox"
-                />
-                <section className={styles['hero-text']}>
-                  <p>Fox Archer</p>
-                  <article>
+              <section className={styles['hero-text']}>
+                <p>Fox Archer</p>
+                <div>
                       HP: 20<br/>
                       STM: 10<br/>
                       AC: 2<br/>
                       SPD: 5<br/>
                       ATK: 4
-                  </article>
-                </section>
-              </div>
-            </label>
-            <label htmlFor="devilkin">
-              <input
-                className={styles['input-display']}
-                type="radio"
-                name="hero"
-                value="devilkinMage"
-                id="devilkin"
-                onChange={
-                  ({ target }) => setHero(target.value)
-                }
+                </div>
+              </section>
+            </div>
+          </label>
+          <label htmlFor="devilkin">
+            <input
+              className={styles['input-display']}
+              type="radio"
+              name="hero"
+              value="devilkinMage"
+              id="devilkin"
+              onChange={
+                ({ target }) => setHero(target.value)
+              }
+            />
+            <div className={styles['hero-container']}>
+              <img
+                className={styles['hero-icon']}
+                src={devilkin}
+                alt="devilkin"
               />
-              <div className={styles['hero-container']}>
-                <img
-                  className={styles['hero-icon']}
-                  src={devilkin}
-                  alt="devilkin"
-                />
-                <section className={styles['hero-text']}>
-                  <p>Devilkin Mage</p>
-                  <article>
+              <section className={styles['hero-text']}>
+                <p>Devilkin Mage</p>
+                <div>
                       HP: 15<br/>
                       STM: 10<br/>
                       AC: 1<br/>
                       SPD: 8<br/>
                       ATK: 6
-                  </article>
-                </section>
-              </div>
-            </label>
-            <label htmlFor="vampire">
-              <input
-                className={styles['input-display']}
-                type="radio"
-                name="hero"
-                value="vampireRonin"
-                id="vampire"
-                onChange={
-                  ({ target }) => setHero(target.value)
-                }
+                </div>
+              </section>
+            </div>
+          </label>
+          <label htmlFor="vampire">
+            <input
+              className={styles['input-display']}
+              type="radio"
+              name="hero"
+              value="vampireRonin"
+              id="vampire"
+              onChange={
+                ({ target }) => setHero(target.value)
+              }
+            />
+            <div className={styles['hero-container']}>
+              <img
+                className={styles['hero-icon']}
+                src={vampire}
+                alt="vampire"
               />
-              <div className={styles['hero-container']}>
-                <img
-                  className={styles['hero-icon']}
-                  src={vampire}
-                  alt="vampire"
-                />
-                <section className={styles['hero-text']}>
-                  <p>Vampire Ronin</p>
-                  <article>
+              <section className={styles['hero-text']}>
+                <p>Vampire Ronin</p>
+                <div>
                       HP: 35<br/>
                       STM: 10<br/>
                       AC: 3<br/>
                       SPD: 3<br/>
                       ATK: 3
-                  </article>
-                </section>
-              </div>
-            </label>
-          </div>
-          <button className={styles['form-button']}>
+                </div>
+              </section>
+            </div>
+          </label>
+        </div>
+        <button className={styles['form-button']}>
               Start the Adventure
-          </button>
-        </form>
-      </div>
-    </>
+        </button>
+      </form>
+    </div>
   );
 };
 

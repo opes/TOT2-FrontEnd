@@ -24,15 +24,18 @@ const CutScene = () => {
   };
 
   return (
-    <>
-      <div className={styles['main-container']}>
-        <article className={styles['first-article']}>{cutscene.intro}</article>
-        <article>{cutscene[userObj?.heroStats?.type]}</article>
-        <button onClick={onClick}>
+    <div className={styles['main-container']}>
+      <div className={styles['parchment']}>
+        <div className={styles['article-container']}>
+          <article className={styles['first-article']}>{cutscene.intro}</article>
+          <br /> 
+          <article>{cutscene[userObj?.heroStats?.type]}</article>
+        </div>
+        <button onClick={onClick} className={styles['cutscene-button']}>
         Begin Adverture
-        </button> 
-      </div>
-    </>
+        </button>
+      </div> 
+    </div>
   );
 };
 

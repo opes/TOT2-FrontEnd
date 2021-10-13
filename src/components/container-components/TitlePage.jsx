@@ -15,7 +15,7 @@ const TitlePage = () => {
         <div
           className={!signedIn ? styles['left-container'] : styles['full-page']}
         >
-            <Login signedIn={signedIn} />
+          <Login signedIn={signedIn} />
           <SignUp event={setSignedIn} />
         </div>
         <div
@@ -28,16 +28,13 @@ const TitlePage = () => {
         <div className={styles['fogwrapper']}>
           <div className={styles['foglayer_01']}>
             <div className="image01"></div>
-            {/* <div className="image02"></div> */}
           </div>
         </div>
         <div className={styles['foglayer_02']}>
           <div className="image01"></div>
-          {/* <div className="image02"></div> */}
         </div>
         <div className={styles['foglayer_03']}>
           <div className="image01"></div>
-          {/* <div className="image02"></div> */}
         </div>
       </div>
     </>
