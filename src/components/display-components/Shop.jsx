@@ -1,7 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { useContextHero } from '../../hooks/HeroProvider';
 
 const Shop = ({ handleVillageLocationChange }) => {
+
+  const contextHero = useContextHero(); 
+  const 
+
   return (
     <div>
       Shop

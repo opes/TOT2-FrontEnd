@@ -20,7 +20,7 @@ const Tavern = ({ handleVillageLocationChange }) => {
 
   const handleRetire = async(id) => {
     const message = confirm('Are you sure you want to retire hero?')
-    if (!id) console.error('Invalid Id...')
+    if (!id) throw new Error('Invalid Id...');
     if (message && id) {
       const deletionMessage = await deleteUserById(id)
       alert(deletionMessage.message);
