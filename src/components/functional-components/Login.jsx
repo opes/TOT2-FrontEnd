@@ -15,11 +15,11 @@ const Login = ({ signedIn }) => {
   const setContextGoogleId = useSetContextGoogleId();
   const setActiveSession = useSetActiveSession();
   const setContextHero = useSetContextHero(); 
-
   const history = useHistory(); 
+
   const handleLogin = async (id) => {
     const bckRes = await getUserById(id);
-    console.log(bckRes);
+
     if (bckRes.status !== 500) {
       setContextGoogleId(id);
       setActiveSession(true);

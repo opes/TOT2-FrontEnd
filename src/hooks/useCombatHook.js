@@ -8,7 +8,7 @@ const useCombatHook = (heroObj, enemyListArr) => {
   const [activeCombat, setActiveCombat] = useState(true);
   const [loading, setLoading] = useState(true);
   const [combatLog, setCombatLog] = useState([]);
-
+ 
   useEffect(() => {
     const chosenEnemy = grabRandomEnemy(player?.level, enemyListArr);
     setEnemy(chosenEnemy);

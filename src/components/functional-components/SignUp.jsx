@@ -11,7 +11,7 @@ import dwarfWarrior from '../../assets/Dwarf Warrior.png';
 import foxArcher from '../../assets/FoxArcher.png';
 import devilkin from '../../assets/devilkin.png';
 import vampire from '../../assets/vampire.png';
-import parchment from '../../assets/parchement2.png';
+// import parchment from '../../assets/parchement2.png';
 
 const SignUp = ({ event }) => {
   const [token, setToken] = useState();
@@ -74,21 +74,18 @@ const SignUp = ({ event }) => {
   </div>;
   return (
     <>
-      <div
-        style={{
-          backgroundImage: `url(${parchment})`,
-          backgroundRepeat: 'no-repeat',
-        }}
-        className={styles['parchment']}
-      >
-        <div className={styles['hero-form']}>
-          <form onSubmit={onSubmit}>
+      <div className={styles['hero-form']}>
+        <form onSubmit={onSubmit} className={styles['form-container']}>
+          <label>
+              Username
             <input
               type="text"
               value={username}
               onChange={({ target }) => setUsername(target.value)}
             />
-            <div className={styles['radio-buttons']}>
+          </label>
+          <div className={styles['radio-buttons']}>
+            <label htmlFor="dwarf">
               <input
                 className={styles['input-display']}
                 type="radio"
@@ -99,73 +96,116 @@ const SignUp = ({ event }) => {
                   ({ target }) => setHero(target.value)
                 }
               />
-              <label htmlFor="dwarf">
+              <div className={styles['hero-container']}>
                 <img
                   className={styles['hero-icon']}
                   src={dwarfWarrior}
                   alt="dwarf"
                 />
-              </label>
-              <label htmlFor="fox">
+                <section className={styles['hero-text']}>
+                  <p>Dwarf Warrior</p>
+                  <article>
+                      HP: 25<br/>
+                      STM: 10<br/>
+                      AC: 6<br/>
+                      SPD: 1<br/>
+                      ATK: 3
+                  </article>
+                </section>
+              </div>
+            </label>
+            <label htmlFor="fox">
+              <input
+                className={styles['input-display']}
+                type="radio"
+                name="hero"
+                value="foxArcher"
+                id="fox"
+                onChange={
+                  ({ target }) => setHero(target.value)
+                }
+              />
+              <div className={styles['hero-container']}>
                 <img
                   className={styles['hero-icon']}
                   src={foxArcher}
                   alt="fox"
                 />
-                Fox Archer
-                <input
-                  className={styles['input-display']}
-                  type="radio"
-                  name="hero"
-                  value="foxArcher"
-                  id="fox"
-                  onChange={
-                    ({ target }) => setHero(target.value)
-                  }
-                />
-              </label>
-              <label htmlFor="devilkin">
+                <section className={styles['hero-text']}>
+                  <p>Fox Archer</p>
+                  <article>
+                      HP: 20<br/>
+                      STM: 10<br/>
+                      AC: 2<br/>
+                      SPD: 5<br/>
+                      ATK: 4
+                  </article>
+                </section>
+              </div>
+            </label>
+            <label htmlFor="devilkin">
+              <input
+                className={styles['input-display']}
+                type="radio"
+                name="hero"
+                value="devilkinMage"
+                id="devilkin"
+                onChange={
+                  ({ target }) => setHero(target.value)
+                }
+              />
+              <div className={styles['hero-container']}>
                 <img
                   className={styles['hero-icon']}
                   src={devilkin}
                   alt="devilkin"
                 />
-                Devilkin Mage
-                <input
-                  className={styles['input-display']}
-                  type="radio"
-                  name="hero"
-                  value="devilkinMage"
-                  id="devilkin"
-                  onChange={
-                    ({ target }) => setHero(target.value)
-                  }
-                />
-              </label>
-              <label htmlFor="vampire">
+                <section className={styles['hero-text']}>
+                  <p>Devilkin Mage</p>
+                  <article>
+                      HP: 15<br/>
+                      STM: 10<br/>
+                      AC: 1<br/>
+                      SPD: 8<br/>
+                      ATK: 6
+                  </article>
+                </section>
+              </div>
+            </label>
+            <label htmlFor="vampire">
+              <input
+                className={styles['input-display']}
+                type="radio"
+                name="hero"
+                value="vampireRonin"
+                id="vampire"
+                onChange={
+                  ({ target }) => setHero(target.value)
+                }
+              />
+              <div className={styles['hero-container']}>
                 <img
                   className={styles['hero-icon']}
                   src={vampire}
                   alt="vampire"
                 />
-                Vampire Ronin
-                <input
-                  className={styles['input-display']}
-                  type="radio"
-                  name="hero"
-                  value="vampireRonin"
-                  id="vampire"
-                  onChange={
-                    ({ target }) => setHero(target.value)
-                  }
-                />
-              </label>
-            </div>
-            <button className={styles['form-button']}>
+                <section className={styles['hero-text']}>
+                  <p>Vampire Ronin</p>
+                  <article>
+                      HP: 35<br/>
+                      STM: 10<br/>
+                      AC: 3<br/>
+                      SPD: 3<br/>
+                      ATK: 3
+                  </article>
+                </section>
+              </div>
+            </label>
+          </div>
+          <button className={styles['form-button']}>
               Start the Adventure
-            </button>
-          </form>
-        </div>
+          </button>
+        </form>
       </div>
     </>
   );

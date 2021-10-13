@@ -1,35 +1,31 @@
-/* eslint-disable max-len */
 import React from 'react';
 import { useHistory } from 'react-router';
 import { useContextHero, useSetContextHero } from '../../hooks/HeroProvider';
 import { useActiveSession } from '../../hooks/SessionProvider';
+import { enemyList } from '../../data/enemy-list.js';
 import useCombatHook from '../../hooks/useCombatHook';
-import styles from './Tutorial.css';
-import PlayerScroll from '../display-components/PlayerScroll';
+import styles from './CombatPage.css'
 
-const tutorialFight = [{
-  level: 1,
-  HP: 8,
-  AC: 1,
-  SPD: 2,
-  ATK: 2,
-  name: 'Common Goblin',
-  XP: 5,
-  gold: 3
-}];
-
-
-const Tutorial = () => {
+const CombatPage = () => {
   const activeSession = useActiveSession();
   const contextHero = useContextHero();
   const setContextHero = useSetContextHero();
   const history = useHistory();
-  const { player, enemy, activeCombat, combatLog, loading, doOneCombatRound, doFlee } = useCombatHook(contextHero, tutorialFight);
+  const {
+    player,
+    enemy,
+    activeCombat,
+    combatLog,
+    loading,
+    doOneCombatRound,
+    doFlee,
+  } = useCombatHook(contextHero, enemyList);
 
   const handleReturnToVillage = () => {
-    setContextHero(player); 
+    setContextHero(player);
     history.push('/village');
   };
+
 
   if (!activeSession) history.push('/');
   if (loading) return <h1>Loading...</h1>;
@@ -37,7 +33,7 @@ const Tutorial = () => {
   return (
     <div className={styles['main-container']}>
       <section className={styles['left-container']}>
-        <PlayerScroll />
+        {/* <PlayerScroll /> */}
         {player?.type}
         {player?.HP}
         {player?.STM}
@@ -94,4 +90,4 @@ const Tutorial = () => {
   );
 };
 
-export default Tutorial;
+export default CombatPage;
