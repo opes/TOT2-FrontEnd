@@ -37,9 +37,7 @@ const Church = ({ handleVillageLocationChange }) => {
   const hanldeHeal = async () => {
     const { heroStats } = await getUserById(contextGoogleId);
     if (
-      contextHero.HP < heroStats.MAXHP
-        &&
-      contextHero.XP >= 0
+      contextHero.HP < heroStats.MAXHP && contextHero.XP >= 0
     ) {
       const message = confirm('Are you sure you want to get healed?');
       if (message) {
@@ -50,9 +48,9 @@ const Church = ({ handleVillageLocationChange }) => {
         }));
       }
     } else if (contextHero.XP <= 0) {
-      alert('Lack of XP');
-    } else if (  contextHero.HP >= heroStats.MAXHP) {
-      alert('You are too health no need to heal');
+      alert('Cannot heal, lack of XP');
+    } else if (contextHero.HP >= heroStats.MAXHP) {
+      alert('You are too healthy no need to heal');
     }
   };
 
