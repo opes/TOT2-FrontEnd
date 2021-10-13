@@ -5,7 +5,8 @@ import Church from '../display-components/Church';
 import PlayerScroll from '../display-components/PlayerScroll';
 import Shop from '../display-components/Shop';
 import Tavern from '../display-components/Tavern';
-import Login from '../functional-components/Login';
+// import Login from '../functional-components/Login';
+
 
 const VillagePage = () => {
   const activeSession = useActiveSession();
@@ -25,9 +26,14 @@ const VillagePage = () => {
     }
   }
 
-  if (villageLocation === 'tavern') return (<Tavern handleVillageLocationChange={handleVillageLocationChange}/>);
-  if (villageLocation === 'shop') return (<Shop handleVillageLocationChange={handleVillageLocationChange} />);
-  if (villageLocation === 'church')  return (<Church handleVillageLocationChange={handleVillageLocationChange} />);
+  if (villageLocation === 'tavern')
+    return (<Tavern handleVillageLocationChange={handleVillageLocationChange} />);
+  
+  if (villageLocation === 'shop')
+    return (<Shop handleVillageLocationChange={handleVillageLocationChange} />);
+  
+  if (villageLocation === 'church')
+    return (<Church handleVillageLocationChange={handleVillageLocationChange} />);
   
   
   return (
@@ -36,9 +42,9 @@ const VillagePage = () => {
         <PlayerScroll />
       </div>
       <div className="right-component-village-enterties">
-        <div className="tavern">
+        <div className="tavern-component">
           <button
-            value="tavern-component"
+            value="tavern"
             onClick={(event) => handleVillageLocationChange(event)}
           >
             Tavern
@@ -68,4 +74,4 @@ const VillagePage = () => {
   );
 }
 
-export default VillagePage
+export default VillagePage;
