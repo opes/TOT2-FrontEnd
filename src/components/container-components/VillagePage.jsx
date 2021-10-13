@@ -37,10 +37,9 @@ const VillagePage = () => {
   if (villageLocation === 'church')
     return (<Church handleVillageLocationChange={handleVillageLocationChange} />);
   
-  
   return (
-    <>
-      <div className="left-component-playerScroll">
+    <div className={styles['village-main-container']}>
+      <div className={styles['left-component-playerScroll']}>
         <PlayerScroll
           type={contextHero.type}
           HP={contextHero.HP}
@@ -53,36 +52,37 @@ const VillagePage = () => {
           XP={contextHero.XP}
         />
       </div>
-      <div className="right-component-village-enterties">
-        <div className="tavern-component">
-          <button
-            value="tavern"
-            onClick={(event) => handleVillageLocationChange(event)}
-          >
-            Tavern
-          </button>
-        </div>
-        <div className="church-component">
-          <button
-            value="church"
-            onClick={(event) => handleVillageLocationChange(event)}
-          >
-            Church
-          </button>
-        </div>
-        <div className="shop-component">
-          <button
-            value="shop"
-            onClick={(event) => handleVillageLocationChange(event)}
-          >
-            Shop
-          </button>
-        </div>
-        <div className="local-wilderness-component">
+      <div className={styles['right-component-village-enterties']}>
+        <div className={styles['village-viewport']}>
+          <div className={styles['tavern-component']}>
+            <button
+              value="tavern"
+              onClick={(event) => handleVillageLocationChange(event)}
+            >
+              Tavern
+            </button>
+          </div>
+          <div className={styles['church-component']}>
+            <button
+              value="church"
+              onClick={(event) => handleVillageLocationChange(event)}
+            >
+              Church
+            </button>
+          </div>
+          <div className={styles['shop-component']}>
+            <button
+              value="shop"
+              onClick={(event) => handleVillageLocationChange(event)}
+            >
+              Shop
+            </button>
+          </div>
+          <div className={styles['local-wilderness-component']}></div>
           <button onClick={handleWilderness}>Local Wilderness</button>
         </div>
       </div>
-    </>
+    </div>
   );
 }
 
