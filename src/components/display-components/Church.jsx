@@ -41,13 +41,11 @@ const Church = ({ handleVillageLocationChange }) => {
     if (contextHero.HP < heroStats.MAXHP) {
       const message = confirm('Are you sure you want to get healed?');
       if (message) {
-        setContextHero((prevHero) => (
-          {
-            ...prevHero,
-            HP: heroStats.MAXHP,
-            XP: XP - (5 * heroStats.level)
-          }
-        ))
+        setContextHero((prevHero) => ({
+          ...prevHero,
+          HP: heroStats.MAXHP,
+          XP: contextHero.XP - 5 * heroStats.level,
+        }));
       }
     } else {
       alert('You are too health no need to heal')
