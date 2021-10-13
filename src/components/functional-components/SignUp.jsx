@@ -76,7 +76,7 @@ const SignUp = ({ event }) => {
     <>
       <div className={styles['hero-form']}>
         <form onSubmit={onSubmit} className={styles['form-container']}>
-          <label>
+          <label className={styles['username-label']}>
               Username
             <input
               type="text"
