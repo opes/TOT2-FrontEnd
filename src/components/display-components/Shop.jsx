@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { useContextHero } from '../../hooks/HeroProvider';
+import styles from '../container-components/VillagePage.css';
 
 const Shop = ({ handleVillageLocationChange }) => {
 
@@ -8,7 +9,7 @@ const Shop = ({ handleVillageLocationChange }) => {
 
 
   return (
-    <div>
+    <div className={styles['viewport-content']}>
       Shop
       <button
         onClick={(event) => handleVillageLocationChange(event)}
