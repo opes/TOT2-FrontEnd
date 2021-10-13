@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { useHistory } from 'react-router-dom';
+import { useContextHero } from '../../hooks/HeroProvider';
 import { useActiveSession } from '../../hooks/SessionProvider';
 import Church from '../display-components/Church';
 import PlayerScroll from '../display-components/PlayerScroll';
@@ -12,6 +13,7 @@ const VillagePage = () => {
   const activeSession = useActiveSession();
   const history = useHistory(); 
   const [villageLocation, setVillageLocation] = useState('main'); 
+  const contextHero = useContextHero();
 
   if (!activeSession) history.push('/'); 
 
@@ -39,7 +41,17 @@ const VillagePage = () => {
   return (
     <>
       <div className="left-component-playerScroll">
-        <PlayerScroll />
+        <PlayerScroll
+          type={contextHero.type}
+          HP={contextHero.HP}
+          STM={contextHero.STM}
+          AC={contextHero.AC}
+          SPD={contextHero.SPD}
+          ATK={contextHero.ATK}
+          level={contextHero.level}
+          gold={contextHero.gold}
+          XP={contextHero.XP}
+        />
       </div>
       <div className="right-component-village-enterties">
         <div className="tavern-component">
