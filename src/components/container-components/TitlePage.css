@@ -37,7 +37,7 @@
 }
 
 .login-button:hover, .signup-button:hover {
-  box-shadow: 12px 5px 40px 10px #cac5b8de;
+  box-shadow: 12px 15px 30px 10px #cac5b8de;
 }
 
 .right-container {
