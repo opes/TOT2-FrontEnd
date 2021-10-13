@@ -29,9 +29,7 @@ const VillagePage = () => {
       history.push('/combat');
     }
   };
-
-
-  console.log(villageLocation);
+  
   return (
     <div className={styles['village-main-container']}>
       <div className={styles['left-component-playerScroll']}>
