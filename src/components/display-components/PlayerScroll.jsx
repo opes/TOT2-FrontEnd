@@ -14,7 +14,6 @@ const PlayerScroll = () => {
         <li>Hero MAXHP: {`${contextHero.MAXHP}`}</li>
         <li>Hero SPD: {`${contextHero.SPD}`}</li>
         <li>Hero STM: {`${contextHero.STM}`}</li>
-        <li>Hero Type: {`${contextHero.XP}`}</li>
         <li>Hero XP: {`${contextHero.XP}`}</li>
         <li>Hero gold: {`${contextHero.gold}`}</li>
       </ul>
