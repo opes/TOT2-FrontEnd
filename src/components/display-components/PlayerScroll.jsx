@@ -8,11 +8,13 @@ import devilkin from '../../assets/devilkin.png';
 import vampire from '../../assets/vampire.png';
 
 const PlayerScroll = ({ type, HP, STM, AC, SPD, ATK, level, gold, XP }) => {
+
+  const imgSrc = { dwarf, fox, devilkin, vampire };
   return (
     <>
       <div className={styles['scroll']}>
         <p>{type}</p>
-        <img src={`https://github.com/Tales-of-Torr-2/TOT2-FrontEnd/blob/dev/src/assets/${type}.png`} alt={`${type}`} className={styles['portrait']} />
+        <img src={imgSrc[type]} alt={`${type}`} className={styles['portrait']} />
         <div className={styles['stats']}>
           <p>Health Points: {HP}</p>
           <p>Stamina: {STM}</p>

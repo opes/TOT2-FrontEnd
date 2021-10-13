@@ -4,6 +4,7 @@ import { deleteUserById, updateUserById } from '../../services/backendUtils';
 import { useContextHero } from '../../hooks/HeroProvider';
 import { useContextGoogleId } from '../../hooks/SessionProvider';
 import { useHistory } from 'react-router';
+import styles from '../container-components/VillagePage.css';
 
 const Tavern = ({ handleVillageLocationChange }) => {
 
@@ -29,7 +30,7 @@ const Tavern = ({ handleVillageLocationChange }) => {
   }
 
   return (
-    <div>
+    <div className={styles['viewport-content']}>
       Tavern
       <button onClick={() => handleSave()}>Save</button>
       <button onClick={() => handleSave(true)}>Save & Quit</button>
