@@ -50,10 +50,10 @@ const useCombatHook = (heroObj, enemyListArr) => {
     const playerHitChance = player.AC + player.SPD;
     const enemyHitChance = enemy?.AC + enemy?.SPD;
 
-    //PLAYER PHASE
+    // PLAYER PHASE
     const playerAttack = attackRoll(player);
     if(playerAttack >= enemyHitChance) {
-      //IF PLAYER HITS, THESE ACTIONS ARE TAKEN
+      // IF PLAYER HITS, THESE ACTIONS ARE TAKEN
       const newEnemyHP = doDamage(player, enemy);
       if (newEnemyHP <= 0) {
         const newPlayerXP = player.XP + enemy?.XP;
