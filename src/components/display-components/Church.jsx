@@ -2,16 +2,19 @@ import React from 'react';
 import PropTypes from 'prop-types'
 import { useContextHero, useSetContextHero } from '../../hooks/HeroProvider';
 import { heroesLevelUp } from '../../data/hero-templates';
+import { useContextGoogleId } from '../../hooks/SessionProvider';
+import { getUserById } from '../../services/backendUtils';
 
 const Church = ({ handleVillageLocationChange }) => {
 
   const contextHero = useContextHero();
+  const contextGoogleId = useContextGoogleId(); 
   const setContextHero = useSetContextHero(); 
 
   const handleLevelUp = () => {
-
     const heroType = heroesLevelUp[`${contextHero.type}LevelUp`];
     const neededXP = 5 + (10 * contextHero.level)
+
     if (contextHero.XP >= neededXP) { 
       const message = confirm(`Do you want to level up? [${neededXP} xp]`);
       if (message) {
@@ -32,10 +35,28 @@ const Church = ({ handleVillageLocationChange }) => {
     }
   }
 
+  const hanldeHeal = async () => {
+    const { heroStats } = await getUserById(contextGoogleId)
+    if (contextHero.HP < heroStats.MAXHP) {
+      const message = confirm('Are you sure you want to get healed?');
+      if (message) {
+        setContextHero((prevHero) => (
+          {
+            ...prevHero,
+            HP: heroStats.MAXHP,
+            XP: XP - (5 * heroStats.level)
+          }
+        ))
+      }
+    } else {
+      alert('You are too health no need to heal')
+    }
+  }
+
   return (
     <div>
       Church
-      <button> Heal </button>
+      <button onClick={hanldeHeal}> Heal </button>
       <button onClick={handleLevelUp}> Level Up </button>
       <button
         onClick={(event) => handleVillageLocationChange(event)}

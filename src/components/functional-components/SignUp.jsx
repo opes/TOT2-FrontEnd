@@ -17,7 +17,6 @@ const SignUp = ({ event }) => {
   const [token, setToken] = useState();
   const [username, setUsername] = useState();
   const [googleId, setGoogleId] = useState();
-  // const [selectedHero, setSelectedHero] = useState(true);
   const [hero, setHero] = useState();
   const setContextGoogleId = useSetContextGoogleId();
   const setActiveSession = useSetActiveSession();
@@ -41,7 +40,11 @@ const SignUp = ({ event }) => {
       location.replace('/');
     }
   };
+<<<<<<< HEAD
   
+=======
+
+>>>>>>> eb072ef28046f123575425fb2fd6e1f25e624827
   const onSubmit = async (event) => {
     event.preventDefault();
     const userObject = {
@@ -63,7 +66,6 @@ const SignUp = ({ event }) => {
   if (!token) return <div style={{ zIndex: '99' }}>
     <GoogleLogin
       className={styles['button']}
-      // className="button"
       clientId={process.env.CLIENT_GOOGLE_ID}
       buttonText="Signup using Google"
       onSuccess={(token) => {
@@ -91,24 +93,21 @@ const SignUp = ({ event }) => {
               onChange={({ target }) => setUsername(target.value)}
             />
             <div className={styles['radio-buttons']}>
+              <input
+                className={styles['input-display']}
+                type="radio"
+                name="hero"
+                value="dwarfWarrior"
+                id="dwarf"
+                onChange={
+                  ({ target }) => setHero(target.value)
+                }
+              />
               <label htmlFor="dwarf">
                 <img
                   className={styles['hero-icon']}
                   src={dwarfWarrior}
                   alt="dwarf"
-                />
-                Dwarf Warrior
-                <input
-                  className={styles['input-display']}
-                  type="radio"
-                  name="hero"
-                  value="dwarfWarrior"
-                  // checked={selectedHero === 'dwarfWarrior'}
-                  id="dwarf"
-                  onChange={
-                    ({ target }) => setHero(target.value)
-                    // , ({ target }) => setSelectedHero(target.value)
-                  }
                 />
               </label>
               <label htmlFor="fox">
@@ -123,11 +122,9 @@ const SignUp = ({ event }) => {
                   type="radio"
                   name="hero"
                   value="foxArcher"
-                  // checked={selectedHero === 'foxArcher'}
                   id="fox"
                   onChange={
                     ({ target }) => setHero(target.value)
-                    // , ({ target }) => setSelectedHero(target.value)
                   }
                 />
               </label>
@@ -143,11 +140,9 @@ const SignUp = ({ event }) => {
                   type="radio"
                   name="hero"
                   value="devilkinMage"
-                  // checked={selectedHero === 'devilkinMage'}
                   id="devilkin"
                   onChange={
                     ({ target }) => setHero(target.value)
-                    // ,({ target }) => setSelectedHero(target.value)
                   }
                 />
               </label>
@@ -163,11 +158,9 @@ const SignUp = ({ event }) => {
                   type="radio"
                   name="hero"
                   value="vampireRonin"
-                  // checked={selectedHero === 'vampireRonin'}
                   id="vampire"
                   onChange={
                     ({ target }) => setHero(target.value)
-                    // ,({ target }) => setSelectedHero(target.value)
                   }
                 />
               </label>
