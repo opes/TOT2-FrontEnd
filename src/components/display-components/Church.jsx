@@ -1,21 +1,20 @@
 import React from 'react';
-import PropTypes from 'prop-types'
+import PropTypes from 'prop-types';
 import { useContextHero, useSetContextHero } from '../../hooks/HeroProvider';
 import { heroesLevelUp } from '../../data/hero-templates';
 import { useContextGoogleId } from '../../hooks/SessionProvider';
 import { getUserById } from '../../services/backendUtils';
 
 const Church = ({ handleVillageLocationChange }) => {
-
   const contextHero = useContextHero();
-  const contextGoogleId = useContextGoogleId(); 
-  const setContextHero = useSetContextHero(); 
+  const contextGoogleId = useContextGoogleId();
+  const setContextHero = useSetContextHero();
 
   const handleLevelUp = () => {
     const heroType = heroesLevelUp[`${contextHero.type}LevelUp`];
-    const neededXP = 5 + (10 * contextHero.level)
+    const neededXP = 5 + 10 * contextHero.level;
 
-    if (contextHero.XP >= neededXP) { 
+    if (contextHero.XP >= neededXP) {
       const message = confirm(`Do you want to level up? [${neededXP} xp]`);
       if (message) {
         setContextHero((prevHero) => {
@@ -25,20 +24,23 @@ const Church = ({ handleVillageLocationChange }) => {
             SPD: prevHero.SPD + heroType?.SPD,
             ATK: prevHero.ATK + heroType?.ATK,
             level: prevHero.level + heroType?.level,
-            gold: prevHero.gold, 
+            gold: prevHero.gold,
             XP: prevHero.XP - neededXP,
           };
         });
       }
+    } else {
+      alert('You do not have enough XP to level up...');
     }
-    else {
-      alert('You do not have enough XP to level up...')
-    }
-  }
+  };
 
   const hanldeHeal = async () => {
-    const { heroStats } = await getUserById(contextGoogleId)
-    if (contextHero.HP < heroStats.MAXHP) {
+    const { heroStats } = await getUserById(contextGoogleId);
+    if (
+      contextHero.HP < heroStats.MAXHP &&
+      contextHero.XP >= 0 &&
+      contextHero.XP % 5 === 0
+    ) {
       const message = confirm('Are you sure you want to get healed?');
       if (message) {
         setContextHero((prevHero) => ({
@@ -47,10 +49,12 @@ const Church = ({ handleVillageLocationChange }) => {
           XP: contextHero.XP - 5 * heroStats.level,
         }));
       }
-    } else {
-      alert('You are too health no need to heal')
+    } else if (contextHero.XP <= 0 || contextHero.XP % 5 !== 0) {
+      alert('Lack of XP');
+    } else if (  contextHero.HP >= heroStats.MAXHP) {
+      alert('You are too health no need to heal');
     }
-  }
+  };
 
   return (
     <div>
@@ -67,10 +71,8 @@ const Church = ({ handleVillageLocationChange }) => {
   );
 };
 
-
 Church.propTypes = {
-  handleVillageLocationChange: PropTypes.func.isRequired, 
+  handleVillageLocationChange: PropTypes.func.isRequired,
 };
 
-
-export default Church
+export default Church;

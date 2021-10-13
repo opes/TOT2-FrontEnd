@@ -48,7 +48,7 @@ const vampireRonin = {
   ATK: 3,
   level: 1,
   gold: 0,
-  XP: 0,
+  XP: -100,
 };
 
 export const heroes = { dwarfWarrior, foxArcher, devilkinMage, vampireRonin };
