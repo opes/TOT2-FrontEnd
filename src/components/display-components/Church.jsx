@@ -25,6 +25,7 @@ const Church = ({ handleVillageLocationChange }) => {
             SPD: prevHero.SPD + heroType?.SPD,
             ATK: prevHero.ATK + heroType?.ATK,
             level: prevHero.level + heroType?.level,
+            gold: prevHero.gold, 
             XP: prevHero.XP - neededXP,
           };
         });

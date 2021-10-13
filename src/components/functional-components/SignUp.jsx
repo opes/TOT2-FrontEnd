@@ -40,11 +40,7 @@ const SignUp = ({ event }) => {
       location.replace('/');
     }
   };
-<<<<<<< HEAD
-  
-=======
 
->>>>>>> eb072ef28046f123575425fb2fd6e1f25e624827
   const onSubmit = async (event) => {
     event.preventDefault();
     const userObject = {
