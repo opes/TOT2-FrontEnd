@@ -127,6 +127,10 @@ button {
   margin: 5px;
   padding: 5px;
   filter: drop-shadow(6px 6px 8px #cac5b8de);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .hero-text > p {

@@ -27,11 +27,31 @@
   width: 15vw;
   padding: 2vw 2vh;
   border: none;
-  font-size: 2rem;
+  font-size: 1.5rem;
   border-radius: 20px;
   background-image: url('https://png2.cleanpng.com/sh/a8492d85ab33b12bbbe242f35539030d/L0KzQYi4UsEzN2g6eZGAYUOzRoW4VMQyaWhnT5C6NUG6Q4S7WME2OWQ2SqICOEi1RomCTwBvbz==/5a30641441a7b7.1517334815131207882689.png');
   background-size: contain;
   background-repeat: no-repeat;
+  background-color: antiquewhite;
+  position: relative;
+  text-decoration: none;
+  box-shadow: 0 2px rgba(250, 235, 215, 0.66);
+  text-transform: uppercase;
+}
+
+.cutscene-button:hover {
+    box-shadow: 0.3px 3px rgba(75, 54, 25, 0.578);
+    cursor: pointer;
+    top: 2px;
+}
+
+.cutscene-button:active {
+  box-shadow: none;
+  top: 3px;
+}
+
+.button-words-display {
+  margin-left: 3rem;
 }
 
 .article-container {

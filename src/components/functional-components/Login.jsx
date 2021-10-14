@@ -38,7 +38,7 @@ const Login = ({ signedIn }) => {
       <GoogleLogin
         className={styles['button']}
         // className="button"
-        clientId={process.env.CLIENT_GOOGLE_ID}
+        clientId={process.env.REACT_APP_CLIENT_GOOGLE_ID}
         buttonText="Login using Google"
         onSuccess={(token) => {
           handleLogin(token?.googleId);

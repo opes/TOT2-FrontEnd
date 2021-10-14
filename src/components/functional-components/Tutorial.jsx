@@ -14,9 +14,9 @@ const tutorialFight = [
     AC: 1,
     SPD: 2,
     ATK: 2,
-    name: 'Common Goblin',
-    XP: 5,
-    gold: 3,
+    name: 'Weak Goblin',
+    XP: 4,
+    gold: 2,
   },
 ];
 
