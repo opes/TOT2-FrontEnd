@@ -46,6 +46,7 @@ const vampireRonin = {
   HP: 35,
   MAXHP: 35,
   STM: 7,
+  MAXSTM: 7,
   AC: 3,
   SPD: 3,
   ATK: 3,

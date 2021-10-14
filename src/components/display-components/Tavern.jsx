@@ -28,7 +28,14 @@ const Tavern = ({ handleVillageLocationChange }) => {
     const currentUser = await getUserById(id)
     const costOfGold = currentUser.location * 2; 
     const message = confirm(`Are you sure you want to rest which costs ${costOfGold} gold`);
-    if (contextHero.gold >= costOfGold && message) {
+    if (
+      contextHero.STM < contextHero.MAXSTM
+        && 
+      contextHero.gold >= costOfGold
+        &&
+      message
+    )
+      {
         setContextHero((prev) => ({
           ...prev,
           gold: prev.gold - costOfGold,
@@ -36,7 +43,9 @@ const Tavern = ({ handleVillageLocationChange }) => {
         }));
     } else if (contextHero.gold < costOfGold) {
       alert('You dont have enough gold...')
-    } 
+    } else if (contextHero.STM >= contextHero.MAXSTM) {
+      alert('You dont need to rest')
+    }
   }
 
   const handleRetire = async (id) => {
