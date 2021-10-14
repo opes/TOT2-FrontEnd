@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 import React from 'react';
 import PropTypes from 'prop-types';
 import { useContextHero, useSetContextHero } from '../../hooks/HeroProvider';
@@ -57,15 +58,32 @@ const Church = ({ handleVillageLocationChange }) => {
 
   return (
     <div className={styles['viewport-content']}>
-      Church
-      <button onClick={hanldeHeal}> Heal </button>
-      <button onClick={handleLevelUp}> Level Up </button>
-      <button
-        onClick={(event) => handleVillageLocationChange(event)}
-        value="main"
-      >
-        Go back to Village
-      </button>
+      <section className={styles['viewport-left-container']}>
+        <img className={styles['tavern-viewport-image']} src="https://cdn.discordapp.com/attachments/380989362755600394/898307690969825343/Untitled_Artwork.jpg" alt="tavern"/>
+      </section>
+      <section className={styles['viewport-right-container']}>
+        <section className={styles['viewport-right-top-container']}>
+          <div className={styles['viewport-button']}>
+            <button onClick={hanldeHeal}> Heal </button>
+            <p> - Offer your experience to Torr and restore your health.</p>
+          </div>
+          <div className={styles['viewport-button']}>
+            <button onClick={handleLevelUp}> Level Up </button>
+            <p> - Offer your experience to Torr and increase your battle prowess.</p>
+          </div>
+          <div className={styles['viewport-button']}>
+            <button
+              onClick={(event) => handleVillageLocationChange(event)}
+              value="main"
+            >Go back to Village</button>
+          </div>
+        </section>
+        <section className={styles['viewport-right-bot-container']}>
+          <div className={styles['text-box']}>
+            {''}
+          </div>
+        </section>
+      </section>
     </div>
   );
 };
