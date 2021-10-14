@@ -69,7 +69,7 @@ const Tutorial = () => {
         </div>
         <div className={styles['bot-right-container']}>
           <div className={styles['left-bot-right-container']}>
-            <section className={styles['combat-buttons']}>
+            <section className={styles[ 'combat-buttons' ]}>
               <button
                 onClick={doOneCombatRound}
                 className={!activeCombat ? styles['hidden'] : styles['bloop']}
