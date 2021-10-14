@@ -21,6 +21,7 @@ const Church = ({ handleVillageLocationChange }) => {
       if (message) {
         setContextHero((prevHero) => {
           return {
+            ...prevHero,
             HP: prevHero.HP + heroType?.HP,
             STM: prevHero.STM + heroType?.STM,
             SPD: prevHero.SPD + heroType?.SPD,
