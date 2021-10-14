@@ -92,6 +92,8 @@
   
   .combat-log {
     border: inset rgb(68, 58, 45);
+    box-sizing: border-box;
+    padding: 8px;
     overflow-y: scroll;
     overflow-wrap: break-word;
     width: 100%;
@@ -118,8 +120,14 @@
   
   .enemy-stats {
     border: inset rgb(68, 58, 45);
+    box-sizing: border-box;
+    padding: 8px;
     background-color: rgba(0, 0, 0, 0.651);
     color: rgb(223, 202, 172);
     font-family: fantasy;
     text-align: right;
+  }
+
+  .enemy-stats > p {
+    line-height: 1.75em;
   }
