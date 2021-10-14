@@ -59,8 +59,14 @@ const Tutorial = () => {
         />
       </section>
       <section className={styles['right-container']}>
-        <div className={styles['top-right-container']}>ITEMS GO HERE</div>
-        <div className={styles['middle-right-container']}>PICTURES GO HERE</div>
+        <div className={styles['top-right-container']}></div>
+        <div className={styles['middle-right-container']}>
+          <img
+            className={styles['middle-right-content']}
+            src="https://cdn.discordapp.com/attachments/380989362755600394/897995496554123304/image0.jpg"
+            alt="background"
+          />
+        </div>
         <div className={styles['bot-right-container']}>
           <div className={styles['left-bot-right-container']}>
             <section className={styles['combat-buttons']}>
@@ -75,7 +81,7 @@ const Tutorial = () => {
                   const flee = doFlee();
                   if (flee) {
                     if (player.gold < 3) {
-                      alert("You don't have enough gold to flee");
+                      alert('You don\'t have enough gold to flee');
                     } else {
                       setContextHero(player);
                       history.push('/village');
@@ -100,7 +106,13 @@ const Tutorial = () => {
             </section>
           </div>
           <div className={styles['right-bot-right-container']}>
-            ENEMY STATS HERE
+            <div className={styles['enemy-stats']}>
+              <p>{enemy?.name}</p>
+              <p>{enemy?.HP}</p>
+              <p>{enemy?.AC}</p>
+              <p>{enemy?.SPD}</p>
+              <p>{enemy?.ATK}</p>
+            </div>
           </div>
         </div>
       </section>
