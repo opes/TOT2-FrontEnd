@@ -4,7 +4,7 @@ import { useContextHero, useSetContextHero } from '../../hooks/HeroProvider';
 import { heroesLevelUp } from '../../data/hero-templates';
 import { useContextGoogleId } from '../../hooks/SessionProvider';
 import { getUserById } from '../../services/backendUtils';
-import styles from '../container-components/VillagePage.css'
+import styles from '../container-components/VillagePage.css';
 
 const Church = ({ handleVillageLocationChange }) => {
   const contextHero = useContextHero();
