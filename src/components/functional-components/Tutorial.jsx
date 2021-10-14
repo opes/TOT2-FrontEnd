@@ -69,7 +69,7 @@ const Tutorial = () => {
         </div>
         <div className={styles['bot-right-container']}>
           <div className={styles['left-bot-right-container']}>
-            <section className={styles['combat-buttons']}>
+            <section className={styles[ 'combat-buttons' ]}>
               <button
                 onClick={doOneCombatRound}
                 className={!activeCombat ? styles['hidden'] : styles['bloop']}
@@ -107,11 +107,11 @@ const Tutorial = () => {
           </div>
           <div className={styles['right-bot-right-container']}>
             <div className={styles['enemy-stats']}>
-              <p>{enemy?.name}</p>
-              <p>{enemy?.HP}</p>
-              <p>{enemy?.AC}</p>
-              <p>{enemy?.SPD}</p>
-              <p>{enemy?.ATK}</p>
+              <h2>{enemy?.name}</h2>
+              <p>Health Points: {enemy?.HP}</p>
+              <p>Armor Class: {enemy?.AC}</p>
+              <p>Speed: {enemy?.SPD}</p>
+              <p>Attack: {enemy?.ATK}</p>
             </div>
           </div>
         </div>
