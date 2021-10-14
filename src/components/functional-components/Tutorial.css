@@ -12,6 +12,8 @@
     background-image: url('https://cdn.discordapp.com/attachments/380989362755600394/897956370630983711/image0.jpg');
     background-repeat: no-repeat;
     background-size: 100vw 100vh;
+    overflow: hidden;
+    position: relative;
   }
   
   .left-container {
@@ -26,7 +28,9 @@
     text-shadow: -1px 1px 5px rgb(41, 45, 48);
     filter: drop-shadow(-3px 3px 8px rgb(41, 45, 48));
     margin-left: 55px;
+    margin-top: 5vh;
     position: relative;
+    overflow: hidden;
   }
   
   .right-container {
@@ -47,6 +51,8 @@
     flex-direction: row;
     height: 65vh;
     width: 65vw;
+    margin-top: -5.5vh;
+    filter: drop-shadow(-5px 5px 5px rgb(13, 13, 14));
   }
   
   .middle-right-content {
@@ -64,7 +70,8 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  margin-top: 5vh;
+  margin-top: 3.5vh;
+  filter: drop-shadow(-5px 5px 5px rgb(13, 13, 14));
   }
   
   .left-bot-right-container {
@@ -79,6 +86,7 @@
   border-image-source: url('https://t3.ftcdn.net/jpg/00/70/87/48/240_F_70874851_f0GblTdhvXkq6L9a7ZbUAKfNSXfGxZ1S.jpg');
   border-image-slice: 60 60 fill;
   border-image-outset: 2px;
+  filter: drop-shadow(-5px 5px 5px rgb(13, 13, 14));
   }
   
   .combat-log {
@@ -102,6 +110,7 @@
     border-image-source: url('https://t3.ftcdn.net/jpg/00/70/87/48/240_F_70874851_f0GblTdhvXkq6L9a7ZbUAKfNSXfGxZ1S.jpg');
     border-image-slice: 60 60 fill;
     border-image-outset: 2px;
+    filter: drop-shadow(-5px 5px 5px rgb(13, 13, 14));
   }
   
   .enemy-stats {
