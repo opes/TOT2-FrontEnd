@@ -51,7 +51,7 @@ const VillagePage = () => {
           {villageLocation === 'main' ? (
             <img
               className={styles['viewport-content']}
-              src="https://cdn.discordapp.com/attachments/380989362755600394/895906508976562206/First_Town.jpg"
+              src="https://cdn.discordapp.com/attachments/380989362755600394/898306680578797608/Untitled_Artwork.jpg"
               alt="background"
             />
           ) : (
