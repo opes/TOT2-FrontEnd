@@ -36,17 +36,31 @@ const Tavern = ({ handleVillageLocationChange }) => {
         <img className={styles['tavern-viewport-image']} src="https://cdn.discordapp.com/attachments/380989362755600394/898308608922628107/Untitled_Artwork.jpg" alt="tavern"/>
       </section>
       <section className={styles['viewport-right-container']}>
-        <button onClick={() => handleSave()}>Save</button>
-        <button onClick={() => handleSave(true)}>Save & Quit</button>
-        <button
-          onClick={(event) => handleVillageLocationChange(event)}
-          value="main"
-        >
-        Go back to Village
-        </button>
-        <button onClick={() => handleRetire(contextGoogleId)}>
-        Retire the Hero
-        </button>
+        <section className={styles['viewport-right-top-container']}>
+          <div className={styles['viewport-button']}>
+            <button onClick={() => handleSave()}>Save</button>
+            <p> - Save your progress and continue playing.</p>
+          </div>
+          <div className={styles['viewport-button']}>
+            <button onClick={() => handleSave(true)}>Save & Quit</button>
+            <p> - Save your progress and quit to Title Screen.</p>
+          </div>
+          <div className={styles['viewport-button']}>
+            <button onClick={() => handleRetire(contextGoogleId)}>Retire the Hero</button>
+            <p> - Deletes ALL save progress. CANNOT BE UNDONE.</p>
+          </div>
+          <div className={styles['viewport-button']}>
+            <button
+              onClick={(event) => handleVillageLocationChange(event)}
+              value="main"
+            >Go back to Village</button>
+          </div>
+        </section>
+        <section className={styles['viewport-right-bot-container']}>
+          <div className={styles['text-box']}>
+            {''}
+          </div>
+        </section>
       </section>
     </div>
   );
