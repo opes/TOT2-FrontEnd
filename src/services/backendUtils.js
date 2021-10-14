@@ -1,4 +1,4 @@
-const URL = process.env.DATABASE_URL;
+const URL = process.env.REACT_APP_DATABASE_URL;
 
 export async function createUser(user) {
   const response = await fetch(`${URL}/api/v1/users`,

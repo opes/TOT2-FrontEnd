@@ -62,7 +62,7 @@ const SignUp = ({ event }) => {
   if (!token) return <div style={{ zIndex: '99' }}>
     <GoogleLogin
       className={styles['button']}
-      clientId={process.env.CLIENT_GOOGLE_ID}
+      clientId={process.env.REACT_APP_CLIENT_GOOGLE_ID}
       buttonText="Signup using Google"
       onSuccess={(token) => {
         setToken(token); event(true);
