@@ -5,6 +5,7 @@ const goblin = {
   SPD: 4,
   ATK: 2,
   name: 'Common Goblin',
+  img: 'goblin',
   XP: 5,
   gold: 3
 };
@@ -16,6 +17,7 @@ const zombie1 = {
   SPD: 1,
   ATK: 5,
   name: 'Shambling Zombie',
+  img: 'zombie1',
   XP: 5,
   gold: 1
 };
@@ -27,6 +29,7 @@ const skeleton1 = {
   SPD: 4,
   ATK: 5,
   name: 'Shambling Skeleton',
+  img: 'skeleton1',
   XP: 5,
   gold: 2
 };
@@ -38,6 +41,7 @@ const hobgoblin = {
   SPD: 4,
   ATK: 4,
   name: 'Hobgoblin Scout',
+  img: 'hobgoblin',
   XP: 8,
   gold: 5
 };
@@ -49,6 +53,7 @@ const skeleton2 = {
   SPD: 4,
   ATK: 5,
   name: 'Old Armored Skeleton',
+  img: 'skeleton2',
   XP: 8,
   gold: 3
 };
@@ -60,6 +65,7 @@ const zombie2 = {
   SPD: 2,
   ATK: 5,
   name: 'Rotting Zombie',
+  img: 'zombie2',
   XP: 8,
   gold: 3
 };
