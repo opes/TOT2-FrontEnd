@@ -1,8 +1,8 @@
 /* eslint-disable max-len */
 const dwarfWarrior = {
   type: 'dwarf',
-  HP: 15,
-  MAXHP: 15,
+  HP: 25,
+  MAXHP: 25,
   STM: 10,
   AC: 3,
   SPD: 1,
@@ -14,8 +14,8 @@ const dwarfWarrior = {
 
 const foxArcher = {
   type: 'fox',
-  HP: 10,
-  MAXHP: 10,
+  HP: 20,
+  MAXHP: 20,
   STM: 10,
   AC: 2,
   SPD: 3,
@@ -27,8 +27,8 @@ const foxArcher = {
 
 const devilkinMage = {
   type: 'devilkin',
-  HP: 8,
-  MAXHP: 8,
+  HP: 18,
+  MAXHP: 18,
   STM: 10,
   AC: 1,
   SPD: 5,
@@ -40,8 +40,8 @@ const devilkinMage = {
 
 const vampireRonin = {
   type: 'vampire',
-  HP: 20,
-  MAXHP: 20,
+  HP: 35,
+  MAXHP: 35,
   STM: 12,
   AC: 3,
   SPD: 3,
