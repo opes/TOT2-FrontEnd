@@ -10,8 +10,8 @@
 }
 
 .portrait {
-    height: 150px;
-    width: 150px;
+    height: 300px;
+    width: 300px;
     border-radius: 50%;
-    padding: 10%;
+    padding: 12%;
 }
