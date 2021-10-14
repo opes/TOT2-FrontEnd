@@ -13,7 +13,7 @@ const PlayerScroll = ({ type, HP, STM, AC, SPD, ATK, level, gold, XP }) => {
   return (
     <>
       <div className={styles['scroll']}>
-        <p>{type}</p>
+        <p className={styles['hero-type']}>{type}</p>
         <img src={imgSrc[type]} alt={`${type}`} className={styles['portrait']} />
         <div className={styles['stats']}>
           <p>Health Points: {HP}</p>
