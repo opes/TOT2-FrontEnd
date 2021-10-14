@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import { useContextHero } from '../../hooks/HeroProvider';
