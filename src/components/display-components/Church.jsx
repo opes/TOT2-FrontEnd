@@ -59,7 +59,7 @@ const Church = ({ handleVillageLocationChange }) => {
   return (
     <div className={styles['viewport-content']}>
       <section className={styles['viewport-left-container']}>
-        <img className={styles['church-viewport-image']} src="https://cdn.discordapp.com/attachments/380989362755600394/898307690969825343/Untitled_Artwork.jpg" alt="tavern"/>
+        <img className={styles['church-viewport-image']} src="https://cdn.discordapp.com/attachments/380989362755600394/898307690969825343/Untitled_Artwork.jpg" alt="church"/>
       </section>
       <section className={styles['viewport-right-container']}>
         <section className={styles['viewport-right-top-container']}>

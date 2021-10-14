@@ -132,7 +132,7 @@
   right: 5.5vw;
   width: 180%;
   height: 180%;
-  background-image: url("https://cdn.discordapp.com/attachments/380989362755600394/898308608922628107/Untitled_Artwork.jpg");
+
 }
 
 .church-viewport-image {
@@ -141,5 +141,12 @@
   top: 37vh;
   width: 180%;
   height: 180%;
-  background-image: url("https://cdn.discordapp.com/attachments/380989362755600394/898308608922628107/Untitled_Artwork.jpg");
+}
+
+.shop-viewport-image {
+  position: relative;
+  right: 46vw;
+  top: 80vh;
+  width: 300%;
+  height: 280%;
 }
