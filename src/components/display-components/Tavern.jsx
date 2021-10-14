@@ -32,18 +32,22 @@ const Tavern = ({ handleVillageLocationChange }) => {
 
   return (
     <div className={styles['viewport-content']}>
-      Tavern
-      <button onClick={() => handleSave()}>Save</button>
-      <button onClick={() => handleSave(true)}>Save & Quit</button>
-      <button
-        onClick={(event) => handleVillageLocationChange(event)}
-        value="main"
-      >
+      <section className={styles['viewport-left-container']}>
+        <img className={styles['tavern-viewport-image']} src="https://cdn.discordapp.com/attachments/380989362755600394/898308608922628107/Untitled_Artwork.jpg" alt="tavern"/>
+      </section>
+      <section className={styles['viewport-right-container']}>
+        <button onClick={() => handleSave()}>Save</button>
+        <button onClick={() => handleSave(true)}>Save & Quit</button>
+        <button
+          onClick={(event) => handleVillageLocationChange(event)}
+          value="main"
+        >
         Go back to Village
-      </button>
-      <button onClick={() => handleRetire(contextGoogleId)}>
+        </button>
+        <button onClick={() => handleRetire(contextGoogleId)}>
         Retire the Hero
-      </button>
+        </button>
+      </section>
     </div>
   );
 };
