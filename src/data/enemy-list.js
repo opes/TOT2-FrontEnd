@@ -1,12 +1,23 @@
 const goblin = {
   level: 1,
   HP: 8,
-  AC: 1,
-  SPD: 2,
+  AC: 2,
+  SPD: 4,
   ATK: 2,
   name: 'Common Goblin',
   XP: 5,
   gold: 3
+};
+
+const zombie = {
+  level: 1,
+  HP: 22,
+  AC: 0,
+  SPD: 2,
+  ATK: 5,
+  name: 'Shambling Zombie',
+  XP: 8,
+  gold: 0
 };
 
 const hobgoblin = {
