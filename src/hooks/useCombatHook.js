@@ -1,13 +1,19 @@
 /* eslint-disable max-len */
 import { useEffect, useState } from 'react';
 import grabRandomEnemy from '../services/grabRandomEnemy';
+import { useSetContextHero } from './HeroProvider';
+import { useHistory } from 'react-router';
 
 const useCombatHook = (heroObj, enemyListArr) => {
   const [player, setPlayer] = useState(heroObj);
+  console.log(heroObj, 'heroObj')
   const [enemy, setEnemy] = useState({});
   const [activeCombat, setActiveCombat] = useState(true);
   const [loading, setLoading] = useState(true);
   const [combatLog, setCombatLog] = useState([]);
+  const setContextHero = useSetContextHero(); 
+  const history = useHistory(); 
+
  
   useEffect(() => {
     const chosenEnemy = grabRandomEnemy(player?.level, enemyListArr);
@@ -33,18 +39,20 @@ const useCombatHook = (heroObj, enemyListArr) => {
     return defenderHP;
   };
 
+
   const doFlee = () => {
     const flee = confirm(`Do you want to flee from ${enemy?.name}? [${enemy?.gold}]`);
     if (flee) {
       let newPlayerGold = player.gold - enemy?.gold;
       if (newPlayerGold <= 0) newPlayerGold = 0;
-      setPlayer(prev => {
+
+      setContextHero((prev) => {
         return { ...prev, gold: newPlayerGold };
-      });
-      return true;
+      }); 
+      history.push('/village')
     }
-    return false;
   };
+    
 
   const doOneCombatRound = () => {
     const playerHitChance = player.AC + player.SPD;
@@ -59,13 +67,14 @@ const useCombatHook = (heroObj, enemyListArr) => {
         const newPlayerXP = player.XP + enemy?.XP;
         const newPlayerGold = player.gold + enemy?.gold;
         setPlayer(prev => {
-          return { ...prev, XP: newPlayerXP, gold: newPlayerGold };
+          return {
+            ...prev,
+            XP: newPlayerXP,
+            gold: newPlayerGold,
+          };
         });
         updateCombatLog(`The Hero has dealt ${enemy?.HP - newEnemyHP} damage, slaining ${enemy?.name}, gaining ${enemy?.gold} gold pieces and ${enemy?.XP} experience!`);
         setActiveCombat(false);
-        setPlayer(prev => {
-          return { ...prev, STM: prev.STM - 1 };
-        });
         return 'Combat Done';
       } else if (newEnemyHP > 0) {
         updateCombatLog(`The hero hits ${enemy?.name} for ${enemy?.HP - newEnemyHP} damage!`);
@@ -98,7 +107,7 @@ const useCombatHook = (heroObj, enemyListArr) => {
       setActiveCombat(false);
       updateCombatLog(`The Hero has fallen at the hands of ${enemy?.name}...`);
       alert('You have been defeated, returning to the village in a sorry state.');
-      setPlayer(prev => {
+      setContextHero(prev => {
         return { ...prev, HP: 1, XP: 0, gold: 0, STM: prev.STM - 1 };
       });
       history.push('/village');
