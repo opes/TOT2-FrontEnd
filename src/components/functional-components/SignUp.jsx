@@ -7,11 +7,13 @@ import { heroes } from '../../data/hero-templates';
 import { createUser, getUserById } from '../../services/backendUtils';
 import { useSetActiveSession, useSetContextGoogleId } from '../../hooks/SessionProvider';
 import styles from './SignUp.css';
-import dwarfWarrior from '../../assets/dwarf.png';
-import foxArcher from '../../assets/fox.png';
+import dwarf from '../../assets/dwarf.png';
+import fox from '../../assets/fox.png';
 import devilkin from '../../assets/devilkin.png';
 import vampire from '../../assets/vampire.png';
-// import parchment from '../../assets/parchement2.png';
+
+
+const { dwarfWarrior, foxArcher, devilkinMage, vampireRonin } = heroes;
 
 const SignUp = ({ event }) => {
   const [token, setToken] = useState();
@@ -99,17 +101,17 @@ const SignUp = ({ event }) => {
             <div className={styles['hero-container']}>
               <img
                 className={styles['hero-icon']}
-                src={dwarfWarrior}
+                src={dwarf}
                 alt="dwarf"
               />
               <section className={styles['hero-text']}>
-                <p>Dwarf Warrior</p>
+                <h2>Dwarf Warrior</h2>
                 <div>
-                      HP: 25<br/>
-                      STM: 10<br/>
-                      AC: 6<br/>
-                      SPD: 1<br/>
-                      ATK: 3
+                  <p>Health Points: {dwarfWarrior.HP}</p>
+                  <p>Stamina: {dwarfWarrior.STM}</p>
+                  <p>Armor Class: {dwarfWarrior.AC}</p>
+                  <p>Speed: {dwarfWarrior.SPD}</p>
+                  <p>Attack: {dwarfWarrior.ATK}</p>
                 </div>
               </section>
             </div>
@@ -128,17 +130,17 @@ const SignUp = ({ event }) => {
             <div className={styles['hero-container']}>
               <img
                 className={styles['hero-icon']}
-                src={foxArcher}
+                src={fox}
                 alt="fox"
               />
               <section className={styles['hero-text']}>
-                <p>Fox Archer</p>
+                <h2>Fox Archer</h2>
                 <div>
-                      HP: 20<br/>
-                      STM: 10<br/>
-                      AC: 2<br/>
-                      SPD: 5<br/>
-                      ATK: 4
+                  <p>Health Points: {foxArcher.HP}</p>
+                  <p>Stamina: {foxArcher.STM}</p>
+                  <p>Armor Class: {foxArcher.AC}</p>
+                  <p>Speed: {foxArcher.SPD}</p>
+                  <p>Attack: {foxArcher.ATK}</p>
                 </div>
               </section>
             </div>
@@ -161,13 +163,13 @@ const SignUp = ({ event }) => {
                 alt="devilkin"
               />
               <section className={styles['hero-text']}>
-                <p>Devilkin Mage</p>
+                <h2>Devilkin Mage</h2>
                 <div>
-                      HP: 15<br/>
-                      STM: 10<br/>
-                      AC: 1<br/>
-                      SPD: 8<br/>
-                      ATK: 6
+                  <p>Health Points: {devilkinMage.HP}</p>
+                  <p>Stamina: {devilkinMage.STM}</p>
+                  <p>Armor Class: {devilkinMage.AC}</p>
+                  <p>Speed: {devilkinMage.SPD}</p>
+                  <p>Attack: {devilkinMage.ATK}</p>
                 </div>
               </section>
             </div>
@@ -190,13 +192,13 @@ const SignUp = ({ event }) => {
                 alt="vampire"
               />
               <section className={styles['hero-text']}>
-                <p>Vampire Ronin</p>
+                <h2>Vampire Ronin</h2>
                 <div>
-                      HP: 35<br/>
-                      STM: 10<br/>
-                      AC: 3<br/>
-                      SPD: 3<br/>
-                      ATK: 3
+                  <p>Health Points: {vampireRonin.HP}</p>
+                  <p>Stamina: {vampireRonin.STM}</p>
+                  <p>Armor Class: {vampireRonin.AC}</p>
+                  <p>Speed: {vampireRonin.SPD}</p>
+                  <p>Attack: {vampireRonin.ATK}</p>
                 </div>
               </section>
             </div>

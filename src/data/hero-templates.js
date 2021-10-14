@@ -4,11 +4,11 @@ const dwarfWarrior = {
   HP: 15,
   MAXHP: 15,
   STM: 10,
-  AC: 6,
+  AC: 3,
   SPD: 1,
   ATK: 3,
   level: 1,
-  gold: 0,
+  gold: 3,
   XP: 0,
 };
 
@@ -18,10 +18,10 @@ const foxArcher = {
   MAXHP: 10,
   STM: 10,
   AC: 2,
-  SPD: 5,
+  SPD: 3,
   ATK: 4,
   level: 1,
-  gold: 0,
+  gold: 1,
   XP: 0,
 };
 
@@ -31,10 +31,10 @@ const devilkinMage = {
   MAXHP: 8,
   STM: 10,
   AC: 1,
-  SPD: 8,
-  ATK: 6,
+  SPD: 5,
+  ATK: 5,
   level: 1,
-  gold: 0,
+  gold: 6,
   XP: 0,
 };
 
@@ -42,12 +42,12 @@ const vampireRonin = {
   type: 'vampire',
   HP: 20,
   MAXHP: 20,
-  STM: 10,
+  STM: 12,
   AC: 3,
   SPD: 3,
   ATK: 3,
   level: 1,
-  gold: 0,
+  gold: 3,
   XP: 0,
 };
 
