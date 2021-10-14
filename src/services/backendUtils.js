@@ -5,7 +5,8 @@ export async function createUser(user) {
     {
       method: 'POST',
       headers: {
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin': '*'
       },
       body: JSON.stringify(user)
     }
@@ -18,7 +19,8 @@ export async function getUserById(id) {
     {
       method: 'GET',
       headers: {
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin': '*'
       },
     }
   );
@@ -49,7 +51,11 @@ export async function deleteUserById(id) {
 export async function getAllUsers() {
   const response = await fetch(`${URL}/api/v1/users`,
     {
-      method: 'GET'
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin': '*'
+      },
     }
   );
   return response.json();
