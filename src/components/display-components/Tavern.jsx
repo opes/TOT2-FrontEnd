@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 import React from 'react';
 import PropTypes from 'prop-types';
 import { deleteUserById, updateUserById } from '../../services/backendUtils';
@@ -13,21 +14,21 @@ const Tavern = ({ handleVillageLocationChange }) => {
   const history = useHistory(); 
 
   const handleSave = async (quit) => {
-    const updatedUser = await updateUserById(contextGoogleId, {heroStats: contextHero});
+    await updateUserById(contextGoogleId, { heroStats: contextHero });
     if (quit) {
-      location.replace('/')
+      location.replace('/');
     }
-  }
+  };
 
-  const handleRetire = async(id) => {
-    const message = confirm('Are you sure you want to retire hero?\nAll your progress will be deleted!!')
+  const handleRetire = async (id) => {
+    const message = confirm('Are you sure you want to retire hero?\nAll your progress will be deleted!!');
     if (!id) throw new Error('Invalid Id...');
     if (message && id) {
-      const deletionMessage = await deleteUserById(id)
+      const deletionMessage = await deleteUserById(id);
       alert(deletionMessage.message);
-      history.push('/')
+      history.push('/');
     }
-  }
+  };
 
   return (
     <div className={styles['viewport-content']}>
