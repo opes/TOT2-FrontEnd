@@ -107,7 +107,7 @@ const Tutorial = () => {
           </div>
           <div className={styles['right-bot-right-container']}>
             <div className={styles['enemy-stats']}>
-              <p>{enemy?.name}</p>
+              <h2>{enemy?.name}</h2>
               <p>Health Points: {enemy?.HP}</p>
               <p>Armor Class: {enemy?.AC}</p>
               <p>Speed: {enemy?.SPD}</p>

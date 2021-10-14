@@ -106,8 +106,8 @@
   .combat-buttons > button {
     margin-bottom: 6px;
     margin-top: -5px;
-    margin-left: 5px;
-    margin-right: 5px;
+    margin-left: 8px;
+    margin-right: 8px;
     box-sizing: border-box;
     padding: 4px;
     font-family: fantasy;
@@ -123,6 +123,7 @@
     border-image-slice: 20 20 fill;
     border-image-outset: 2px;
     justify-content: space-between;
+    width: 6vw;
   }
 
   .combat-buttons {
