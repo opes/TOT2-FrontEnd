@@ -65,4 +65,10 @@ const zombie2 = {
 };
 
 
-export const enemyList = [goblin, zombie1, skeleton1, hobgoblin];
+export const enemyList = [
+  // LEVEL 1
+  goblin, zombie1, skeleton1, 
+  // LEVEL 2
+  hobgoblin, skeleton2, zombie2
+  // LEVEL 3
+];
