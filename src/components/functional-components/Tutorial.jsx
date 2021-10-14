@@ -106,7 +106,13 @@ const Tutorial = () => {
             </section>
           </div>
           <div className={styles['right-bot-right-container']}>
-            ENEMY STATS HERE
+            <div className={styles['enemy-stats']}>
+              <p>{enemy?.name}</p>
+              <p>{enemy?.HP}</p>
+              <p>{enemy?.AC}</p>
+              <p>{enemy?.SPD}</p>
+              <p>{enemy?.ATK}</p>
+            </div>
           </div>
         </div>
       </section>
