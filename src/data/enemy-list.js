@@ -9,26 +9,37 @@ const goblin = {
   gold: 3
 };
 
-const zombie = {
+const zombie1 = {
   level: 1,
   HP: 22,
   AC: 0,
-  SPD: 2,
+  SPD: 1,
   ATK: 5,
   name: 'Shambling Zombie',
-  XP: 8,
+  XP: 5,
   gold: 0
+};
+
+const skeleton1 = {
+  level: 1,
+  HP: 6,
+  AC: 1,
+  SPD: 4,
+  ATK: 5,
+  name: 'Shambling Skeleton',
+  XP: 5,
+  gold: 1
 };
 
 const hobgoblin = {
   level: 2,
-  HP: 14,
-  AC: 3,
-  SPD: 3,
-  ATK: 3,
+  HP: 20,
+  AC: 4,
+  SPD: 4,
+  ATK: 4,
   name: 'Hobgoblin Scout',
   XP: 8,
-  gold: 8
+  gold: 5
 };
 
 export const enemyList = [goblin, hobgoblin];
