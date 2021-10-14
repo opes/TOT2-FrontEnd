@@ -1,0 +1,17 @@
+.scroll {
+    display: flex;
+    flex-direction: column;
+    height: 90vh;
+    width: 20vw;
+    background-image: url('https://cdn.discordapp.com/attachments/837066685004906506/897964110413709392/image0.png');
+    background-size: 20vw 90vh;
+    background-repeat: no-repeat;
+    align-items: center; 
+}
+
+.portrait {
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    padding: 10%;
+}

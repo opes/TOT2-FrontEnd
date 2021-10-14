@@ -1,0 +1,133 @@
+.main-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 100vw;
+    background-image: url('https://cdn.discordapp.com/attachments/380989362755600394/897221809739558912/image0.jpg');
+    background-color: black;
+    background-repeat: no-repeat;
+    background-size: cover;
+    justify-content: center;
+    align-items: center;
+}
+
+.parchment{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 55vh;
+  width: 35vw;
+  background-image: url('https://cdn.discordapp.com/attachments/380989362755600394/897646780206940170/parchement2.png');
+  background-size: 35vw 55vh;
+  background-repeat: no-repeat;
+}
+
+.cutscene-button {
+  width: 15vw;
+  padding: 2vw 2vh;
+  border: none;
+  font-size: 2rem;
+  border-radius: 20px;
+  background-image: url('https://png2.cleanpng.com/sh/a8492d85ab33b12bbbe242f35539030d/L0KzQYi4UsEzN2g6eZGAYUOzRoW4VMQyaWhnT5C6NUG6Q4S7WME2OWQ2SqICOEi1RomCTwBvbz==/5a30641441a7b7.1517334815131207882689.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.article-container {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  word-wrap: normal;
+  height: fit-content;
+}
+
+article {
+    font-family: "Courier";
+    font-size: 14px;
+    word-wrap: break-word;
+    width: 25vw;
+    flex-wrap: wrap;
+    overflow-wrap: normal;
+    opacity: 1;
+  }
+
+/* article:nth-child(1) {
+    width: 150ch;
+    -webkit-animation: type 5s steps(150, end);
+    animation: type 5s steps(150, end);
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+        white-space: nowrap;
+    overflow: hidden;
+    word-wrap: break-word;
+  }
+  
+article:nth-child(2) {
+    width: 200ch;
+    opacity: 0;
+    -webkit-animation: type2 5s steps(200, end);
+    animation: type2 5s steps(200, end);
+    -webkit-animation-delay: 5s;
+    animation-delay: 5s;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+  }
+  
+  
+  @keyframes type {
+    0% {
+      width: 0;
+    }
+    99.9% {
+      border-right: .15em transparent;
+    }
+    100% {
+      border: none;
+    }
+  }
+  
+  @-webkit-keyframes type {
+    0% {
+      width: 0;
+    }
+    99.9% {
+      border-right: .15em transparent;
+    }
+    100% {
+      border: none;
+    }
+  }
+  
+  @keyframes type2 {
+    0% {
+      width: 0;
+    }
+    1% {
+      opacity: 1;
+    }
+    99.9% {
+      border-right: .15em transparent;
+    }
+    100% {
+      opacity: 1;
+      border: none;
+    }
+  }
+  
+  @-webkit-keyframes type2 {
+    0% {
+      width: 0;
+    }
+    1% {
+      opacity: 1;
+    }
+    99.9% {
+      border-right: .15em transparent;
+    }
+    100% {
+      opacity: 1;
+      border: none;
+    }
+  }
+   */
