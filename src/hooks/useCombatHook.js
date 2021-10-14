@@ -63,12 +63,12 @@ const useCombatHook = (heroObj, enemyListArr) => {
         });
         updateCombatLog(`The Hero has dealt ${enemy?.HP - newEnemyHP} damage, slaining ${enemy?.name}, gaining ${enemy?.gold} gold pieces and ${enemy?.XP} experience!`);
         setActiveCombat(false);
-        return 'Combat Done';
-      } else if (newEnemyHP > 0) {
-        updateCombatLog(`The hero hits ${enemy?.name} for ${enemy?.HP - newEnemyHP} damage!`);
         setPlayer(prev => {
           return { ...prev, STM: prev.STM - 1 };
         });
+        return 'Combat Done';
+      } else if (newEnemyHP > 0) {
+        updateCombatLog(`The hero hits ${enemy?.name} for ${enemy?.HP - newEnemyHP} damage!`);
         setEnemy(prev => {
           return { ...prev, HP: newEnemyHP };
         });
@@ -97,9 +97,11 @@ const useCombatHook = (heroObj, enemyListArr) => {
     if(player.HP <= 0) {
       setActiveCombat(false);
       updateCombatLog(`The Hero has fallen at the hands of ${enemy?.name}...`);
+      alert('You have been defeated, returning to the village in a sorry state.');
       setPlayer(prev => {
-        return { ...prev, XP: 0, gold: 0 };
+        return { ...prev, HP: 1, XP: 0, gold: 0, STM: prev.STM - 1 };
       });
+      history.push('/village');
     }
   };
 
