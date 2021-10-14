@@ -1,8 +1,8 @@
 /* eslint-disable max-len */
 const dwarfWarrior = {
   type: 'dwarf',
-  HP: 25,
-  MAXHP: 25,
+  HP: 15,
+  MAXHP: 15,
   STM: 10,
   AC: 6,
   SPD: 1,
@@ -14,8 +14,8 @@ const dwarfWarrior = {
 
 const foxArcher = {
   type: 'fox',
-  HP: 20,
-  MAXHP: 20,
+  HP: 10,
+  MAXHP: 10,
   STM: 10,
   AC: 2,
   SPD: 5,
@@ -27,8 +27,8 @@ const foxArcher = {
 
 const devilkinMage = {
   type: 'devilkin',
-  HP: 15,
-  MAXHP: 15,
+  HP: 8,
+  MAXHP: 8,
   STM: 10,
   AC: 1,
   SPD: 8,
@@ -40,8 +40,8 @@ const devilkinMage = {
 
 const vampireRonin = {
   type: 'vampire',
-  HP: 35,
-  MAXHP: 35,
+  HP: 20,
+  MAXHP: 20,
   STM: 10,
   AC: 3,
   SPD: 3,
@@ -54,32 +54,32 @@ const vampireRonin = {
 export const heroes = { dwarfWarrior, foxArcher, devilkinMage, vampireRonin };
 
 const dwarfLevelUp = {
-  HP: 5,
-  STM: 7,
+  HP: 3,
+  STM: 2,
   SPD: 1,
   ATK: 2,
   level: 1,
 };
   
 const foxLevelUp = {
-  HP: 3,
-  STM: 5,
+  HP: 2,
+  STM: 1,
   SPD: 2,
-  ATK: 3,
+  ATK: 2,
   level: 1,
 };
   
 const devilkinLevelUp = {
   HP: 2,
-  STM: 5,
-  SPD: 3,
+  STM: 1,
+  SPD: 2,
   ATK: 4,
   level: 1,
 };
   
 const vampireLevelUp = {
-  HP: 8,
-  STM: 5,
+  HP: 4,
+  STM: 1,
   SPD: 2,
   ATK: 2,
   level: 1,

@@ -42,4 +42,4 @@ const hobgoblin = {
   gold: 5
 };
 
-export const enemyList = [goblin, hobgoblin];
+export const enemyList = [goblin, zombie1, skeleton1, hobgoblin];
