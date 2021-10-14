@@ -21,6 +21,7 @@ const CombatPage = () => {
     loading,
     doOneCombatRound,
     doFlee,
+    doAddtionalFight
   } = useCombatHook(contextHero, enemyList);
 
 
@@ -35,24 +36,27 @@ const CombatPage = () => {
   return (
     <div className={styles['main-container']}>
       <section className={styles['left-container']}>
-        <PlayerScroll 
-          type={player.type} 
-          HP={player.HP} 
-          STM={player.STM} 
-          AC={player.AC} 
-          SPD={player.SPD} 
-          ATK={player.ATK} 
-          level={player.level} 
-          gold={player.gold} 
-          XP={player.XP} />
+        <PlayerScroll
+          type={player.type}
+          HP={player.HP}
+          STM={player.STM}
+          AC={player.AC}
+          SPD={player.SPD}
+          ATK={player.ATK}
+          level={player.level}
+          gold={player.gold}
+          XP={player.XP}
+        />
       </section>
       <section className={styles['right-container']}>
         <div className={styles['top-right-container']}></div>
-        <div className={styles['middle-right-container']}><img
-          className={styles['middle-right-content']}
-          src="https://cdn.discordapp.com/attachments/380989362755600394/897995496554123304/image0.jpg"
-          alt="background"
-        /></div>
+        <div className={styles['middle-right-container']}>
+          <img
+            className={styles['middle-right-content']}
+            src="https://cdn.discordapp.com/attachments/380989362755600394/897995496554123304/image0.jpg"
+            alt="background"
+          />
+        </div>
         <div className={styles['bot-right-container']}>
           <div className={styles['left-bot-right-container']}>
             <section className={styles['combat-buttons']}>
@@ -79,6 +83,12 @@ const CombatPage = () => {
                 onClick={() => handleReturnToVillage()}
               >
                 To Village
+              </button>
+              <button
+                className={activeCombat ? styles['hidden'] : styles['bloop']}
+                onClick={() => doAddtionalFight()}
+              >
+                Fight More
               </button>
             </section>
             <section className={styles['combat-log']}>
