@@ -72,7 +72,7 @@
   border: inset rgb(68, 58, 45);
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: flex-end;
 }
 
@@ -128,7 +128,17 @@
 /* THESE STYLES ARE FOR THE INDIVIDUAL DISPLAY COMPS NESTED IN VILLAGE VIEWPORT! */
 
 .tavern-viewport-image {
-  padding-left: 7vw;
+  position: relative;
+  right: 5.5vw;
+  width: 180%;
+  height: 180%;
+  background-image: url("https://cdn.discordapp.com/attachments/380989362755600394/898308608922628107/Untitled_Artwork.jpg");
+}
+
+.church-viewport-image {
+  position: relative;
+  right: 9vw;
+  top: 37vh;
   width: 180%;
   height: 180%;
   background-image: url("https://cdn.discordapp.com/attachments/380989362755600394/898308608922628107/Untitled_Artwork.jpg");
