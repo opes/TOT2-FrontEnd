@@ -199,6 +199,18 @@ button:hover {
   height: 180%;
 }
 
+.tavern-viewport-background {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  background-image: url('https://cdn.discordapp.com/attachments/837471254097297449/898475812108517396/image.png');
+  background-size: 140% 140%;
+  background-position-x: -5vw;
+  background-position-y: -5vh;
+  width: 100%;
+  height: 100%;
+}
 .church-viewport-background {
   display: flex;
   flex-direction: column;
