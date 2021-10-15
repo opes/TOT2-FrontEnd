@@ -21,18 +21,18 @@ const VillagePage = () => {
 
   useEffect(() => {
     if (contextHero.STM <= 0) {
-      alert('You have return to the village but fall from exhaustion.')
+      alert('You have return to the village but fall from exhaustion.');
       setContextHero(prev => {
         return {
           ...prev, 
           gold: 0,
           STM: prev.MAXSTM, 
-         }
-       })
+        };
+      });
     } 
     
     if (contextHero.HP <= 0) {
-      alert('You have been defeated from the previous battel')
+      alert('You have been defeated from the previous battel');
       setContextHero((prev) => {
         return {
           ...prev,
@@ -42,7 +42,7 @@ const VillagePage = () => {
         };
       });
     }
-  }, [])
+  }, []);
 
   const handleVillageLocationChange = ({ target }) => {
     setVillageLocation(target.value);
@@ -53,9 +53,9 @@ const VillagePage = () => {
       return {
         ...prev,
         STM: prev.STM - 1, 
-      }
+      };
     });
-  }
+  };
 
   const handleWilderness = () => {
     const message = confirm(

@@ -21,13 +21,13 @@ const Tavern = ({ handleVillageLocationChange }) => {
       location.replace('/');
     } else {
       setLog(prev => {
-        return [...prev, 'You have saved your progress']
-      })
+        return [...prev, 'You have saved your progress'];
+      });
     }
   };
 
   const handleRest = async (id) => {
-    const currentUser = await getUserById(id)
+    const currentUser = await getUserById(id);
     const costOfGold = currentUser.location * 2; 
     const message = confirm(`Are you sure you want to rest which costs ${costOfGold} gold`);
     if (
@@ -37,21 +37,21 @@ const Tavern = ({ handleVillageLocationChange }) => {
         &&
       message
     )
-      {
-        setContextHero((prev) => ({
-          ...prev,
-          gold: prev.gold - costOfGold,
-          STM: prev.MAXSTM, 
-        }));
+    {
+      setContextHero((prev) => ({
+        ...prev,
+        gold: prev.gold - costOfGold,
+        STM: prev.MAXSTM, 
+      }));
       setLog(prev => {
-        return [...prev, 'You have spent some time resting and have fully regained your stamina.']
-      })
+        return [...prev, 'You have spent some time resting and have fully regained your stamina.'];
+      });
     } else if (contextHero.gold < costOfGold) {
-      alert('You dont have enough gold...')
+      alert('You dont have enough gold...');
     } else if (contextHero.STM >= contextHero.MAXSTM) {
-      alert('You dont need to rest')
+      alert('You dont need to rest');
     }
-  }
+  };
 
   const handleRetire = async (id) => {
     const message = confirm('Are you sure you want to retire hero?\nAll your progress will be deleted!!');
@@ -74,39 +74,39 @@ const Tavern = ({ handleVillageLocationChange }) => {
       </section>
       <section className={styles['viewport-right-container']}>
         <section className={styles['viewport-right-top-container']}>
-          <div className={styles['viewport-button']}>
-            <button onClick={() => handleSave()}>Save</button>
-            <p> - Save your progress and continue playing.</p>
-          </div>
-          <div className={styles['viewport-button']}>
-            <button onClick={() => handleSave(true)}>Save & Quit</button>
-            <p> - Save your progress and quit to Title Screen.</p>
-          </div>
-          <div className={styles['viewport-button']}>
-            <button onClick={() => handleRetire(contextGoogleId)}>
-              Retire the Hero
-            </button>
-            <p> - Deletes ALL save progress. CANNOT BE UNDONE.</p>
-          </div>
-          <div className={styles['viewport-button']}>
-            <button onClick={() => handleRest(contextGoogleId)}>
-              Rest for the night
-            </button>
-            <p> - Rest and regain your stamina.</p>
-          </div>
-          <div className={styles['viewport-button']}>
-            <button
-              onClick={(event) => handleVillageLocationChange(event)}
-              value="main"
-            >
+          <div className={styles[ 'tavern-viewport-background' ]}>
+            <div className={styles['grey-screen']}>
+              <div className={styles['viewport-button']}>
+                <button onClick={() => handleSave()}>Save- Save your progress and continue playing.</button>
+              </div>
+              <div className={styles['viewport-button']}>
+                <button onClick={() => handleSave(true)}>Save & Quit - Save your progress and quit to Title Screen.</button>
+              </div>
+              <div className={styles['viewport-button']}>
+                <button onClick={() => handleRetire(contextGoogleId)}>
+              Retire the Hero - Deletes ALL save progress. CANNOT BE UNDONE.
+                </button>
+              </div>
+              <div className={styles['viewport-button']}>
+                <button onClick={() => handleRest(contextGoogleId)}>
+              Rest for the night - Rest and regain your stamina.
+                </button>
+              </div>
+              <div className={styles['viewport-button']}>
+                <button
+                  onClick={(event) => handleVillageLocationChange(event)}
+                  value="main"
+                >
               Go back to Village
-            </button>
+                </button>
+              </div>
+            </div>
           </div>
         </section>
         <section className={styles['viewport-right-bot-container']}>
           <div className={styles['text-box']}>{
             log.map((single, idx) => {
-              return <p key={idx}> {single} </p>
+              return <p key={idx}> {single} </p>;
             })
           }</div>
         </section>

@@ -35,8 +35,8 @@ const Church = ({ handleVillageLocationChange }) => {
           };
         });
         setLog(prev => {
-          return [...prev, `Now you are a level ${contextHero.level + 1} ${contextHero.type}`]
-        })
+          return [...prev, `Now you are a level ${contextHero.level + 1} ${contextHero.type}`];
+        });
       }
     } else {
       alert('You do not have enough XP to level up...');
@@ -72,26 +72,31 @@ const Church = ({ handleVillageLocationChange }) => {
         />
       </section>
       <section className={styles['viewport-right-container']}>
-        <section className={styles['viewport-right-top-container']}>
-          <div className={styles['viewport-button']}>
-            <button onClick={hanldeHeal}> Heal </button>
-            <p> - Offer your experience to Torr and restore your health.</p>
-          </div>
-          <div className={styles['viewport-button']}>
-            <button onClick={handleLevelUp}> Level Up </button>
-            <p>
-              {' '}
-              - Offer your experience to Torr and increase your battle prowess.
-            </p>
-          </div>
-          <div className={styles['viewport-button']}>
-            <button
-              onClick={(event) => handleVillageLocationChange(event)}
-              value="main"
-            >
+        <section className={styles[ 'viewport-right-top-container' ]}>
+          <div className={styles[ 'church-viewport-background' ]}>
+            <div className={styles['grey-screen']}>
+              <div className={styles['viewport-button']}>
+                <button onClick={hanldeHeal}> Heal - Offer your experience to Torr and restore your health. </button>
+              </div>
+              <div className={styles['viewport-button']}>
+                <button onClick={handleLevelUp}> Level Up- Offer your experience to Torr and increase your battle prowess. </button>
+              </div>
+              <div className={styles['viewport-button']}>
+                <button
+                  onClick={(event) => handleVillageLocationChange(event)}
+                  value="main"
+                >
               Go back to Village
-            </button>
+                </button>
+              </div>
+            </div>
           </div>
+          
+          {/* <img
+            className={styles['church-viewport-image']}
+            src="https://cdn.discordapp.com/attachments/837471254097297449/898445502494945400/image.png"
+            alt="church"
+          /> */}
         </section>
         <section className={styles['viewport-right-bot-container']}>
           <div className={styles['text-box']}>{log}</div>
