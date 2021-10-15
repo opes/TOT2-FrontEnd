@@ -123,13 +123,23 @@
   text-overflow: clip;
   flex-direction: column;
   justify-content: center;
-  align-items: flex-start;
+  align-items: space-evenly;
 }
 
-.viewport-button {
+.viewport-button{
   display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.viewport-button > button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   flex-direction: row;
-  margin: 1vh
+  border: outset #9DA7AF;
+  width: 90%;
+  filter: drop-shadow(-5px 5px 8px rgb(7, 8, 8));
 }
 
 .viewport-right-bot-container {
@@ -174,6 +184,10 @@
 }
 
 .church-viewport-background {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
   background-image: url('https://cdn.discordapp.com/attachments/837471254097297449/898445502494945400/image.png');
   background-size: 185% 185%;
   background-position-x: -12vw;

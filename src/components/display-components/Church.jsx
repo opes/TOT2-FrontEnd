@@ -75,15 +75,10 @@ const Church = ({ handleVillageLocationChange }) => {
         <section className={styles[ 'viewport-right-top-container' ]}>
           <div className={styles['church-viewport-background']}>
             <div className={styles['viewport-button']}>
-              <button onClick={hanldeHeal}> Heal </button>
-              <p> - Offer your experience to Torr and restore your health.</p>
+              <button onClick={hanldeHeal}> Heal - Offer your experience to Torr and restore your health. </button>
             </div>
             <div className={styles['viewport-button']}>
-              <button onClick={handleLevelUp}> Level Up </button>
-              <p>
-                {' '}
-              - Offer your experience to Torr and increase your battle prowess.
-              </p>
+              <button onClick={handleLevelUp}> Level Up- Offer your experience to Torr and increase your battle prowess. </button>
             </div>
             <div className={styles['viewport-button']}>
               <button
