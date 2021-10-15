@@ -8,6 +8,8 @@
   background-image: url('https://cdn.discordapp.com/attachments/380989362755600394/897956370630983711/image0.jpg');
   background-repeat: no-repeat;
   background-size: 100vw 100vh;
+  overflow: hidden;
+  position: relative;
 }
 
 .left-component-playerScroll {
