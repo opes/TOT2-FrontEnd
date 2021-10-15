@@ -10,18 +10,33 @@ const useCombatHook = (heroObj, enemyListArr) => {
   const [activeCombat, setActiveCombat] = useState(true);
   const [loading, setLoading] = useState(true);
   const [combatLog, setCombatLog] = useState([]);
-  const setContextHero = useSetContextHero(); 
-  const history = useHistory(); 
+  const setContextHero = useSetContextHero();
+  const history = useHistory();
 
- 
   useEffect(() => {
     const chosenEnemy = grabRandomEnemy(player?.level, enemyListArr);
     setEnemy(chosenEnemy);
     setLoading(false);
   }, []);
 
+  useEffect(() => {
+    if (player.HP === 0) {
+      setActiveCombat(false);
+      updateCombatLog(`The Hero has fallen at the hands of ${enemy?.name}...`);
+      alert(
+        'You have been defeated, returning to the village in a sorry state.'
+      );
+      setContextHero((prev) => {
+        const newSTM = prev.STM - 2;
+        if (newSTM < 0) newSTM = 0;
+        return { ...prev, HP: 1, STM: newSTM };
+      });
+      history.push('/village');
+    }
+  }, [player.HP]);
+
   const updateCombatLog = (string) => {
-    setCombatLog(prev => [...prev, string]);
+    setCombatLog((prev) => [...prev, string]);
   };
 
   const attackRoll = (attacker) => {
@@ -31,27 +46,27 @@ const useCombatHook = (heroObj, enemyListArr) => {
   };
 
   const doDamage = (attacker, defender) => {
-    const additionalDamage = Math.floor(Math.random() * (3 * attacker.level));
-    let damageDone = (attacker.ATK + additionalDamage) - defender.AC;
-    if(damageDone < 0) damageDone = 0;
+    const additionalDamage = Math.floor(Math.random() * (1 * attacker.level));
+    let damageDone = attacker.ATK + additionalDamage - defender.AC;
+    if (damageDone < 0) damageDone = 0;
     const defenderHP = defender.HP - damageDone;
     return defenderHP;
   };
 
-
   const doFlee = () => {
-    const flee = confirm(`Do you want to flee from ${enemy?.name}? [${enemy?.gold}]`);
+    const flee = confirm(
+      `Do you want to flee from ${enemy?.name}? [${enemy?.gold}]`
+    );
     if (flee) {
       let newPlayerGold = player.gold - enemy?.gold;
       if (newPlayerGold <= 0) newPlayerGold = 0;
 
       setContextHero((prev) => {
         return { ...prev, gold: newPlayerGold };
-      }); 
-      history.push('/village')
+      });
+      history.push('/village');
     }
   };
-    
 
   const doOneCombatRound = () => {
     const playerHitChance = player.AC + player.SPD;
@@ -59,28 +74,34 @@ const useCombatHook = (heroObj, enemyListArr) => {
 
     // PLAYER PHASE
     const playerAttack = attackRoll(player);
-    if(playerAttack >= enemyHitChance) {
+    if (playerAttack >= enemyHitChance) {
       // IF PLAYER HITS, THESE ACTIONS ARE TAKEN
       const newEnemyHP = doDamage(player, enemy);
       if (newEnemyHP <= 0) {
         const newPlayerXP = player.XP + enemy?.XP;
         const newPlayerGold = player.gold + enemy?.gold;
-         setEnemy((prev) => {
-           return { ...prev, HP: newEnemyHP };
-         });
-        setPlayer(prev => {
+        setEnemy((prev) => {
+          return { ...prev, HP: newEnemyHP };
+        });
+        setPlayer((prev) => {
           return {
             ...prev,
             XP: newPlayerXP,
             gold: newPlayerGold,
           };
         });
-        updateCombatLog(`The Hero has dealt ${enemy?.HP - newEnemyHP} damage, slaining ${enemy?.name}, gaining ${enemy?.gold} gold pieces and ${enemy?.XP} experience!`);
+        updateCombatLog(
+          `The Hero has dealt ${enemy?.HP - newEnemyHP} damage, slaining ${
+            enemy?.name
+          }, gaining ${enemy?.gold} gold pieces and ${enemy?.XP} experience!`
+        );
         setActiveCombat(false);
         return 'Combat Done';
       } else if (newEnemyHP > 0) {
-        updateCombatLog(`The hero hits ${enemy?.name} for ${enemy?.HP - newEnemyHP} damage!`);
-        setEnemy(prev => {
+        updateCombatLog(
+          `The hero hits ${enemy?.name} for ${enemy?.HP - newEnemyHP} damage!`
+        );
+        setEnemy((prev) => {
           return { ...prev, HP: newEnemyHP };
         });
       }
@@ -90,27 +111,35 @@ const useCombatHook = (heroObj, enemyListArr) => {
     }
 
     //ENEMY HP CHECK
-    if(enemy?.HP > 0) {
+    if (enemy?.HP > 0) {
       //ENEMY PHASE
-      const enemyAttack = attackRoll(enemy);
-      if(enemyAttack >= playerHitChance) {
-        const newPlayerHP = doDamage(enemy, player);
-        updateCombatLog(`The ${enemy?.name} hits the Hero for ${player.HP - newPlayerHP} damage!`);
-        setPlayer(prev => {
-          return { ...prev, HP: newPlayerHP };
+      const enemyRoll = attackRoll(enemy);
+      const enemyAttack = doDamage(enemy, player);
+      if (enemyRoll >= playerHitChance) {
+        updateCombatLog(
+          `The ${enemy?.name} hits the Hero for ${
+            player.HP - enemyAttack
+          } damage!`
+        );
+        setPlayer((prev) => {
+          return { ...prev, HP: enemyAttack };
         });
-      } else {
-        updateCombatLog(`The ${enemy?.name} misses their attack against the Hero`);
+      } else if (enemyRoll < playerHitChance) {
+        updateCombatLog(
+          `The ${enemy?.name} misses their attack against the Hero`
+        );
       }
     }
 
     //FINAL CHECK TO SEE IF PLAYER LIVES
-    if(player.HP <= 0) {
+    if (player.HP <= 0) {
       setActiveCombat(false);
       updateCombatLog(`The Hero has fallen at the hands of ${enemy?.name}...`);
-      alert('You have been defeated, returning to the village in a sorry state.');
-      setContextHero(prev => {
-        const newSTM = prev.STM - 2; 
+      alert(
+        'You have been defeated, returning to the village in a sorry state.'
+      );
+      setContextHero((prev) => {
+        const newSTM = prev.STM - 2;
         if (newSTM < 0) newSTM = 0;
         return { ...prev, HP: 1, STM: newSTM };
       });
@@ -119,13 +148,13 @@ const useCombatHook = (heroObj, enemyListArr) => {
   };
 
   const doAddtionalFight = () => {
-    setLoading(true); 
-    setActiveCombat(true); 
+    setLoading(true);
+    setActiveCombat(true);
     const chosenEnemy = grabRandomEnemy(player?.level, enemyListArr);
     setEnemy(chosenEnemy);
-    setCombatLog([]); 
-    setLoading(false); 
-  }
+    setCombatLog([]);
+    setLoading(false);
+  };
 
   return {
     player,
