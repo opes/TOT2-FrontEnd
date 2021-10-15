@@ -106,6 +106,7 @@
   justify-content: center;
   align-items: flex-start;
   overflow-x: hidden;
+  border: solid 3px rgb(224, 14, 49);
 }
 
 .viewport-right-top-container {
@@ -118,9 +119,11 @@
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
+  border: solid 3px yellow;
 }
 
 .viewport-button {
+  border: solid 3px blue;
   display: flex;
   flex-direction: row;
   margin: 1vh
