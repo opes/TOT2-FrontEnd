@@ -75,11 +75,6 @@ input[type="radio"]:hover + div {
   border-image-source: url('https://t3.ftcdn.net/jpg/00/70/87/48/240_F_70874851_f0GblTdhvXkq6L9a7ZbUAKfNSXfGxZ1S.jpg');
   border-image-slice: 60 30 fill;
   border-image-outset: 2px;
-  /* background-image: url('https://t3.ftcdn.net/jpg/00/70/87/48/240_F_70874851_f0GblTdhvXkq6L9a7ZbUAKfNSXfGxZ1S.jpg');
-  background-repeat: no-repeat;
-  background-position-x: center;
-  background-position-y: center;
-  background-size: 355px 115px; */
   filter: drop-shadow(-3px 3px 8px #cac5b8de);
 }
 

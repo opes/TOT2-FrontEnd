@@ -6,6 +6,10 @@ import { useActiveSession } from '../../hooks/SessionProvider';
 import useCombatHook from '../../hooks/useCombatHook';
 import PlayerScroll from '../display-components/PlayerScroll';
 import styles from './Tutorial.css';
+import dwarf from '../../assets/dwarf.png';
+import fox from '../../assets/fox.png';
+import devilkin from '../../assets/devilkin.png';
+import vampire from '../../assets/vampire.png';
 
 const tutorialFight = [
   {
@@ -14,7 +18,8 @@ const tutorialFight = [
     AC: 1,
     SPD: 2,
     ATK: 2,
-    name: 'Weak Goblin',
+    name: 'Goblin',
+    img: 'https://cdn.discordapp.com/attachments/380989362755600394/898626117165010974/Idle01.png',
     XP: 4,
     gold: 2,
   },
@@ -43,6 +48,8 @@ const Tutorial = () => {
   if (!activeSession) history.push('/');
   if (loading) return <h1>Loading...</h1>;
 
+  const imgSrc = { dwarf, fox, devilkin, vampire };
+
   return (
     <div className={styles['main-container']}>
       <section className={styles['left-container']}>
@@ -61,15 +68,14 @@ const Tutorial = () => {
       <section className={styles['right-container']}>
         <div className={styles['top-right-container']}></div>
         <div className={styles['middle-right-container']}>
-          <img
-            className={styles['middle-right-content']}
-            src="https://cdn.discordapp.com/attachments/380989362755600394/897995496554123304/image0.jpg"
-            alt="background"
-          />
+          <div className={styles['middle-right-content']}>
+            <img src={imgSrc[player.type]}  className={styles['hero-sprite']} alt="player-sprite"/>
+            <img src={enemy.img} className={styles[`${enemy.name}`]} alt={enemy} />
+          </div>
         </div>
         <div className={styles['bot-right-container']}>
           <div className={styles['left-bot-right-container']}>
-            <section className={styles['combat-buttons']}>
+            <section className={styles[ 'combat-buttons' ]}>
               <button
                 onClick={doOneCombatRound}
                 className={!activeCombat ? styles['hidden'] : styles['bloop']}
@@ -107,11 +113,11 @@ const Tutorial = () => {
           </div>
           <div className={styles['right-bot-right-container']}>
             <div className={styles['enemy-stats']}>
-              <p>{enemy?.name}</p>
-              <p>{enemy?.HP}</p>
-              <p>{enemy?.AC}</p>
-              <p>{enemy?.SPD}</p>
-              <p>{enemy?.ATK}</p>
+              <h2>{enemy?.name}</h2>
+              <p>Health Points: {enemy?.HP}</p>
+              <p>Armor Class: {enemy?.AC}</p>
+              <p>Speed: {enemy?.SPD}</p>
+              <p>Attack: {enemy?.ATK}</p>
             </div>
           </div>
         </div>

@@ -3,8 +3,6 @@ import React, { useState } from 'react';
 import SignUp from '../functional-components/SignUp';
 import Login from '../functional-components/Login';
 import styles from './TitlePage.css';
-import mainLogo from '../../assets/mock-logo.png';
-// import fogStyles from '../../styles/fog.css';
 
 
 const TitlePage = () => {
@@ -29,7 +27,7 @@ const TitlePage = () => {
         <div
           className={!signedIn ? styles['right-container'] : styles['hidden']}
         >
-          <img src={mainLogo} alt="Main logo" className={styles['logo']} />
+          <img src={'https://cdn.discordapp.com/attachments/852813558109569024/898648369768050699/TOT2_Logo.png'} alt="Main logo" className={styles['logo']} />
         </div>
       </div>
       <div>

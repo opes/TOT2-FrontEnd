@@ -1,3 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Calligraffitti&display=swap');
+
+button:hover {
+  cursor: pointer;
+}
+
 .village-main-container {
   display: flex;
   flex-direction: row;
@@ -8,12 +14,34 @@
   background-image: url('https://cdn.discordapp.com/attachments/380989362755600394/897956370630983711/image0.jpg');
   background-repeat: no-repeat;
   background-size: 100vw 100vh;
+  overflow: hidden;
+  position: relative;
+}
+
+.left-component-playerScroll {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 25vw;
+    font-family: 'Calligraffitti', cursive;
+    color: rgb(177, 23, 54);
+    font-weight: bold;
+    font-size: 35px;
+    line-height: 3.5rem;
+    text-shadow: -1px 1px 2px rgb(41, 45, 48);
+    filter: drop-shadow(-3px 3px 8px rgb(41, 45, 48));
+    margin-left: 55px;
+    margin-top: 5vh;
+    position: relative;
+    overflow: hidden;
+    filter: drop-shadow(-5px 5px 10px rgb(7, 8, 8));
 }
 
 .right-component-village-enterties {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  filter: drop-shadow(-5px 5px 10px rgb(7, 8, 8));
 }
 
 .village-viewport {
@@ -23,6 +51,7 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  filter: drop-shadow(-5px 5px 10px rgb(7, 8, 8));
 }
 
 .village-buttons-container {
@@ -43,12 +72,18 @@
   border-image-source: url('https://t3.ftcdn.net/jpg/00/70/87/48/240_F_70874851_f0GblTdhvXkq6L9a7ZbUAKfNSXfGxZ1S.jpg');
   border-image-slice: 31 33 fill;
   border-image-outset: 2px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
 
 .village-button { 
   width: 11vw;
-  height: 7vh;
-  color: white;
+  height: 7.5vh;
+  color: rgb(223, 202, 172);
+  text-shadow: -1px 1px rgb(41, 45, 48);
+  font-family: fantasy;
   font-size: 2rem;
   border-style: solid;
   border-width: 1.5vw;
@@ -59,5 +94,184 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  filter: drop-shadow(-5px 5px 8px rgb(7, 8, 8));
 }
 
+button {
+  -moz-transition: all 0.2s ease-in;
+  -o-transition: all 0.2s ease-in;
+  -webkit-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+}
+
+.village-button:hover {
+  /* opacity: 75%; */
+  font-weight: bolder;
+  color: rgb(223, 202, 172);
+  text-shadow: 8px 8px 30px #cac5b8de;
+  filter: drop-shadow(1px 1px 10px #cac5b8de);
+  -moz-transition: all 0.2s ease-in;
+  -o-transition: all 0.2s ease-in;
+  -webkit-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+}
+
+.viewport-left-container {
+  height: 100%;
+  width: 40%;
+  overflow: hidden;
+  border: inset rgb(68, 58, 45);
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-end;
+}
+
+.viewport-right-container {
+  height: 100%;
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  overflow-x: hidden;
+}
+
+.viewport-right-top-container {
+  display: flex;
+  width: 100%;
+  height: 70%;
+  overflow: scroll;
+  overflow-x: hidden;
+  text-overflow: clip;
+  flex-direction: column;
+  justify-content: center;
+  align-items: space-evenly;
+}
+
+.viewport-button {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.viewport-button:hover {
+  opacity: 90%;
+  filter: drop-shadow(1px 1px 1px rgb(223, 202, 172));
+}
+
+.viewport-button > button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  border: outset #9DA7AF;
+  background-color: #9DA7AF;
+  font-size: 1rem;
+  font-weight: bolder;
+  font-family: fantasy;
+  color: #323435;
+  text-shadow: -1px -1px 2px rgb(41, 45, 48);
+  text-shadow: 1px 1px 2px rgb(152, 166, 173);
+  width: 90%;
+  filter: drop-shadow(-5px 5px 8px rgb(7, 8, 8));
+}
+
+.viewport-right-bot-container {
+  width: 95%;
+  height: 30%;
+  border-style: solid;
+  border-width: 1vw;
+  border-image-source: url('https://t3.ftcdn.net/jpg/00/70/87/48/240_F_70874851_f0GblTdhvXkq6L9a7ZbUAKfNSXfGxZ1S.jpg');
+  border-image-slice: 60 60 fill;
+  border-image-outset: 2px;
+  overflow: scroll;
+  overflow-x: hidden;
+  text-overflow: clip;
+}
+
+.text-box {
+  background-color: rgba(0, 0, 0, 0.698);
+  width: 100%;
+  height: 100%;
+  color: rgb(223, 202, 172);
+  font-family: fantasy;
+  border: inset rgb(68, 58, 45);
+  padding: 3px;
+}
+
+.grey-screen {
+  display: inherit;
+  flex-direction: inherit;
+  justify-content: inherit;
+  align-items: inherit;
+  width: 100%;
+  height: 100%;
+  background-color:rgba(21, 22, 26, 0.349);
+}
+
+/* THESE STYLES ARE FOR THE INDIVIDUAL DISPLAY COMPS NESTED IN VILLAGE VIEWPORT! */
+
+.tavern-viewport-image {
+  position: relative;
+  right: 5.5vw;
+  width: 180%;
+  height: 180%;
+
+}
+
+.church-viewport-image {
+  position: relative;
+  right: 9vw;
+  top: 37vh;
+  width: 180%;
+  height: 180%;
+}
+
+.tavern-viewport-background {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  background-image: url('https://cdn.discordapp.com/attachments/837471254097297449/898475812108517396/image.png');
+  background-size: 140% 140%;
+  background-position-x: -5vw;
+  background-position-y: -5vh;
+  width: 100%;
+  height: 100%;
+}
+
+.church-viewport-background {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  background-image: url('https://cdn.discordapp.com/attachments/837471254097297449/898445502494945400/image.png');
+  background-size: 185% 185%;
+  background-position-x: -12vw;
+  background-position-y: -30vh;
+  width: 100%;
+  height: 100%;
+}
+
+.shop-viewport-background {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: black;
+  background-image: url('https://cdn.discordapp.com/attachments/837471254097297449/898479625485819934/cart.png');
+  background-size: 230% 210%;
+  background-position-x: -30.5vw;
+  background-position-y: -18vh;
+  width: 100%;
+  height: 100%;
+}
+
+.shop-viewport-image {
+  position: relative;
+  right: 46vw;
+  top: 80vh;
+  width: 300%;
+  height: 280%;
+}

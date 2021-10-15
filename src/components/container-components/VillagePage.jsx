@@ -1,7 +1,7 @@
 /* eslint-disable max-len */
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
-import { useContextHero } from '../../hooks/HeroProvider';
+import { useContextHero, useSetContextHero } from '../../hooks/HeroProvider';
 import { useActiveSession } from '../../hooks/SessionProvider';
 import Church from '../display-components/Church';
 import PlayerScroll from '../display-components/PlayerScroll';
@@ -15,11 +15,46 @@ const VillagePage = () => {
   const history = useHistory();
   const [villageLocation, setVillageLocation] = useState('main');
   const contextHero = useContextHero();
+  const setContextHero = useSetContextHero();
 
   if (!activeSession) history.push('/');
 
+  useEffect(() => {
+    if (contextHero.STM <= 0) {
+      alert('You have return to the village but fall from exhaustion.');
+      setContextHero(prev => {
+        return {
+          ...prev, 
+          gold: 0,
+          STM: prev.MAXSTM, 
+        };
+      });
+    } 
+    
+    if (contextHero.HP <= 0) {
+      alert('You have been defeated from the previous battel');
+      setContextHero((prev) => {
+        return {
+          ...prev,
+          gold: 1,
+          HP: 1, 
+          STM: 1,
+        };
+      });
+    }
+  }, []);
+
   const handleVillageLocationChange = ({ target }) => {
     setVillageLocation(target.value);
+  };
+
+  const handleHeroStamina = () => {
+    setContextHero(prev => {
+      return {
+        ...prev,
+        STM: prev.STM - 1, 
+      };
+    });
   };
 
   const handleWilderness = () => {
@@ -27,6 +62,7 @@ const VillagePage = () => {
       'You are about to head to the wilderness, do you want to continue?'
     );
     if (message) {
+      handleHeroStamina();
       history.push('/combat');
     }
   };
@@ -51,7 +87,7 @@ const VillagePage = () => {
           {villageLocation === 'main' ? (
             <img
               className={styles['viewport-content']}
-              src="https://cdn.discordapp.com/attachments/380989362755600394/895906508976562206/First_Town.jpg"
+              src="https://cdn.discordapp.com/attachments/380989362755600394/898306680578797608/Untitled_Artwork.jpg"
               alt="background"
             />
           ) : (

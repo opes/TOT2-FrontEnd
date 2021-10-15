@@ -7,11 +7,21 @@
     background-size: 20vw 90vh;
     background-repeat: no-repeat;
     align-items: center; 
+    position: relative;
 }
 
 .portrait {
-    height: 150px;
-    width: 150px;
+    height: 320px;
+    width: 320px;
     border-radius: 50%;
     padding: 10%;
+    filter: drop-shadow(-18px 15px 8px #302f2ca6);
+    position: relative;
+}
+
+.hero-type {
+    /* border: solid salmon 3px; */
+    margin-top: 150px;
+    font-size: 3.85rem;
+    position: relative;
 }
