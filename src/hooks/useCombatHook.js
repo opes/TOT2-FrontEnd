@@ -6,7 +6,6 @@ import { useHistory } from 'react-router';
 
 const useCombatHook = (heroObj, enemyListArr) => {
   const [player, setPlayer] = useState(heroObj);
-  console.log(heroObj, 'heroObj')
   const [enemy, setEnemy] = useState({});
   const [activeCombat, setActiveCombat] = useState(true);
   const [loading, setLoading] = useState(true);

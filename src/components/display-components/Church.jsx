@@ -1,5 +1,5 @@
 /* eslint-disable max-len */
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { useContextHero, useSetContextHero } from '../../hooks/HeroProvider';
 import { heroesLevelUp } from '../../data/hero-templates';
@@ -8,6 +8,7 @@ import { getUserById } from '../../services/backendUtils';
 import styles from '../container-components/VillagePage.css';
 
 const Church = ({ handleVillageLocationChange }) => {
+  const [log, setLog] = useState([]); 
   const contextHero = useContextHero();
   const contextGoogleId = useContextGoogleId();
   const setContextHero = useSetContextHero();
@@ -33,6 +34,9 @@ const Church = ({ handleVillageLocationChange }) => {
             XP: prevHero.XP - neededXP,
           };
         });
+        setLog(prev => {
+          return [...prev, `Now you are a level ${contextHero.level + 1} ${contextHero.type}`]
+        })
       }
     } else {
       alert('You do not have enough XP to level up...');
@@ -61,7 +65,11 @@ const Church = ({ handleVillageLocationChange }) => {
   return (
     <div className={styles['viewport-content']}>
       <section className={styles['viewport-left-container']}>
-        <img className={styles['church-viewport-image']} src="https://cdn.discordapp.com/attachments/380989362755600394/898307690969825343/Untitled_Artwork.jpg" alt="church"/>
+        <img
+          className={styles['church-viewport-image']}
+          src="https://cdn.discordapp.com/attachments/380989362755600394/898307690969825343/Untitled_Artwork.jpg"
+          alt="church"
+        />
       </section>
       <section className={styles['viewport-right-container']}>
         <section className={styles['viewport-right-top-container']}>
@@ -71,19 +79,22 @@ const Church = ({ handleVillageLocationChange }) => {
           </div>
           <div className={styles['viewport-button']}>
             <button onClick={handleLevelUp}> Level Up </button>
-            <p> - Offer your experience to Torr and increase your battle prowess.</p>
+            <p>
+              {' '}
+              - Offer your experience to Torr and increase your battle prowess.
+            </p>
           </div>
           <div className={styles['viewport-button']}>
             <button
               onClick={(event) => handleVillageLocationChange(event)}
               value="main"
-            >Go back to Village</button>
+            >
+              Go back to Village
+            </button>
           </div>
         </section>
         <section className={styles['viewport-right-bot-container']}>
-          <div className={styles['text-box']}>
-            {''}
-          </div>
+          <div className={styles['text-box']}>{log}</div>
         </section>
       </section>
     </div>
