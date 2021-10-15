@@ -32,6 +32,7 @@
     margin-top: 5vh;
     position: relative;
     overflow: hidden;
+    filter: drop-shadow(-5px 5px 10px rgb(7, 8, 8));
   }
   
   .right-container {
@@ -45,6 +46,7 @@
     display: flex;
     flex-direction: row;
     height: 10vh;
+    filter: drop-shadow(-5px 5px 10px rgb(7, 8, 8));
   }
   
   .middle-right-container {
@@ -54,6 +56,7 @@
     width: 65vw;
     margin-top: -5.5vh;
     filter: drop-shadow(-5px 5px 5px rgb(13, 13, 14));
+    filter: drop-shadow(-5px 5px 10px rgb(7, 8, 8));
   }
   
   .middle-right-content {
@@ -73,6 +76,7 @@
   align-items: center;
   margin-top: 3.5vh;
   filter: drop-shadow(-5px 5px 5px rgb(13, 13, 14));
+  filter: drop-shadow(-5px 5px 10px rgb(7, 8, 8));
   }
   
   .left-bot-right-container {
@@ -88,6 +92,7 @@
   border-image-slice: 60 60 fill;
   border-image-outset: 2px;
   filter: drop-shadow(-5px 5px 5px rgb(13, 13, 14));
+  filter: drop-shadow(-5px 5px 10px rgb(7, 8, 8));
   }
   
   .combat-log {
@@ -129,6 +134,7 @@
   .combat-buttons {
     display: flex;
     justify-content: space-around;
+    filter: drop-shadow(-5px 5px 10px rgb(7, 8, 8));
   }
 
   
