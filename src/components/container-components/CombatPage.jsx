@@ -22,7 +22,6 @@ const CombatPage = () => {
     enemy,
     activeCombat,
     combatLog,
-    loading,
     doOneCombatRound,
     doFlee,
     doAddtionalFight
@@ -57,8 +56,8 @@ const CombatPage = () => {
         <div className={styles['top-right-container']}></div>
         <div className={styles[ 'middle-right-container' ]}>
           <div className={styles[ 'middle-right-content' ]}>
-            <img src={imgSrc[player.type]} alt="player-sprite"/>
-            <img></img>
+            <img src={imgSrc[player.type]} className={styles['hero-sprite']} alt="player-sprite"/>
+            <img src={enemy.img} className={styles[`${enemy.name}`]} alt={enemy} />
           </div>
         </div>
         <div className={styles['bot-right-container']}>
@@ -84,15 +83,15 @@ const CombatPage = () => {
               </button>
               <button
                 className={activeCombat ? styles['hidden'] : styles['bloop']}
-                onClick={() => handleReturnToVillage()}
-              >
-                To Village
-              </button>
-              <button
-                className={activeCombat ? styles['hidden'] : styles['bloop']}
                 onClick={() => doAddtionalFight()}
               >
                 Fight More
+              </button>
+              <button
+                className={activeCombat ? styles['hidden'] : styles['bloop']}
+                onClick={() => handleReturnToVillage()}
+              >
+                To Village
               </button>
             </section>
             <section className={styles['combat-log']}>

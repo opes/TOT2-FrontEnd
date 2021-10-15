@@ -6,6 +6,10 @@ import { useActiveSession } from '../../hooks/SessionProvider';
 import useCombatHook from '../../hooks/useCombatHook';
 import PlayerScroll from '../display-components/PlayerScroll';
 import styles from './Tutorial.css';
+import dwarf from '../../assets/dwarf.png';
+import fox from '../../assets/fox.png';
+import devilkin from '../../assets/devilkin.png';
+import vampire from '../../assets/vampire.png';
 
 const tutorialFight = [
   {
@@ -14,7 +18,8 @@ const tutorialFight = [
     AC: 1,
     SPD: 2,
     ATK: 2,
-    name: 'Weak Goblin',
+    name: 'Goblin',
+    img: 'https://cdn.discordapp.com/attachments/380989362755600394/898626117165010974/Idle01.png',
     XP: 4,
     gold: 2,
   },
@@ -43,6 +48,8 @@ const Tutorial = () => {
   if (!activeSession) history.push('/');
   if (loading) return <h1>Loading...</h1>;
 
+  const imgSrc = { dwarf, fox, devilkin, vampire };
+
   return (
     <div className={styles['main-container']}>
       <section className={styles['left-container']}>
@@ -62,6 +69,8 @@ const Tutorial = () => {
         <div className={styles['top-right-container']}></div>
         <div className={styles['middle-right-container']}>
           <div className={styles['middle-right-content']}>
+            <img src={imgSrc[player.type]}  className={styles['hero-sprite']} alt="player-sprite"/>
+            <img src={enemy.img} className={styles[`${enemy.name}`]} alt={enemy} />
           </div>
         </div>
         <div className={styles['bot-right-container']}>

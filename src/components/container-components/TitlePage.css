@@ -14,7 +14,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: flex-end;
   background-size: 275px 150px;
   overflow: hidden;
 }
@@ -31,7 +31,6 @@
 
 .login-button {
   padding: 0;
-  width: 209px;
 }
 
 .login-button:hover, .signup-button:hover {
@@ -41,6 +40,10 @@
 .right-container {
   width: 70%;
   overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
 
 .full-page {
@@ -60,13 +63,8 @@
 }
 
 .logo {
-  width: 60vw;
-  display: flex;
-  margin: 225px;
-  margin-left: 55px;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
+  width: 80%;
+  height: auto;
 }
 
 .button {

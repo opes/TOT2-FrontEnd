@@ -72,6 +72,10 @@
   background-size: 100% 100%;
   background-position-x: 0vw;
   background-position-y: 0vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
 }
   
   .bot-right-container {
@@ -191,4 +195,14 @@ filter: drop-shadow(-5px 5px 10px rgb(7, 8, 8));
 
   .enemy-stats > p {
     line-height: 1.75em;
+  }
+
+  .hero-sprite {
+    width: 20vw;
+    height: auto;
+  }
+
+  .Goblin {
+    height: 20vh;
+    transform: scaleX(-1);
   }
