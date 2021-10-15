@@ -31,7 +31,6 @@ const CombatPage = () => {
   };
 
   if (!activeSession) history.push('/');
-  if (loading) return <h1>Loading...</h1>;
 
   return (
     <div className={styles['main-container']}>
