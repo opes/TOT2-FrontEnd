@@ -61,11 +61,8 @@ const Tutorial = () => {
       <section className={styles['right-container']}>
         <div className={styles['top-right-container']}></div>
         <div className={styles['middle-right-container']}>
-          <img
-            className={styles['middle-right-content']}
-            src="https://cdn.discordapp.com/attachments/380989362755600394/897995496554123304/image0.jpg"
-            alt="background"
-          />
+          <div className={styles['middle-right-content']}>
+          </div>
         </div>
         <div className={styles['bot-right-container']}>
           <div className={styles['left-bot-right-container']}>

@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 const goblin = {
   level: 1,
   HP: 8,
@@ -5,7 +6,7 @@ const goblin = {
   SPD: 4,
   ATK: 2,
   name: 'Common Goblin',
-  img: 'goblin',
+  img: 'https://cdn.discordapp.com/attachments/380989362755600394/898626117165010974/Idle01.png',
   XP: 5,
   gold: 3
 };
