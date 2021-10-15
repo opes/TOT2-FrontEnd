@@ -83,15 +83,15 @@ const CombatPage = () => {
               </button>
               <button
                 className={activeCombat ? styles['hidden'] : styles['bloop']}
-                onClick={() => handleReturnToVillage()}
-              >
-                To Village
-              </button>
-              <button
-                className={activeCombat ? styles['hidden'] : styles['bloop']}
                 onClick={() => doAddtionalFight()}
               >
                 Fight More
+              </button>
+              <button
+                className={activeCombat ? styles['hidden'] : styles['bloop']}
+                onClick={() => handleReturnToVillage()}
+              >
+                To Village
               </button>
             </section>
             <section className={styles['combat-log']}>
