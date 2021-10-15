@@ -1,5 +1,5 @@
 /* eslint-disable max-len */
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { deleteUserById, getUserById, updateUserById } from '../../services/backendUtils';
 import { useContextHero, useSetContextHero } from '../../hooks/HeroProvider';
@@ -8,7 +8,7 @@ import { useHistory } from 'react-router';
 import styles from '../container-components/VillagePage.css';
 
 const Tavern = ({ handleVillageLocationChange }) => {
-
+  const [log, setLog] = useState([]); 
   const contextHero = useContextHero(); 
   const contextGoogleId = useContextGoogleId(); 
   const setContextHero = useSetContextHero(); 
@@ -19,10 +19,12 @@ const Tavern = ({ handleVillageLocationChange }) => {
     await updateUserById(contextGoogleId, { heroStats: contextHero });
     if (quit) {
       location.replace('/');
+    } else {
+      setLog(prev => {
+        return [...prev, 'You have saved your progress']
+      })
     }
   };
-
-  
 
   const handleRest = async (id) => {
     const currentUser = await getUserById(id)
@@ -41,6 +43,9 @@ const Tavern = ({ handleVillageLocationChange }) => {
           gold: prev.gold - costOfGold,
           STM: prev.MAXSTM, 
         }));
+      setLog(prev => {
+        return [...prev, 'You have spent some time resting and have fully regained your stamina.']
+      })
     } else if (contextHero.gold < costOfGold) {
       alert('You dont have enough gold...')
     } else if (contextHero.STM >= contextHero.MAXSTM) {
@@ -83,10 +88,11 @@ const Tavern = ({ handleVillageLocationChange }) => {
             </button>
             <p> - Deletes ALL save progress. CANNOT BE UNDONE.</p>
           </div>
-          <div>
+          <div className={styles['viewport-button']}>
             <button onClick={() => handleRest(contextGoogleId)}>
               Rest for the night
             </button>
+            <p> - Rest and regain your stamina.</p>
           </div>
           <div className={styles['viewport-button']}>
             <button
@@ -98,7 +104,11 @@ const Tavern = ({ handleVillageLocationChange }) => {
           </div>
         </section>
         <section className={styles['viewport-right-bot-container']}>
-          <div className={styles['text-box']}>{''}</div>
+          <div className={styles['text-box']}>{
+            log.map((single, idx) => {
+              return <p key={idx}> {single} </p>
+            })
+          }</div>
         </section>
       </section>
     </div>
