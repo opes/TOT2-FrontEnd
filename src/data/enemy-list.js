@@ -5,7 +5,7 @@ const goblin1 = {
   SPD: 4,
   ATK: 2,
   name: 'Necro-Goblin',
-  img: 'goblin',
+  img: 'https://cdn.discordapp.com/attachments/380989362755600394/898626117165010974/Idle01.png',
   XP: 5,
   gold: 3
 };

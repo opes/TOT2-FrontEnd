@@ -7,6 +7,10 @@ import { enemyList } from '../../data/enemy-list.js';
 import useCombatHook from '../../hooks/useCombatHook';
 import styles from './CombatPage.css';
 import PlayerScroll from '../display-components/PlayerScroll';
+import dwarf from '../../assets/dwarf.png';
+import fox from '../../assets/fox.png';
+import devilkin from '../../assets/devilkin.png';
+import vampire from '../../assets/vampire.png';
 
 const CombatPage = () => {
   const activeSession = useActiveSession();
@@ -32,6 +36,8 @@ const CombatPage = () => {
 
   if (!activeSession) history.push('/');
 
+  const imgSrc = { dwarf, fox, devilkin, vampire };
+
   return (
     <div className={styles['main-container']}>
       <section className={styles['left-container']}>
@@ -49,12 +55,11 @@ const CombatPage = () => {
       </section>
       <section className={styles['right-container']}>
         <div className={styles['top-right-container']}></div>
-        <div className={styles['middle-right-container']}>
-          <img
-            className={styles['middle-right-content']}
-            src="https://cdn.discordapp.com/attachments/380989362755600394/897995496554123304/image0.jpg"
-            alt="background"
-          />
+        <div className={styles[ 'middle-right-container' ]}>
+          <div className={styles[ 'middle-right-content' ]}>
+            <img src={imgSrc[player.type]} alt="player-sprite"/>
+            <img></img>
+          </div>
         </div>
         <div className={styles['bot-right-container']}>
           <div className={styles['left-bot-right-container']}>
