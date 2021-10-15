@@ -42,9 +42,7 @@ const Church = ({ handleVillageLocationChange }) => {
   const hanldeHeal = async () => {
     const { heroStats } = await getUserById(contextGoogleId);
     const healCost = 5 * contextHero.level; 
-    if (
-      contextHero.HP < heroStats.MAXHP && contextHero.XP >= 0
-    ) {
+    if (contextHero.HP < heroStats.MAXHP && contextHero.XP >= healCost) {
       const message = confirm('Are you sure you want to get healed?');
       if (message) {
         setContextHero((prevHero) => ({
