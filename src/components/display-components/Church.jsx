@@ -41,6 +41,7 @@ const Church = ({ handleVillageLocationChange }) => {
 
   const hanldeHeal = async () => {
     const { heroStats } = await getUserById(contextGoogleId);
+    const healCost = 5 * contextHero.level; 
     if (
       contextHero.HP < heroStats.MAXHP && contextHero.XP >= 0
     ) {
@@ -49,13 +50,13 @@ const Church = ({ handleVillageLocationChange }) => {
         setContextHero((prevHero) => ({
           ...prevHero,
           HP: heroStats.MAXHP,
-          XP: contextHero.XP - (5 * heroStats.level),
+          XP: contextHero.XP - healCost,
         }));
       }
-    } else if (contextHero.XP <= 0) {
+    } else if (contextHero.XP < healCost) {
       alert('Cannot heal, lack of XP');
     } else if (contextHero.HP >= heroStats.MAXHP) {
-      alert('You are too healthy no need to heal');
+      alert('You are too healthy, no need to heal');
     }
   };
 

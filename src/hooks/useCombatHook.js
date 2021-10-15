@@ -66,6 +66,9 @@ const useCombatHook = (heroObj, enemyListArr) => {
       if (newEnemyHP <= 0) {
         const newPlayerXP = player.XP + enemy?.XP;
         const newPlayerGold = player.gold + enemy?.gold;
+         setEnemy((prev) => {
+           return { ...prev, HP: newEnemyHP };
+         });
         setPlayer(prev => {
           return {
             ...prev,
@@ -108,7 +111,9 @@ const useCombatHook = (heroObj, enemyListArr) => {
       updateCombatLog(`The Hero has fallen at the hands of ${enemy?.name}...`);
       alert('You have been defeated, returning to the village in a sorry state.');
       setContextHero(prev => {
-        return { ...prev, HP: 1, XP: 0, gold: 0, STM: prev.STM - 1 };
+        const newSTM = prev.STM - 2; 
+        if (newSTM < 0) newSTM = 0;
+        return { ...prev, HP: 1, STM: newSTM };
       });
       history.push('/village');
     }
