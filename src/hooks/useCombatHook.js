@@ -27,7 +27,7 @@ const useCombatHook = (heroObj, enemyListArr) => {
         'You have been defeated, returning to the village in a sorry state.'
       );
       setContextHero((prev) => {
-        const newSTM = prev.STM - 2;
+        let newSTM = prev.STM - 2;
         if (newSTM < 0) newSTM = 0;
         return { ...prev, HP: 1, STM: newSTM };
       });
@@ -91,7 +91,7 @@ const useCombatHook = (heroObj, enemyListArr) => {
           };
         });
         updateCombatLog(
-          `The Hero has dealt ${enemy?.HP - newEnemyHP} damage, slaining ${
+          `The Hero has dealt ${enemy?.HP - newEnemyHP} damage, slaying ${
             enemy?.name
           }, gaining ${enemy?.gold} gold pieces and ${enemy?.XP} experience!`
         );
