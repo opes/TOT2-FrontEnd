@@ -26,8 +26,8 @@ button:hover {
     font-family: 'Calligraffitti', cursive;
     color: rgb(177, 23, 54);
     font-weight: bold;
-    font-size: 25px;
-    line-height: 2.2rem;
+    font-size: 35px;
+    line-height: 3.5rem;
     text-shadow: -1px 1px 2px rgb(41, 45, 48);
     filter: drop-shadow(-3px 3px 8px rgb(41, 45, 48));
     margin-left: 55px;
@@ -95,6 +95,25 @@ button:hover {
   justify-content: center;
   align-items: center;
   filter: drop-shadow(-5px 5px 8px rgb(7, 8, 8));
+}
+
+button {
+  -moz-transition: all 0.2s ease-in;
+  -o-transition: all 0.2s ease-in;
+  -webkit-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+}
+
+.village-button:hover {
+  /* opacity: 75%; */
+  font-weight: bolder;
+  color: rgb(223, 202, 172);
+  text-shadow: 8px 8px 30px #cac5b8de;
+  filter: drop-shadow(1px 1px 10px #cac5b8de);
+  -moz-transition: all 0.2s ease-in;
+  -o-transition: all 0.2s ease-in;
+  -webkit-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
 }
 
 .viewport-left-container {
@@ -188,7 +207,7 @@ button:hover {
   align-items: inherit;
   width: 100%;
   height: 100%;
-  background-color:rgba(21, 22, 26, 0.575);
+  background-color:rgba(21, 22, 26, 0.349);
 }
 
 /* THESE STYLES ARE FOR THE INDIVIDUAL DISPLAY COMPS NESTED IN VILLAGE VIEWPORT! */
