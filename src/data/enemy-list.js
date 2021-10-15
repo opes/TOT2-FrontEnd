@@ -1,12 +1,35 @@
-/* eslint-disable max-len */
-const goblin = {
+const goblin1 = {
   level: 1,
   HP: 8,
   AC: 2,
   SPD: 4,
   ATK: 2,
-  name: 'Common Goblin',
+  name: 'Necro-Goblin',
   img: 'https://cdn.discordapp.com/attachments/380989362755600394/898626117165010974/Idle01.png',
+  XP: 5,
+  gold: 3
+};
+
+const goblin2 = {
+  level: 1,
+  HP: 8,
+  AC: 1,
+  SPD: 3,
+  ATK: 3,
+  name: 'Necro-Goblin',
+  img: 'goblin',
+  XP: 5,
+  gold: 4
+};
+
+const goblin3 = {
+  level: 1,
+  HP: 3,
+  AC: 0,
+  SPD: 6,
+  ATK: 1,
+  name: 'Necro-Goblin',
+  img: 'goblin',
   XP: 5,
   gold: 3
 };
@@ -33,6 +56,18 @@ const skeleton1 = {
   img: 'skeleton1',
   XP: 5,
   gold: 2
+};
+
+const fly = {
+  level: 1,
+  HP: 3,
+  AC: 0,
+  SPD: 6,
+  ATK: 1,
+  name: 'Rot Fly',
+  img: 'goblin',
+  XP: 5,
+  gold: 4
 };
 
 const hobgoblin = {
@@ -71,11 +106,47 @@ const zombie2 = {
   gold: 3
 };
 
+const goblin4 = {
+  level: 2,
+  HP: 13,
+  AC: 4,
+  SPD: 1,
+  ATK: 5,
+  name: 'Pus-Bearer Goblin',
+  img: 'goblin',
+  XP: 5,
+  gold: 6
+};
+
+const snail = {
+  level: 3,
+  HP: 40,
+  AC: 5,
+  SPD: 0,
+  ATK: 9,
+  name: 'Necro-Snail',
+  img: 'goblin',
+  XP: 20,
+  gold: 25
+};
+
+const spider = {
+  level: 2,
+  HP: 8,
+  AC: 1,
+  SPD: 6,
+  ATK: 3,
+  name: 'Blood Spider',
+  img: 'goblin',
+  XP: 8,
+  gold: 4
+};
 
 export const enemyList = [
   // LEVEL 1
-  goblin, zombie1, skeleton1, 
+  goblin1, goblin2, goblin3, zombie1, skeleton1, fly,
   // LEVEL 2
-  hobgoblin, skeleton2, zombie2
+  hobgoblin, skeleton2, zombie2, goblin4, spider,
   // LEVEL 3
+  snail
 ];
