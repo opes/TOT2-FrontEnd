@@ -89,11 +89,11 @@ const CombatPage = () => {
           </div>
           <div className={styles['right-bot-right-container']}>
             <div className={styles['enemy-stats']}>
-              <p>{enemy?.name}</p>
-              <p>{enemy?.HP}</p>
-              <p>{enemy?.AC}</p>
-              <p>{enemy?.SPD}</p>
-              <p>{enemy?.ATK}</p>
+              <h2>{enemy?.name}</h2>
+              <p>Health Points: {enemy?.HP}</p>
+              <p>Armor Class: {enemy?.AC}</p>
+              <p>Speed: {enemy?.SPD}</p>
+              <p>Attack: {enemy?.ATK}</p>
             </div>
           </div>
         </div>
