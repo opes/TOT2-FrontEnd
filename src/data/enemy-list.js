@@ -15,7 +15,7 @@ const zombie1 = {
   HP: 14,
   AC: 0,
   SPD: 1,
-  ATK: 5,
+  ATK: 3,
   name: 'Shambling Zombie',
   img: 'zombie1',
   XP: 5,
@@ -27,7 +27,7 @@ const skeleton1 = {
   HP: 6,
   AC: 1,
   SPD: 4,
-  ATK: 5,
+  ATK: 3,
   name: 'Shambling Skeleton',
   img: 'skeleton1',
   XP: 5,
@@ -43,7 +43,7 @@ const hobgoblin = {
   name: 'Hobgoblin Scout',
   img: 'hobgoblin',
   XP: 8,
-  gold: 5
+  gold: 9
 };
 
 const skeleton2 = {
@@ -51,7 +51,7 @@ const skeleton2 = {
   HP: 10,
   AC: 4,
   SPD: 4,
-  ATK: 5,
+  ATK: 4,
   name: 'Old Armored Skeleton',
   img: 'skeleton2',
   XP: 8,
@@ -60,10 +60,10 @@ const skeleton2 = {
 
 const zombie2 = {
   level: 2,
-  HP: 26,
+  HP: 20,
   AC: 0,
   SPD: 2,
-  ATK: 5,
+  ATK: 4,
   name: 'Rotting Zombie',
   img: 'zombie2',
   XP: 8,
