@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Calligraffitti&display=swap');
+
 .village-main-container {
   display: flex;
   flex-direction: row;
@@ -28,12 +30,14 @@
     margin-top: 5vh;
     position: relative;
     overflow: hidden;
+    filter: drop-shadow(-5px 5px 10px rgb(7, 8, 8));
 }
 
 .right-component-village-enterties {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  filter: drop-shadow(-5px 5px 10px rgb(7, 8, 8));
 }
 
 .village-viewport {
@@ -43,6 +47,7 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  filter: drop-shadow(-5px 5px 10px rgb(7, 8, 8));
 }
 
 .village-buttons-container {
@@ -71,8 +76,10 @@
 
 .village-button { 
   width: 11vw;
-  height: 7vh;
-  color: white;
+  height: 7.5vh;
+  color: rgb(223, 202, 172);
+  text-shadow: -1px 1px rgb(41, 45, 48);
+  font-family: fantasy;
   font-size: 2rem;
   border-style: solid;
   border-width: 1.5vw;
@@ -83,10 +90,10 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  filter: drop-shadow(-5px 5px 8px rgb(7, 8, 8));
 }
 
 .viewport-left-container {
-  
   height: 100%;
   width: 40%;
   overflow: hidden;
@@ -100,12 +107,12 @@
 .viewport-right-container {
   height: 100%;
   width: 60%;
-  border: inset rgb(68, 58, 45);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
   overflow-x: hidden;
+  border: solid 3px rgb(224, 14, 49);
 }
 
 .viewport-right-top-container {
@@ -118,9 +125,11 @@
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
+  /* border: solid 3px yellow; */
 }
 
 .viewport-button {
+  border: solid 3px blue;
   display: flex;
   flex-direction: row;
   margin: 1vh
@@ -143,7 +152,10 @@
   background-color: rgba(0, 0, 0, 0.698);
   width: 100%;
   height: 100%;
-  color: white;
+  color: rgb(223, 202, 172);
+  font-family: fantasy;
+  border: inset rgb(68, 58, 45);
+  padding: 3px;
 }
 
 /* THESE STYLES ARE FOR THE INDIVIDUAL DISPLAY COMPS NESTED IN VILLAGE VIEWPORT! */

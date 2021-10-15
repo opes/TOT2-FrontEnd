@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Calligraffitti&display=swap');
+
 .main-container {
     display: flex;
     flex-direction: column;
@@ -28,15 +30,19 @@
   padding: 2vw 2vh;
   border: none;
   font-size: 1.5rem;
+  font-family: fantasy;
+  text-shadow: -1px 1px 2px rgba(65, 70, 73, 0.603);
+  font-weight: bold;
   border-radius: 20px;
   background-image: url('https://png2.cleanpng.com/sh/a8492d85ab33b12bbbe242f35539030d/L0KzQYi4UsEzN2g6eZGAYUOzRoW4VMQyaWhnT5C6NUG6Q4S7WME2OWQ2SqICOEi1RomCTwBvbz==/5a30641441a7b7.1517334815131207882689.png');
   background-size: contain;
   background-repeat: no-repeat;
-  background-color: antiquewhite;
+  background-color: rgba(243, 239, 234, 0.836);
   position: relative;
   text-decoration: none;
   box-shadow: 0 2px rgba(250, 235, 215, 0.66);
   text-transform: uppercase;
+  filter: drop-shadow(-3px 3px 5px rgb(41, 45, 48));
 }
 
 .cutscene-button:hover {
@@ -63,8 +69,11 @@
 }
 
 article {
-    font-family: "Courier";
-    font-size: 14px;
+    font-family: 'Calligraffitti', cursive;
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 1.5em;
+    text-shadow: -1px 1px 2px rgba(65, 70, 73, 0.603);
     word-wrap: break-word;
     width: 25vw;
     flex-wrap: wrap;
