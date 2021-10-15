@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Calligraffitti&display=swap');
 
+button:hover {
+  cursor: pointer;
+}
+
 .village-main-container {
   display: flex;
   flex-direction: row;
@@ -126,10 +130,15 @@
   align-items: space-evenly;
 }
 
-.viewport-button{
+.viewport-button {
   display: flex;
   justify-content: center;
   width: 100%;
+}
+
+.viewport-button:hover {
+  opacity: 90%;
+  filter: drop-shadow(1px 1px 1px rgb(223, 202, 172));
 }
 
 .viewport-button > button {
@@ -138,6 +147,13 @@
   align-items: center;
   flex-direction: row;
   border: outset #9DA7AF;
+  background-color: #9DA7AF;
+  font-size: 1rem;
+  font-weight: bolder;
+  font-family: fantasy;
+  color: #323435;
+  text-shadow: -1px -1px 2px rgb(41, 45, 48);
+  text-shadow: 1px 1px 2px rgb(152, 166, 173);
   width: 90%;
   filter: drop-shadow(-5px 5px 8px rgb(7, 8, 8));
 }
