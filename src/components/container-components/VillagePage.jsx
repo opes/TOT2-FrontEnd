@@ -1,5 +1,5 @@
 /* eslint-disable max-len */
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 import { useContextHero, useSetContextHero } from '../../hooks/HeroProvider';
 import { useActiveSession } from '../../hooks/SessionProvider';
@@ -18,6 +18,31 @@ const VillagePage = () => {
   const setContextHero = useSetContextHero();
 
   if (!activeSession) history.push('/');
+
+  useEffect(() => {
+    if (contextHero.STM <= 0) {
+      alert('You have return to the village but fall from exhaustion.')
+      setContextHero(prev => {
+        return {
+          ...prev, 
+          gold: 0,
+          STM: prev.MAXSTM, 
+         }
+       })
+    } 
+    
+    if (contextHero.HP <= 0) {
+      alert('You have been defeated from the previous battel')
+      setContextHero((prev) => {
+        return {
+          ...prev,
+          gold: 1,
+          HP: 1, 
+          STM: 1,
+        };
+      });
+    }
+  }, [])
 
   const handleVillageLocationChange = ({ target }) => {
     setVillageLocation(target.value);
