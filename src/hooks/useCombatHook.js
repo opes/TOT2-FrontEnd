@@ -139,7 +139,7 @@ const useCombatHook = (heroObj, enemyListArr) => {
         'You have been defeated, returning to the village in a sorry state.'
       );
       setContextHero((prev) => {
-        const newSTM = prev.STM - 2;
+        let newSTM = prev.STM - 2;
         if (newSTM < 0) newSTM = 0;
         return { ...prev, HP: 1, STM: newSTM };
       });
