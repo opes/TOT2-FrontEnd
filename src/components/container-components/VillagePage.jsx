@@ -1,7 +1,7 @@
 /* eslint-disable max-len */
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
-import { useContextHero } from '../../hooks/HeroProvider';
+import { useContextHero, useSetContextHero } from '../../hooks/HeroProvider';
 import { useActiveSession } from '../../hooks/SessionProvider';
 import Church from '../display-components/Church';
 import PlayerScroll from '../display-components/PlayerScroll';
@@ -15,6 +15,7 @@ const VillagePage = () => {
   const history = useHistory();
   const [villageLocation, setVillageLocation] = useState('main');
   const contextHero = useContextHero();
+  const setContextHero = useSetContextHero();
 
   if (!activeSession) history.push('/');
 
@@ -22,11 +23,21 @@ const VillagePage = () => {
     setVillageLocation(target.value);
   };
 
+  const handleHeroStamina = () => {
+    setContextHero(prev => {
+      return {
+        ...prev,
+        STM: prev.STM - 1, 
+      }
+    });
+  }
+
   const handleWilderness = () => {
     const message = confirm(
       'You are about to head to the wilderness, do you want to continue?'
     );
     if (message) {
+      handleHeroStamina();
       history.push('/combat');
     }
   };
