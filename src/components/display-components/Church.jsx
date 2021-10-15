@@ -73,20 +73,22 @@ const Church = ({ handleVillageLocationChange }) => {
       </section>
       <section className={styles['viewport-right-container']}>
         <section className={styles[ 'viewport-right-top-container' ]}>
-          <div className={styles['church-viewport-background']}>
-            <div className={styles['viewport-button']}>
-              <button onClick={hanldeHeal}> Heal - Offer your experience to Torr and restore your health. </button>
-            </div>
-            <div className={styles['viewport-button']}>
-              <button onClick={handleLevelUp}> Level Up- Offer your experience to Torr and increase your battle prowess. </button>
-            </div>
-            <div className={styles['viewport-button']}>
-              <button
-                onClick={(event) => handleVillageLocationChange(event)}
-                value="main"
-              >
+          <div className={styles[ 'church-viewport-background' ]}>
+            <div className={styles['grey-screen']}>
+              <div className={styles['viewport-button']}>
+                <button onClick={hanldeHeal}> Heal - Offer your experience to Torr and restore your health. </button>
+              </div>
+              <div className={styles['viewport-button']}>
+                <button onClick={handleLevelUp}> Level Up- Offer your experience to Torr and increase your battle prowess. </button>
+              </div>
+              <div className={styles['viewport-button']}>
+                <button
+                  onClick={(event) => handleVillageLocationChange(event)}
+                  value="main"
+                >
               Go back to Village
-              </button>
+                </button>
+              </div>
             </div>
           </div>
           

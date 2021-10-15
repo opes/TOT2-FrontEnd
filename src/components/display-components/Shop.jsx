@@ -17,11 +17,13 @@ const Shop = ({ handleVillageLocationChange }) => {
       <section className={styles['viewport-right-container']}>
         <section className={styles[ 'viewport-right-top-container' ]}>
           <div className={styles['shop-viewport-background']}>
-            <div className={styles['viewport-button']}>
-              <button
-                onClick={(event) => handleVillageLocationChange(event)}
-                value="main"
-              >Go back to Village</button>
+            <div className={styles['grey-screen']}>
+              <div className={styles['viewport-button']}>
+                <button
+                  onClick={(event) => handleVillageLocationChange(event)}
+                  value="main"
+                >Go back to Village</button>
+              </div>
             </div>
           </div>
         </section>

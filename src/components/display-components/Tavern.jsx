@@ -74,30 +74,32 @@ const Tavern = ({ handleVillageLocationChange }) => {
       </section>
       <section className={styles['viewport-right-container']}>
         <section className={styles['viewport-right-top-container']}>
-          <div className={styles['tavern-viewport-background']}>
-            <div className={styles['viewport-button']}>
-              <button onClick={() => handleSave()}>Save- Save your progress and continue playing.</button>
-            </div>
-            <div className={styles['viewport-button']}>
-              <button onClick={() => handleSave(true)}>Save & Quit - Save your progress and quit to Title Screen.</button>
-            </div>
-            <div className={styles['viewport-button']}>
-              <button onClick={() => handleRetire(contextGoogleId)}>
+          <div className={styles[ 'tavern-viewport-background' ]}>
+            <div className={styles['grey-screen']}>
+              <div className={styles['viewport-button']}>
+                <button onClick={() => handleSave()}>Save- Save your progress and continue playing.</button>
+              </div>
+              <div className={styles['viewport-button']}>
+                <button onClick={() => handleSave(true)}>Save & Quit - Save your progress and quit to Title Screen.</button>
+              </div>
+              <div className={styles['viewport-button']}>
+                <button onClick={() => handleRetire(contextGoogleId)}>
               Retire the Hero - Deletes ALL save progress. CANNOT BE UNDONE.
-              </button>
-            </div>
-            <div className={styles['viewport-button']}>
-              <button onClick={() => handleRest(contextGoogleId)}>
+                </button>
+              </div>
+              <div className={styles['viewport-button']}>
+                <button onClick={() => handleRest(contextGoogleId)}>
               Rest for the night - Rest and regain your stamina.
-              </button>
-            </div>
-            <div className={styles['viewport-button']}>
-              <button
-                onClick={(event) => handleVillageLocationChange(event)}
-                value="main"
-              >
+                </button>
+              </div>
+              <div className={styles['viewport-button']}>
+                <button
+                  onClick={(event) => handleVillageLocationChange(event)}
+                  value="main"
+                >
               Go back to Village
-              </button>
+                </button>
+              </div>
             </div>
           </div>
         </section>
