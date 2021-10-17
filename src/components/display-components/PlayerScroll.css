@@ -11,17 +11,18 @@
 }
 
 .portrait {
-    height: 320px;
-    width: 320px;
+    height: 300px;
+    width: 300px;
     border-radius: 50%;
-    padding: 10%;
+    padding: 2%;
+    margin-top: -5px;
+    margin-bottom: 5px;
     filter: drop-shadow(-18px 15px 8px #302f2ca6);
     position: relative;
 }
 
 .hero-type {
-    /* border: solid salmon 3px; */
-    margin-top: 150px;
+    margin-top: 90px;
     font-size: 3.85rem;
     position: relative;
 }

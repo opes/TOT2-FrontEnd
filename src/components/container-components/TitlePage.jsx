@@ -4,7 +4,6 @@ import SignUp from '../functional-components/SignUp';
 import Login from '../functional-components/Login';
 import styles from './TitlePage.css';
 
-
 const TitlePage = () => {
   const [signedIn, setSignedIn] = useState(false);
   return (

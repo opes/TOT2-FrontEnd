@@ -69,18 +69,20 @@ const VillagePage = () => {
   
   return (
     <div className={styles['village-main-container']}>
-      <div className={styles['left-component-playerScroll']}>
-        <PlayerScroll
-          type={contextHero.type}
-          HP={contextHero.HP}
-          STM={contextHero.STM}
-          AC={contextHero.AC}
-          SPD={contextHero.SPD}
-          ATK={contextHero.ATK}
-          level={contextHero.level}
-          gold={contextHero.gold}
-          XP={contextHero.XP}
-        />
+      <div className={styles[ 'left-component-playerScroll' ]}>
+        <div className={styles['scroll-content']}>
+          <PlayerScroll
+            type={contextHero.type}
+            HP={contextHero.HP}
+            STM={contextHero.STM}
+            AC={contextHero.AC}
+            SPD={contextHero.SPD}
+            ATK={contextHero.ATK}
+            level={contextHero.level}
+            gold={contextHero.gold}
+            XP={contextHero.XP}
+          />
+        </div>
       </div>
       <div className={styles['right-component-village-enterties']}>
         <div className={styles['village-viewport']}>

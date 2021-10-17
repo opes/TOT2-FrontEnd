@@ -7,6 +7,8 @@
 .main-container {
   display: flex;
   flex-direction: row;
+  justify-content: center;
+  align-items: center;
   height: 100vh;
   width: 100vw;
   background-image: url('https://cdn.discordapp.com/attachments/380989362755600394/897956370630983711/image0.jpg');
@@ -19,15 +21,8 @@
 .left-container {
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  height: 90vh;
   width: 25vw;
-  font-family: 'Calligraffitti', cursive;
-  color: rgb(177, 23, 54);
-  font-weight: bold;
-  font-size: 35px;
-  line-height: 3.5rem;
-  text-shadow: -1px 1px 2px rgb(41, 45, 48);
-  filter: drop-shadow(-3px 3px 8px rgb(41, 45, 48));
   margin-left: 55px;
   margin-top: 5vh;
   position: relative;
@@ -35,25 +30,40 @@
   filter: drop-shadow(-5px 5px 10px rgb(7, 8, 8));
 }
 
+.scroll-content {
+    font-family: 'Calligraffitti', cursive;
+    color: rgb(177, 23, 54);
+    font-weight: bold;
+    font-size: 30px;
+    line-height: 1.5em;
+    text-shadow: -1px 1px 2px rgb(41, 45, 48);
+    filter: drop-shadow(-3px 3px 8px rgb(41, 45, 48));
+  }
+
 .right-container {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   height: 100vh;
   width: 65vw;
+  filter: drop-shadow(-5px 5px 10px rgb(7, 8, 8));
 }
 
 .top-right-container {
+  height: 15vh;
+  width: 65vw;
   display: flex;
   flex-direction: row;
-  height: 10vh;
+  justify-content: center;
+  align-items: center;
   filter: drop-shadow(-5px 5px 10px rgb(7, 8, 8));
 }
 
 .middle-right-container {
   display: flex;
   flex-direction: row;
-  height: 65vh;
-  width: 65vw;
+  height: 100vh;
+  width: 60vw;
   margin-top: -5.5vh;
   overflow: hidden;
   border-style: solid;
@@ -84,8 +94,7 @@ flex-direction: row;
 align-items: center;
 margin-top: 3.5vh;
 margin-bottom: 2vh;
-margin-left: 2.75vw;
-width: 65vw;
+margin-left: 1.5vw;
 filter: drop-shadow(-5px 5px 5px rgb(13, 13, 14));
 filter: drop-shadow(-5px 5px 10px rgb(7, 8, 8));
 }
@@ -95,7 +104,7 @@ display: flex;
 flex-direction: column;
 justify-content: center;
 align-items: center;
-width: 70%;
+width: 45vw;
 height: 20vh;
 border-style: solid;
 border-width: 1.5vw;
@@ -139,7 +148,7 @@ filter: drop-shadow(-5px 5px 10px rgb(7, 8, 8));
     border-image-slice: 20 20 fill;
     border-image-outset: 2px;
     justify-content: space-between;
-    width: 6vw;
+    width: 7vw;
   }
 
 .combat-buttons {
@@ -148,7 +157,7 @@ filter: drop-shadow(-5px 5px 10px rgb(7, 8, 8));
     filter: drop-shadow(-1px 1px 10px rgb(7, 8, 8));
   }
 
-  button {
+button {
   -moz-transition: all 0.2s ease-in;
   -o-transition: all 0.2s ease-in;
   -webkit-transition: all 0.2s ease-in;

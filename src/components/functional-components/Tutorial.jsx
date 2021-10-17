@@ -52,18 +52,20 @@ const Tutorial = () => {
 
   return (
     <div className={styles['main-container']}>
-      <section className={styles['left-container']}>
-        <PlayerScroll
-          type={player.type}
-          HP={player.HP}
-          STM={player.STM}
-          AC={player.AC}
-          SPD={player.SPD}
-          ATK={player.ATK}
-          level={player.level}
-          gold={player.gold}
-          XP={player.XP}
-        />
+      <section className={styles[ 'left-container' ]}>
+        <div className={styles['scroll-content']}>
+          <PlayerScroll
+            type={player.type}
+            HP={player.HP}
+            STM={player.STM}
+            AC={player.AC}
+            SPD={player.SPD}
+            ATK={player.ATK}
+            level={player.level}
+            gold={player.gold}
+            XP={player.XP}
+          />
+        </div>
       </section>
       <section className={styles['right-container']}>
         <div className={styles['top-right-container']}></div>
