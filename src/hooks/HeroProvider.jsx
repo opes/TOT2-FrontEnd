@@ -13,6 +13,7 @@ const HeroProvider = ({ children }) => {
   );
 };
 
+// These two hooks could be combined
 export const useContextHero = () => {
   const { contextHero } = useContext(HeroContext);
   return contextHero;

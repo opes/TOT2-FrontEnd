@@ -12,7 +12,6 @@ import fox from '../../assets/fox.png';
 import devilkin from '../../assets/devilkin.png';
 import vampire from '../../assets/vampire.png';
 
-
 const { dwarfWarrior, foxArcher, devilkinMage, vampireRonin } = heroes;
 
 const SignUp = ({ event }) => {
@@ -33,6 +32,7 @@ const SignUp = ({ event }) => {
   const handleSignup = async (id) => {
     const bckRes = await getUserById(id);
 
+    // How can you handle this error more gracefully? What about changing the error message that comes from the backend?
     if (
       bckRes.message ===
         'null value in column "google_id" of relation "users" violates not-null constraint' ||
@@ -70,7 +70,7 @@ const SignUp = ({ event }) => {
         setToken(token); event(true);
         handleSignup(token?.googleId);
       }}
-      onFailure={ (response) => console.log(response)}
+      onFailure={ (response) => console.log(response)} {/* TODO: Handle signup failure */}
       cookiePolicy={'single_host_origin'}
     />
   </div>;

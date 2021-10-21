@@ -147,7 +147,7 @@ const useCombatHook = (heroObj, enemyListArr) => {
     }
   };
 
-  const doAddtionalFight = () => {
+  const doAdditionalFight = () => {
     setLoading(true);
     setActiveCombat(true);
     const chosenEnemy = grabRandomEnemy(player?.level, enemyListArr);
@@ -164,7 +164,7 @@ const useCombatHook = (heroObj, enemyListArr) => {
     loading,
     doOneCombatRound,
     doFlee,
-    doAddtionalFight,
+    doAddtionalFight: doAdditionalFight,
   };
 };
 

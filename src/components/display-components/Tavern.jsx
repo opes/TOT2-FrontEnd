@@ -14,7 +14,6 @@ const Tavern = ({ handleVillageLocationChange }) => {
   const setContextHero = useSetContextHero(); 
   const history = useHistory(); 
 
-
   const handleSave = async (quit) => {
     await updateUserById(contextGoogleId, { heroStats: contextHero });
     if (quit) {

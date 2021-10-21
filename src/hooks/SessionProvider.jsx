@@ -16,6 +16,7 @@ const SessionProvider = ({ children }) => {
 };
 //These hooks allow all children comps to have access to the context state
 
+// These two hooks could be combined
 export const useContextGoogleId = () => {
   const { contextGoogleId } = useContext(SessionContext);
   return contextGoogleId;
@@ -26,6 +27,7 @@ export const useSetContextGoogleId = () => {
   return setContextGoogleId;
 };
 
+// These two hooks could be combined
 export const useActiveSession = () => {
   const { activeSession } = useContext(SessionContext);
   return activeSession;
@@ -36,10 +38,8 @@ export const useSetActiveSession = () => {
   return setActiveSession;
 };
 
-
 SessionProvider.propTypes = {
   children: PropTypes.node.isRequired
 };
 
 export default SessionProvider;
-

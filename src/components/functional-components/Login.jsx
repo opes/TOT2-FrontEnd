@@ -37,13 +37,12 @@ const Login = ({ signedIn }) => {
     >
       <GoogleLogin
         className={styles['button']}
-        // className="button"
         clientId={process.env.REACT_APP_CLIENT_GOOGLE_ID}
         buttonText="Login using Google"
         onSuccess={(token) => {
           handleLogin(token?.googleId);
         }}
-        onFailure={(response) => console.log(response)}
+        onFailure={(response) => console.log(response)} {/* How can you better handle errors here? */}
         cookiePolicy={'single_host_origin'}
       />
     </div>

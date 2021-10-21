@@ -43,7 +43,7 @@ const Church = ({ handleVillageLocationChange }) => {
     }
   };
 
-  const hanldeHeal = async () => {
+  const handleHeal = async () => {
     const { heroStats } = await getUserById(contextGoogleId);
     const healCost = 5 * contextHero.level; 
     if (contextHero.HP < heroStats.MAXHP && contextHero.XP >= healCost) {
@@ -76,7 +76,7 @@ const Church = ({ handleVillageLocationChange }) => {
           <div className={styles[ 'church-viewport-background' ]}>
             <div className={styles['grey-screen']}>
               <div className={styles['viewport-button']}>
-                <button onClick={hanldeHeal}> Heal - Offer your experience to Torr and restore your health. </button>
+                <button onClick={handleHeal}> Heal - Offer your experience to Torr and restore your health. </button>
               </div>
               <div className={styles['viewport-button']}>
                 <button onClick={handleLevelUp}> Level Up- Offer your experience to Torr and increase your battle prowess. </button>
@@ -91,12 +91,6 @@ const Church = ({ handleVillageLocationChange }) => {
               </div>
             </div>
           </div>
-          
-          {/* <img
-            className={styles['church-viewport-image']}
-            src="https://cdn.discordapp.com/attachments/837471254097297449/898445502494945400/image.png"
-            alt="church"
-          /> */}
         </section>
         <section className={styles['viewport-right-bot-container']}>
           <div className={styles['text-box']}>{log}</div>

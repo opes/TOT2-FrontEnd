@@ -8,7 +8,6 @@ import PlayerScroll from '../display-components/PlayerScroll';
 import Shop from '../display-components/Shop';
 import Tavern from '../display-components/Tavern';
 import styles from './VillagePage.css';
-// import Login from '../functional-components/Login';
 
 const VillagePage = () => {
   const activeSession = useActiveSession();
@@ -32,7 +31,7 @@ const VillagePage = () => {
     } 
     
     if (contextHero.HP <= 0) {
-      alert('You have been defeated from the previous battel');
+      alert('You have been defeated from the previous battle');
       setContextHero((prev) => {
         return {
           ...prev,

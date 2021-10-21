@@ -24,7 +24,7 @@ const CombatPage = () => {
     combatLog,
     doOneCombatRound,
     doFlee,
-    doAddtionalFight
+    doAdditionalFight
   } = useCombatHook(contextHero, enemyList);
 
 
@@ -85,7 +85,7 @@ const CombatPage = () => {
               </button>
               <button
                 className={activeCombat ? styles['hidden'] : styles['bloop']}
-                onClick={() => doAddtionalFight()}
+                onClick={() => doAdditionalFight()}
               >
                 Fight More
               </button>
