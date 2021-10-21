@@ -164,7 +164,7 @@ const useCombatHook = (heroObj, enemyListArr) => {
     loading,
     doOneCombatRound,
     doFlee,
-    doAddtionalFight: doAdditionalFight,
+    doAdditionalFight,
   };
 };
 
